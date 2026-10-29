@@ -1,5 +1,6 @@
 {
   "fecha_corte": "2026-10-29",
+  "origen": "api",
   "datasets": {
     "bdua_contributivo": "tq4m-hmg2",
     "bdua_subsidiado": "d7a5-cnra",
@@ -7,21 +8,25 @@
     "divipola": "gdxc-w37w"
   },
   "filas": {
-    "bdua_eps_contributivo": 28301,
-    "bdua_eps_subsidiado": 25333,
-    "bdua_demo_contributivo": 26102,
-    "bdua_demo_subsidiado": 26942,
+    "eps_contributivo": 28301,
+    "eps_subsidiado": 25333,
+    "demo_contributivo": 26102,
+    "demo_subsidiado": 26942,
     "reps_ips": 19551,
-    "reps_resumen_clase": 10,
+    "reps_resumen": 10,
     "divipola": 1122
   },
-  "eps_intervenidas": [
-    "ASMET SALUD",
-    "CAPRESOCA",
-    "COOSALUD",
-    "EMSSANAR",
-    "FAMISANAR",
-    "NUEVA EPS",
-    "SOS"
-  ]
+  "eps_intervenidas": {
+    "fecha_referencia": "2026-10-08",
+    "fuente": "Vanguardia (8-oct-2026), con base en la Supersalud",
+    "lista": [
+      "NUEVA EPS",
+      "COOSALUD",
+      "EMSSANAR",
+      "ASMET SALUD",
+      "FAMISANAR",
+      "SOS",
+      "CAPRESOCA"
+    ]
+  }
 }

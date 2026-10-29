@@ -2,7 +2,7 @@
   "sens_spearman_mediana": 0.9825705593340279,
   "sens_spearman_p05": 0.9367712551665184,
   "sens_jaccard_top10_mediana": 0.751937984496124,
-  "pca_varianza_explicada": 0.39704217568774675,
+  "pca_varianza_explicada": 0.39704217568774686,
   "pca_spearman_vs_indice": 0.6260936795245544,
   "pca_jaccard_top10": 0.26256983240223464,
   "pesos_pca": {
