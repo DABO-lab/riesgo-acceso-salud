@@ -1,0 +1,12 @@
+# Nada de esto debe entrar a la imagen
+.venv/
+data/
+reports/
+notebooks/
+tests/
+.git/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.pytest_cache/
+.ruff_cache/
