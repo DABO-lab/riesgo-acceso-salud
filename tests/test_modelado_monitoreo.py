@@ -47,6 +47,7 @@ def test_registro_mlflow_solo_mueve_el_alias_si_cumple(preparado, cfg_copia, tmp
 
     monkeypatch.setenv("RIESGO_BASE_DIR", str(tmp_path))
     monkeypatch.delenv("MLFLOW_TRACKING_URI", raising=False)
+    monkeypatch.chdir(tmp_path)  # MLflow crea ./mlruns para el experimento "Default": que no quede en el repo
     cfg_copia["rutas"]["base"] = str(tmp_path)
     ti = indice.calcular_indice(preparado["tabla"], cfg_copia)
     modelo, _, _ = modelado.ajustar_final(ti, cfg_copia, "kmeans", 3)
