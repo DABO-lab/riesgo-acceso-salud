@@ -4,14 +4,16 @@
 
 | Decisión | Por qué | Dónde se cambia |
 |---|---|---|
-| Trabajar con **todo el país** y Antioquia como zoom | Antioquia sola tiene 125 municipios, pocos para el clustering de la fase 2 | `DEPTO_FOCO` en `config.py` |
-| Agregar la BDUA **en el servidor** (API SODA) | ~100 mil filas en lugar de ~2 millones | `extract.params_agregados` |
-| Guardar cada descarga en `data/raw/<fecha>/` | El análisis no depende del portal y se pueden comparar cortes | `extract.descargar` |
+| Trabajar con **todo el país** y Antioquia como zoom | Antioquia sola tiene 125 municipios, pocos para el clustering de la fase 2 | `eda.depto_foco` en `config.yaml` |
+| Agregar la BDUA **en el servidor** (API SODA) | ~100 mil filas en lugar de ~2 millones | `extraccion.consultas` |
+| Guardar cada descarga en `data/raw/<fecha>/` | El análisis no depende del portal y se pueden comparar cortes | `extraccion.extraer` |
 | Contar afiliados "Activo" y "Protección Laboral" | Ambos tienen cobertura | — |
-| Contar solo sedes de clase **IPS** del REPS | Los 54.657 profesionales independientes inflarían la oferta hospitalaria | `CLASE_IPS` en `config.py` |
-| Lista de EPS intervenidas fija por corte | Cambia con el tiempo; se revisa en cada corte | `EPS_INTERVENIDAS_BASE` en `config.py` |
-| Savia Salud **no** intervenida por defecto | No aparece en el listado de oct-2026 (sí en nov-2025) | `INCLUIR_SAVIA=1` |
-| Umbral de alta dependencia: 50 % | Clasificación exploratoria; el índice final es de la fase 2 | `UMBRAL_DEPENDENCIA_INTERVENIDAS` |
+| Contar solo sedes de clase **IPS** del REPS | Los 54.657 profesionales independientes inflarían la oferta hospitalaria | `CLASE_IPS` en `extraccion.py` |
+| Lista de EPS intervenidas fija por corte | Cambia con el tiempo; se revisa en cada corte | `eps_intervenidas.lista` en `config.yaml` |
+| Savia Salud **no** intervenida por defecto | No aparece en el listado de oct-2026 (sí en nov-2025) | agregarla a `eps_intervenidas.lista` |
+| Umbral de alta dependencia: 50 % | Clasificación exploratoria del EDA; para priorizar se usa el índice | `eda.umbral_dependencia` |
+| Índice con pesos por criterio, no por PCA | Dependencia y oferta son el núcleo del problema; PCA pondera por covariación | `indice.componentes` en `config.yaml` |
+| Modelo no supervisado (índice + clustering) | No existe una variable que diga "este municipio perdió acceso" | — |
 
 EPS intervenidas (Vanguardia, 8-oct-2026, con base en la Supersalud): Nueva EPS,
 Coosalud, Emssanar, Asmet Salud, Famisanar, SOS y Capresoca.
@@ -20,57 +22,38 @@ Coosalud, Emssanar, Asmet Salud, Famisanar, SOS y Capresoca.
 
 | Problema | Ejemplo | Solución (código) |
 |---|---|---|
-| Departamentos con otro nombre | `VALLE`, `SAN ANDRES`, `BOGOTA` | `ALIAS_DPTO` en `catalogos.py` |
-| Municipios con otro nombre | `CUCUTA` → `SAN JOSE DE CUCUTA`; `BUGA` → `GUADALAJARA DE BUGA` | `HOMOLOGACION_MANUAL` (55 casos) en `catalogos.py` |
-| Error de codificación de la Ñ | `NARI¥O`, `EL PIJI¥O DEL CARMEN` | `clean.normalizar_texto` |
+| Departamentos con otro nombre | `VALLE`, `SAN ANDRES`, `BOGOTA` | `ALIAS_DPTO` en `limpieza.py` |
+| Municipios con otro nombre | `CUCUTA` → `SAN JOSE DE CUCUTA`; `BUGA` → `GUADALAJARA DE BUGA` | `HOMOLOGACION_MANUAL` (55 casos) en `limpieza.py` |
+| Error de codificación de la Ñ | `NARI¥O`, `EL PIJI¥O DEL CARMEN` | `limpieza.normalizar_texto` |
 | Nombres de municipio repetidos entre departamentos | Varios `SAN PEDRO` y `BOLIVAR` | El cruce es por departamento + municipio |
 | Áreas sin municipio | `DPTO. GUAINIA`, `DPTO. VAUPES` | Se reportan y quedan fuera de la tabla |
-| Una EPS con varios códigos | Nueva EPS: 4 códigos (por régimen y `-CM`) | `REGLAS_EPS` en `catalogos.py` |
-| Zona con seis nombres | `Urbana-Cabecera Municipal`, `Rural - Dispersal`... | `clean.zona_simple` → URBANA / RURAL |
+| Una EPS con varios códigos | Nueva EPS: 4 códigos (por régimen y `-CM`) | `REGLAS_EPS` en `limpieza.py` |
+| Zona con seis nombres | `Urbana-Cabecera Municipal`, `Rural - Dispersal`... | `limpieza.zona_simple` → URBANA / RURAL |
 | Código de municipio inexistente en el REPS | `27086` (4 sedes) | Se reporta y se excluye |
-| Coordenadas con coma decimal | `6,246631` | `clean.preparar_divipola` |
-| Datos personales en el REPS | Correos, teléfonos, cédulas | No se descargan (`COLS_REPS`) |
+| Coordenadas con coma decimal | `6,246631` | `limpieza.preparar_divipola` |
+| Datos personales en el REPS | Correos, teléfonos, cédulas | No se descargan (`COLS_REPS` en `extraccion.py`) |
 
 Sin la homologación manual se perdían 54 municipios con 3,6 millones de afiliados.
 Con ella, el 100 % de los municipios de la BDUA queda con su código DIVIPOLA.
 
 ## Validaciones automáticas
 
-`clean.validar` y `features.construir_tabla_municipal` detienen el proceso con un
-mensaje que dice qué revisar si:
+`validacion.py` revisa cada corte y guarda el resultado en `resultados/<fecha>/calidad.json`.
+Si un chequeo **crítico** falla, el pipeline se detiene antes de entrenar:
 
-- hay afiliados nulos o negativos, o un régimen distinto de contributivo y subsidiado;
-- aparece un grupo de edad que no está en `ORDEN_EDAD`;
-- una EPS intervenida no aparece en la BDUA (regla de `REGLAS_EPS` desactualizada);
-- algún municipio de la BDUA queda sin cruce con DIVIPOLA;
-- las dos vistas de la BDUA (por EPS y demográfica) no suman lo mismo;
-- un código de la homologación manual no existe en DIVIPOLA;
-- la tabla municipal repite municipios, pierde afiliados o tiene indicadores fuera de rango.
+- afiliados no nulos ni negativos, y total nacional de al menos 45 millones;
+- las dos vistas de la BDUA (por EPS y demográfica) suman lo mismo;
+- solo dos regímenes y ningún grupo de edad desconocido;
+- como máximo 0,1 % de afiliados sin código DIVIPOLA;
+- todas las EPS intervenidas aparecen en la BDUA;
+- DIVIPOLA completa y REPS con sedes;
+- la tabla municipal tiene un municipio por fila, conserva el total de afiliados y sus proporciones y HHI están en rango.
 
-Cada validación tiene una prueba con datos rotos a propósito en `tests/test_clean.py`.
+Los no críticos (variación del total frente al corte anterior mayor al 10 %, nulos en las
+variables del modelo) solo generan un aviso. Hay pruebas con datos rotos a propósito en
+`tests/test_limpieza.py`.
 
-## Diccionario de la tabla municipal
-
-`data/processed/tabla_municipal_<fecha>.{parquet,csv}` — una fila por municipio de DIVIPOLA.
-
-| Columna | Definición |
-|---|---|
-| `cod_mpio`, `cod_dpto` | Código DIVIPOLA del municipio (5 dígitos) y del departamento |
-| `dpto`, `nom_mpio`, `tipo_municipio` | Nombres oficiales del DANE |
-| `latitud`, `longitud` | Coordenadas de la cabecera |
-| `afiliados` | Total de afiliados (contributivo + subsidiado) |
-| `pct_subsidiado`, `pct_rural` | Proporción de afiliados en el régimen subsidiado y en zona rural |
-| `pct_intervenidas` | Proporción de afiliados en EPS intervenidas |
-| `n_eps` | Número de EPS con afiliados en el municipio |
-| `hhi` | Índice Herfindahl-Hirschman (0–10.000; > 2.500 = muy concentrado) |
-| `eps_principal`, `pct_eps_principal` | EPS con más afiliados y su participación |
-| `sedes_ips`, `sedes_ips_publicas`, `sedes_ese` | Sedes de IPS habilitadas: total, públicas y de Empresas Sociales del Estado |
-| `ips_x_10mil` | Sedes de IPS por cada 10.000 afiliados |
-| `sin_ips` | `True` si el municipio no tiene ninguna sede de IPS |
-| `cuadrante` | Clasificación exploratoria: dependencia (≥ 50 %) × oferta (≤ mediana) |
-
-**HHI.** Se eleva al cuadrado la participación (en %) de cada EPS y se suma.
-Con 60 % y 40 %: 60² + 40² = 5.200. Con una sola EPS: 10.000.
+El diccionario de columnas está en [diccionario_datos.md](diccionario_datos.md).
 
 ## Tamaño de las fuentes (revisado el 19 y el 25 de octubre de 2026)
 
