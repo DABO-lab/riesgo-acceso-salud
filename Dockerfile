@@ -1,5 +1,5 @@
-# Imagen base: un Linux mínimo que ya trae Python 3.11
-FROM python:3.11-slim
+# Imagen base: un Linux mínimo con Python 3.12 (la misma versión de .python-version)
+FROM python:3.12-slim
 
 # Copiamos el binario de uv desde su imagen oficial
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
@@ -8,14 +8,15 @@ WORKDIR /app
 
 # Dependencias EXACTAS del uv.lock.
 # --frozen: falla si el lock no coincide. --no-dev: sin jupyter/ruff/pytest.
-COPY pyproject.toml uv.lock README.md ./
+COPY pyproject.toml uv.lock README.md .python-version ./
 COPY src/ src/
+COPY config/ config/
 RUN uv sync --frozen --no-dev
 
 # Usuario sin privilegios: el contenedor no corre como root
-RUN useradd --create-home app && mkdir -p /app/data && chown -R app /app
+RUN useradd --create-home app && mkdir -p data resultados mlflow && chown -R app /app
 USER app
 
-# El flujo completo de la fase 1 (lo mismo que `make data`).
-# Monte ./data como volumen para conservar la descarga y los resultados.
-CMD ["sh", "-c", "uv run --no-sync python -m salud.data.extract && uv run --no-sync python -m salud.data.clean && uv run --no-sync python -m salud.features"]
+# El pipeline completo (lo mismo que `make pipeline`). Monte data/, resultados/ y mlflow/
+# como volúmenes para conservar la descarga, los resultados y los experimentos.
+CMD ["uv", "run", "--no-sync", "python", "-m", "riesgo_salud.pipeline"]

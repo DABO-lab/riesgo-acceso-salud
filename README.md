@@ -1,41 +1,70 @@
 # Riesgo de acceso a la salud por municipio en Colombia
 
-Proyecto 2 · Especialización en Ciencia de Datos e IA.
+Proyecto 2 · Especialización en Ciencia de Datos e Inteligencia Artificial · Universidad de Medellín
 
-**Objetivo.** Identificar y priorizar los municipios de Colombia con mayor riesgo
-de que su población se quede sin acceso a la salud, por **depender de EPS
-intervenidas** y contar con **poca oferta de IPS**.
+**Problema.** En muchos municipios, la población depende de EPS en crisis (intervenidas por
+la Supersalud) y tiene poca oferta de IPS. Si esa EPS falla, la gente se queda sin acceso a
+la salud.
 
-Este repositorio contiene la **fase 1** (extracción, limpieza, integración y EDA)
-organizada con las prácticas del curso de MLOps: entorno reproducible con `uv`,
-comandos en un `Makefile`, código como paquete en `src/`, una sola fuente de
-verdad para los parámetros, datos crudos versionados por fecha y hooks que
-vigilan cada commit.
+**Objetivo.** Identificar y priorizar los municipios con mayor riesgo de acceso. Para eso se
+integran tres fuentes oficiales, se construye un índice de riesgo de 0 a 100 y se agrupan los
+municipios con modelos de clustering, todo dentro de un flujo de MLOps reproducible y
+automatizado.
 
-Este es el flujo de datos:
+## Fuentes (datos abiertos, datos.gov.co, licencia CC BY-SA 4.0)
 
-```mermaid
-flowchart LR
-    A["datos.gov.co<br/>API SODA"] -->|make extract| B["data/raw/&lt;fecha&gt;/<br/>7 tablas crudas"]
-    B -->|make clean| C["data/processed/<br/>BDUA, REPS y DIVIPOLA limpios"]
-    C -->|make features| D["tabla_municipal_&lt;fecha&gt;<br/>1 fila por municipio"]
-    D --> E["notebooks/02<br/>EDA y mapa"]
-    D -.->|fase 2| F["índice de riesgo<br/>y clustering"]
-```
-
-## Fuentes (datos abiertos, licencia CC BY-SA 4.0)
-
-| Base | Entidad | ID en datos.gov.co | Uso |
+| Base | Entidad | ID | Uso |
 |---|---|---|---|
-| BDUA régimen contributivo | ADRES | `tq4m-hmg2` | Demanda: afiliados por EPS y municipio |
-| BDUA régimen subsidiado | ADRES | `d7a5-cnra` | Demanda: afiliados por EPS y municipio |
+| BDUA contributivo y subsidiado | ADRES | `tq4m-hmg2`, `d7a5-cnra` | Demanda: afiliados por EPS y municipio |
 | Registro Especial de Prestadores (REPS) | MinSalud | `c36g-9fc2` | Oferta: sedes de IPS por municipio |
 | DIVIPOLA | DANE | `gdxc-w37w` | Llave de integración y coordenadas |
 
-La BDUA se pide **ya agregada en el servidor** (como una tabla dinámica): en vez de
-~2 millones de filas llegan ~100 mil, así que se trabaja con todo el país sin
-problemas de memoria. Del REPS no se descargan correos, teléfonos ni documentos
-(Ley 1581 de 2012).
+## Cómo funciona
+
+```mermaid
+flowchart LR
+    A[datos.gov.co<br/>API SODA] --> B[1. Extracción<br/>data/raw/fecha]
+    B --> C[2. Limpieza +<br/>homologación DIVIPOLA]
+    C --> D{3. Validaciones<br/>de calidad}
+    D -- falla --> X[Se detiene]
+    D -- ok --> E[4. Tabla municipal]
+    E --> F[5. Índice de riesgo<br/>+ sensibilidad + PCA]
+    F --> G[6. 15 modelos de clustering<br/>registrados en MLflow]
+    G --> H{¿Cumple la regla<br/>de selección?}
+    H -- sí --> H1[alias produccion]
+    H -- no --> H2[se registra sin alias]
+    H1 --> I[7. Monitoreo vs.<br/>corte anterior PSI]
+    H2 --> I
+    I --> J[8. Reportes + CSV Power BI<br/>resultados/fecha]
+```
+
+## Puesta en marcha (VS Code o cualquier terminal)
+
+Requisitos: [uv](https://docs.astral.sh/uv/) (`winget install astral-sh.uv`) y, opcional,
+`make` (`winget install ezwinports.make`; después hay que reabrir la terminal).
+
+```bash
+git clone https://github.com/DABO-lab/riesgo-acceso-salud.git
+cd riesgo-acceso-salud
+make setup        # sin make: uv sync  y  uv run pre-commit install
+```
+Instala las versiones exactas del `uv.lock` (con Python 3.12) en `.venv/` y activa los hooks.
+En VS Code, elija `.venv` como intérprete y como kernel de los notebooks.
+
+| Comando | Sin make | Qué hace |
+|---|---|---|
+| `make pipeline` | `uv run python -m riesgo_salud.pipeline` | Pipeline completo con datos reales del corte de hoy (usa la caché si ya se descargó) |
+| `make pipeline FECHA=2026-10-25` | `... pipeline --fecha 2026-10-25` | Un corte específico |
+| `make demo` | `... pipeline --demo --rapido` | El mismo pipeline con datos sintéticos, sin internet |
+| `make mlflow` | `uv run mlflow ui --backend-store-uri sqlite:///mlflow/mlflow.db --port 5001` | Interfaz de MLflow en http://127.0.0.1:5001 |
+| `make test` | `uv run pytest -q` | Pruebas (sin internet) |
+| `make lint` | `uv run ruff check . --fix` y `uv run ruff format .` | Estilo del código |
+| `make notebook` | `uv run jupyter lab notebooks/` | Notebooks narrados |
+| `make docker-build` / `make docker-run` | | El pipeline dentro de un contenedor |
+
+**En Colab** también funciona: se clona el repo, `pip install -e .` y se fija
+`os.environ["RIESGO_BASE_DIR"] = "/content/drive/MyDrive/proyecto2_salud"` para que datos,
+resultados y MLflow queden en Drive.
 
 ## Cómo leer este repositorio
 
@@ -43,119 +72,81 @@ problemas de memoria. Del REPS no se descargan correos, teléfonos ni documentos
 flowchart TD
     A["README.md<br/>¿de qué va esto?"] --> B["Makefile<br/>¿qué comandos existen?"]
     B --> C["pyproject.toml + uv.lock<br/>¿con qué dependencias?"]
-    C --> D["notebooks/01-extraccion-y-limpieza<br/>¿qué tienen de malo los datos?"]
-    D --> E["notebooks/02-eda<br/>¿dónde está el riesgo?"]
-    E --> F["src/salud/<br/>lo mismo, pero como paquete"]
-    F --> F1["config.py — la única fuente de verdad"]
-    F --> F2["data/extract.py, data/catalogos.py, data/clean.py"]
-    F --> F3["features.py — tabla municipal"]
-    F --> G["tests/ y .pre-commit-config.yaml<br/>¿quién vigila la calidad?"]
+    C --> D["config/config.yaml<br/>¿qué se puede cambiar sin tocar código?"]
+    D --> E["notebooks/01_limpieza_eda<br/>¿qué tienen de malo los datos?"]
+    E --> F["notebooks/02_indice_clustering_mlops<br/>¿dónde está el riesgo?"]
+    F --> G["src/riesgo_salud/<br/>lo mismo, pero como paquete"]
+    G --> H["tests/ y .github/workflows/<br/>¿quién vigila la calidad?"]
 ```
 
-Los notebooks **explican**; el paquete **ejecuta**. Los notebooks importan las
-funciones de `src/salud/` en lugar de copiarlas, así que ninguno duplica la
-lógica del otro.
+Los notebooks **explican**; el paquete **ejecuta**. Los notebooks importan las funciones de
+`src/riesgo_salud/` en lugar de copiarlas.
 
 ```text
-├── Makefile                 comandos del proyecto
-├── pyproject.toml, uv.lock  dependencias exactas
-├── Dockerfile               el flujo completo en un contenedor
-├── data/                    (no se versiona) raw/<fecha>/ y processed/
-├── docs/                    decisiones y diccionario de datos
-├── notebooks/               01 extracción y limpieza · 02 EDA
-├── src/salud/
-│   ├── config.py            rutas, datasets, EPS intervenidas, umbrales
-│   ├── data/extract.py      descarga desde la API con caché por fecha
-│   ├── data/catalogos.py    homologaciones revisadas a mano
-│   ├── data/clean.py        normalización, DIVIPOLA, EPS, REPS y validaciones
-│   └── features.py          tabla analítica municipal
-└── tests/                   pruebas con datos sintéticos (no usan internet)
+config/config.yaml        todos los parámetros (EPS intervenidas, pesos, modelos, umbrales)
+src/riesgo_salud/         un módulo por etapa
+    extraccion.py  limpieza.py  validacion.py  features.py  indice.py
+    modelado.py    tracking.py  monitoreo.py   reportes.py  pipeline.py  sintetico.py
+notebooks/
+    01_limpieza_eda.ipynb             fase 1: extracción, limpieza y EDA, explicados
+    02_indice_clustering_mlops.ipynb  fase 2: índice, clustering, MLflow y monitoreo
+tests/                    pruebas automáticas (pytest), con controles negativos
+resultados/<fecha>/       salidas de cada corte (se versionan: son pequeñas)
+data/, mlflow/            datos crudos/limpios y experimentos (no se versionan)
+docs/                     ficha del modelo, arquitectura, decisiones, diccionario, Power BI
+.github/workflows/        pruebas en cada cambio + ejecución mensual automática
 ```
 
-## Puesta en marcha
+## Prácticas de MLOps
 
-Requisitos: [uv](https://docs.astral.sh/uv/) y `make` (en Windows: `winget install ezwinports.make`).
+| Práctica | Dónde |
+|---|---|
+| Entorno reproducible: versiones exactas y misma versión de Python | `uv.lock`, `.python-version`, `make setup` |
+| Comandos del proyecto en un solo lugar | `Makefile` |
+| Configuración separada del código | `config/config.yaml` |
+| Datos versionados por fecha de corte, con metadatos de cada descarga | `data/raw/<fecha>/metadatos_corte.json` |
+| Contratos de datos que detienen el pipeline | `validacion.py` → `resultados/<fecha>/calidad.json` |
+| Seguimiento de experimentos (parámetros, métricas, figuras) | MLflow, `tracking.py` |
+| Registro del modelo con firma y **promoción controlada** al alias `produccion` | MLflow Model Registry |
+| Hooks en cada commit: estilo y notebooks sin salidas | `.pre-commit-config.yaml` (ruff + nbstripout) |
+| Pruebas y pipeline demo en cada cambio | `tests/` + `.github/workflows/ci.yml` |
+| Ejecución programada cada mes | `.github/workflows/pipeline_mensual.yml` |
+| Monitoreo de cambios entre cortes (PSI) y regla de reentrenamiento | `monitoreo.py` → `monitoreo.md` |
+| Contenedor sin root | `Dockerfile` |
+| Documentación del modelo | `docs/ficha_modelo.md` |
 
-```bash
-git clone https://github.com/DABO-lab/riesgo-acceso-salud.git
-cd riesgo-acceso-salud
-make setup
-```
-Instala las dependencias exactas del `uv.lock` en `.venv/` y activa los hooks.
+## Resultados (corte del 29 de octubre de 2026)
 
-```bash
-make data
-```
-Descarga las 7 tablas a `data/raw/<fecha>/`, las limpia y construye
-`data/processed/tabla_municipal_<fecha>.{parquet,csv}`. La terminal muestra el
-reporte de cruce con DIVIPOLA, las EPS unificadas y las validaciones. Si se
-vuelve a ejecutar el mismo día, usa los archivos guardados y no descarga de nuevo.
+- **42,3 %** de los afiliados del país (21,2 millones) está en una EPS intervenida; en 702 de
+  1.122 municipios es la mitad o más.
+- El índice ubica **113 municipios en nivel "Muy alto"** (1,4 millones de afiliados), sobre
+  todo en Santander, Boyacá, Caquetá, Cauca y Valle del Cauca. Los primeros del ranking son
+  Argelia (Cauca), Leiva (Nariño) y Mogotes (Santander).
+- El ranking es estable ante cambios de pesos (Spearman mediano 0,983), pero los pesos de
+  PCA lo cambian bastante (0,63): los pesos son una decisión del equipo, documentada en la
+  ficha del modelo.
+- Clustering: **K-means con k = 3** (estabilidad 0,82, silhouette 0,24). Tres perfiles: rural
+  y dependiente de EPS intervenidas (446 municipios), subsidiado con EPS no intervenidas (388)
+  y urbano contributivo (288).
 
-```bash
-make test
-```
-Corre las pruebas. No necesitan internet.
+Detalle en `resultados/<fecha>/resumen.md` y en el notebook 02.
 
-```bash
-make notebook
-```
-Abre Jupyter para recorrer los notebooks 01 y 02.
+## Decisiones del equipo
+- Se trabaja con **todo el país** (1.122 municipios). Antioquia se analiza como zoom.
+- **EPS intervenidas:** Nueva EPS, Coosalud, Emssanar, Asmet Salud, Famisanar, SOS y Capresoca
+  (listado de octubre de 2026). Savia Salud no se incluye.
+- **Modelo no supervisado** (índice + clustering), porque no existe una variable que indique
+  "este municipio perdió acceso".
 
-### Parámetros sin tocar el código
-
-Todo vive en `src/salud/config.py`. Lo que cambia entre cortes se puede fijar con
-variables de entorno:
-
-| Variable | Para qué | Ejemplo (PowerShell) |
-|---|---|---|
-| `FECHA_CORTE` | Reprocesar un corte guardado | `$env:FECHA_CORTE="2026-10-25"; make clean features` |
-| `INCLUIR_SAVIA` | Escenario con Savia Salud intervenida | `$env:INCLUIR_SAVIA="1"; make clean features` |
-| `DEPTO_FOCO` | Departamento del zoom en el EDA | `$env:DEPTO_FOCO="CHOCO"` |
-
-### Con Docker
-
-```bash
-make docker-build
-make docker-run
-```
-Corre el flujo completo dentro de un contenedor sin instalar Python. Los datos
-quedan en la carpeta `data/` de tu equipo.
-
-## Resultados de la fase 1 (corte del 25 de octubre de 2026)
-
-- El **42,3 %** de los afiliados del país (21,2 millones) está en una EPS intervenida.
-- En **702 de 1.122 municipios** la mitad o más de la población depende de ellas.
-- **362 municipios con 6,6 millones de afiliados** tienen a la vez alta dependencia
-  (≥ 50 %) y baja oferta de IPS (≤ mediana nacional de 2,87 sedes por 10.000
-  afiliados). Son el foco de la fase 2.
-- La dependencia de EPS intervenidas y la oferta de IPS no están correlacionadas
-  (Spearman 0,02): son dos dimensiones distintas del riesgo.
-
-Las decisiones de limpieza, los problemas de calidad encontrados y las
-limitaciones están en [docs/decisiones-y-datos.md](docs/decisiones-y-datos.md).
+Más en [docs/decisiones-y-datos.md](docs/decisiones-y-datos.md) y [docs/ficha_modelo.md](docs/ficha_modelo.md).
 
 ## Trabajo en equipo
 
-`main` siempre debe correr. Cada cambio va en una rama y entra por *pull request*:
+`main` siempre debe correr. Cada cambio va en una rama y entra por *pull request*, donde
+GitHub Actions corre las pruebas antes de unir:
 
 ```bash
-git switch -c feature/indice-riesgo
-# ... cambios ...
-git add . && git commit -m "Agrega el índice de riesgo"
-git push -u origin feature/indice-riesgo
+git switch -c feature/mi-cambio
+git add . && git commit -m "Describe el cambio"
+git push -u origin feature/mi-cambio
 ```
-
-Al hacer `git commit`, `ruff` revisa el estilo y `nbstripout` borra las salidas de
-los notebooks. Si alguno modifica un archivo, el commit se detiene: hay que volver
-a hacer `git add` y `git commit`.
-
-## Hoja de ruta
-
-- [x] Extracción reproducible desde la fuente oficial, versionada por fecha.
-- [x] Limpieza, homologación DIVIPOLA y validaciones automáticas.
-- [x] Tabla analítica municipal y EDA.
-- [x] Repositorio con `uv`, `Makefile`, hooks, pruebas y Docker.
-- [ ] Fase 2: índice de riesgo de acceso y clustering de municipios.
-- [ ] Registro de experimentos y modelos con MLflow (tracking + registry).
-- [ ] Ejecución mensual automática para acumular cortes.
-- [ ] Tablero en Power BI con la tabla municipal.

@@ -1,26 +1,28 @@
-.PHONY: setup data extract clean features test lint notebook docker-build docker-run
+.PHONY: setup pipeline demo mlflow test lint notebook docker-build docker-run
+
+# Fecha del corte: vacío = hoy. Ejemplo: make pipeline FECHA=2026-10-25
+FECHA ?=
+ARG_FECHA = $(if $(FECHA),--fecha $(FECHA),)
 
 # Instala las dependencias exactas del uv.lock y activa los hooks de pre-commit
 setup:
 	uv sync
 	uv run pre-commit install
 
-# Flujo completo de la fase 1: extraer -> limpiar -> tabla municipal
-data: extract clean features
+# Pipeline completo con datos reales: extracción -> limpieza -> validaciones -> tabla municipal
+# -> índice -> 15 modelos de clustering en MLflow -> monitoreo -> resultados/<fecha>/
+pipeline:
+	uv run python -m riesgo_salud.pipeline $(ARG_FECHA)
 
-# Descarga las 7 tablas de datos.gov.co a data/raw/<fecha>/ (usa caché si ya existen)
-extract:
-	uv run python -m salud.data.extract
+# El mismo pipeline con datos sintéticos (sin internet, en menos de un minuto)
+demo:
+	uv run python -m riesgo_salud.pipeline --demo --rapido $(ARG_FECHA)
 
-# Limpia y normaliza el corte más reciente (o el de FECHA_CORTE) -> data/processed/
-clean:
-	uv run python -m salud.data.clean
+# Interfaz de MLflow en http://127.0.0.1:5001 (queda en primer plano; use otra terminal)
+mlflow:
+	uv run mlflow ui --backend-store-uri sqlite:///mlflow/mlflow.db --host 127.0.0.1 --port 5001
 
-# Construye la tabla analítica municipal (una fila por municipio) en parquet y csv
-features:
-	uv run python -m salud.features
-
-# Corre las pruebas (no necesitan internet: usan datos sintéticos)
+# Pruebas (no necesitan internet: usan datos sintéticos)
 test:
 	uv run pytest -q
 
@@ -29,7 +31,7 @@ lint:
 	uv run ruff check . --fix
 	uv run ruff format .
 
-# Abre Jupyter para los notebooks narrados
+# Abre Jupyter para los notebooks narrados (también se pueden abrir en VS Code)
 notebook:
 	uv run jupyter lab notebooks/
 
@@ -37,6 +39,7 @@ notebook:
 docker-build:
 	docker build -t riesgo-acceso-salud .
 
-# Corre el flujo completo dentro de Docker; los datos quedan en ./data de tu equipo
+# Corre el pipeline dentro de Docker; datos, resultados y MLflow quedan en las carpetas del repo
 docker-run:
-	docker run --rm -v "$(CURDIR)/data:/app/data" riesgo-acceso-salud
+	docker run --rm -v "$(CURDIR)/data:/app/data" -v "$(CURDIR)/resultados:/app/resultados" \
+		-v "$(CURDIR)/mlflow:/app/mlflow" riesgo-acceso-salud

@@ -1,0 +1,34 @@
+# Pruebas automáticas: corren cada vez que alguien sube cambios o abre un pull request.
+# Si algo se rompe, GitHub marca el commit con una X roja.
+name: Pruebas automáticas (CI)
+
+on:
+  push:
+    paths-ignore: ["resultados/**", "docs/**", "*.md"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # uv instala exactamente las versiones del uv.lock: lo mismo que en cada computador del equipo
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+
+      - name: Instalar dependencias exactas (uv.lock)
+        run: uv sync --frozen
+
+      - name: Estilo del código (ruff)
+        run: |
+          uv run ruff check .
+          uv run ruff format --check .
+
+      - name: Pruebas unitarias y de punta a punta
+        run: uv run pytest -q
+
+      - name: Pipeline completo con datos sintéticos (incluye MLflow)
+        run: uv run python -m riesgo_salud.pipeline --demo --rapido --fecha 2026-01-01

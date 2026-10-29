@@ -1,0 +1,82 @@
+# =============================================================================
+# Configuración central del proyecto: Riesgo de acceso a la salud por municipio
+# Todo lo que se puede cambiar sin tocar código está aquí.
+# =============================================================================
+proyecto: riesgo-acceso-salud
+semilla: 42                      # misma semilla = mismos resultados (reproducibilidad)
+
+rutas:
+  # Carpeta raíz donde se guardan datos y resultados. En Colab se cambia con la
+  # variable de entorno RIESGO_BASE_DIR (por ejemplo, una carpeta de Google Drive).
+  base: "."
+  raw: data/raw                  # datos crudos, una subcarpeta por fecha de corte (no se suben a GitHub)
+  procesados: data/processed     # datos limpios intermedios (no se suben a GitHub)
+  resultados: resultados         # salidas pequeñas que SÍ se versionan en GitHub
+  mlflow: mlflow                 # base de datos y artefactos de MLflow
+
+fuente:
+  base_url: "https://www.datos.gov.co/resource/"
+  tamano_pagina: 50000
+  reintentos: 4
+  datasets:
+    bdua_contributivo: tq4m-hmg2   # ADRES
+    bdua_subsidiado: d7a5-cnra     # ADRES
+    reps: c36g-9fc2                # MinSalud
+    divipola: gdxc-w37w            # DANE
+
+# EPS bajo medida de intervención de la Supersalud. Se revisa en cada corte.
+# Decisión del equipo: Savia Salud NO se incluye (no figura en el listado de oct-2026).
+eps_intervenidas:
+  fecha_referencia: "2026-10-08"
+  fuente: "Vanguardia (8-oct-2026), con base en la Supersalud"
+  lista: [NUEVA EPS, COOSALUD, EMSSANAR, ASMET SALUD, FAMISANAR, SOS, CAPRESOCA]
+
+# Análisis exploratorio (notebook 01). La clasificación por cuadrantes es exploratoria:
+# el índice de riesgo de abajo es el que se usa para priorizar.
+eda:
+  depto_foco: ANTIOQUIA                  # departamento para el zoom (null = ninguno)
+  umbral_dependencia: 0.50               # >= 50 % de afiliados en EPS intervenidas = alta dependencia
+
+# Reglas de calidad de datos. Si una regla "critica" falla, el pipeline se detiene.
+validacion:
+  min_afiliados_total: 45000000          # el país tiene ~50 M de afiliados
+  max_pct_afiliados_sin_cruce: 0.001     # máx. 0,1 % de afiliados sin código DIVIPOLA
+  max_variacion_vs_corte_anterior: 0.10  # alerta si el total cambia más de 10 % entre cortes
+  min_municipios: 1100
+
+# Índice de riesgo de acceso (0 = menor riesgo, 100 = mayor riesgo).
+# Cada componente se lleva a percentiles (0-100) y se promedia con estos pesos.
+indice:
+  componentes:
+    dependencia:   {variable: pct_intervenidas, sentido: positivo, peso: 0.35}
+    oferta:        {variable: ips_x_10mil,      sentido: negativo, peso: 0.30}
+    concentracion: {variable: hhi,              sentido: positivo, peso: 0.15}
+    ruralidad:     {variable: pct_rural,        sentido: positivo, peso: 0.10}
+    subsidiado:    {variable: pct_subsidiado,   sentido: positivo, peso: 0.10}
+  # Niveles por cuantiles del índice: 30 % Bajo, 40 % Medio, 20 % Alto, 10 % Muy alto
+  cuantiles_niveles: [0.30, 0.70, 0.90]
+  etiquetas_niveles: [Bajo, Medio, Alto, Muy alto]
+  sensibilidad:
+    simulaciones: 500                    # pesos perturbados al azar para medir estabilidad
+    concentracion_dirichlet: 50          # más alto = perturbaciones más pequeñas
+
+# Modelos de agrupación (clustering) que se comparan.
+clustering:
+  variables: [pct_intervenidas, hhi, ips_x_10mil, pct_rural, pct_subsidiado]
+  transformacion_log: [ips_x_10mil]      # se aplica log(1 + x) por la cola larga
+  algoritmos: [kmeans, jerarquico, gmm]
+  valores_k: [3, 4, 5, 6, 7]
+  min_tamano_grupo: 0.05                 # ningún grupo puede tener menos del 5 % de los municipios
+  min_estabilidad: 0.70                  # ARI promedio mínimo en bootstrap
+  n_bootstrap: 20
+
+# Monitoreo entre cortes mensuales.
+monitoreo:
+  psi_alerta: 0.10                       # PSI entre 0,10 y 0,25 = cambio moderado
+  psi_critico: 0.25                      # PSI > 0,25 = cambio fuerte: reentrenar
+  max_pct_cambio_nivel: 0.15             # alerta si más del 15 % de municipios cambia de nivel
+
+mlflow:
+  experimento: riesgo-acceso-salud
+  modelo_registrado: clusters-riesgo-municipal
+  alias_produccion: produccion
