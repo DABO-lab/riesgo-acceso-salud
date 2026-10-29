@@ -1,0 +1,16 @@
+# Dos porteros en cada `git commit`:
+#  1. ruff revisa (y arregla) el estilo del código.
+#  2. nbstripout borra las salidas de los notebooks: al repo solo entra el
+#     código y el texto, no tablas ni gráficos con datos (se regeneran al ejecutar).
+# Si alguno cambia un archivo, el commit se detiene: revise, `git add` y repita.
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.12.10
+    hooks:
+      - id: ruff-check
+        args: [--fix]
+      - id: ruff-format
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.8.1
+    hooks:
+      - id: nbstripout

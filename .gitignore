@@ -1,0 +1,28 @@
+# Entorno virtual
+.venv/
+
+# Datos: se regeneran con `make data`, no se versionan
+data/*
+!data/.gitkeep
+
+# Figuras y reportes generados por los notebooks
+reports/
+
+# Artefactos de MLflow (fase 2)
+mlruns/
+mlartifacts/
+mlflow.db
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Sistema operativo y Office
+.DS_Store
+Thumbs.db
+~$*

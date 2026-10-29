@@ -1,0 +1,42 @@
+[project]
+name = "salud"
+version = "0.1.0"
+description = "Riesgo de acceso a la salud por municipio en Colombia: dependencia de EPS intervenidas y oferta de IPS"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas",
+    "numpy",
+    "pyarrow",
+    "requests",
+]
+
+[dependency-groups]
+dev = [
+    "ruff",
+    "pre-commit",
+    "pytest",
+    "jupyter",
+    "matplotlib",
+    "plotly",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/salud"]
+
+[tool.ruff]
+line-length = 110
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff.lint.per-file-ignores]
+# En los notebooks se prioriza la lectura de cada celda sobre el largo de línea
+"*.ipynb" = ["E501"]
