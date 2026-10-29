@@ -1,10 +1,14 @@
 # Nada de esto debe entrar a la imagen
 .venv/
 data/
-reports/
+resultados/
+resultados_demo/
+mlflow/
 notebooks/
 tests/
+docs/
 .git/
+.github/
 __pycache__/
 *.pyc
 .ipynb_checkpoints/

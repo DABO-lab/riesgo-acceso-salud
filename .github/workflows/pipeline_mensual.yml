@@ -1,0 +1,62 @@
+# Ejecución mensual automática con datos reales de datos.gov.co.
+# Corre el día 5 de cada mes a las 8:00 a. m. (hora de Colombia) y también se puede lanzar a mano
+# desde la pestaña "Actions" -> "Pipeline mensual" -> "Run workflow".
+name: Pipeline mensual
+
+on:
+  schedule:
+    - cron: "0 13 5 * *"     # 13:00 UTC = 8:00 a. m. en Colombia
+  workflow_dispatch:
+    inputs:
+      fecha:
+        description: "Fecha del corte (AAAA-MM-DD). Vacío = hoy"
+        required: false
+
+permissions:
+  contents: write            # para guardar los resultados en el repositorio
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+
+      - name: Instalar dependencias exactas (uv.lock)
+        run: uv sync --frozen
+
+      - name: Pruebas antes de usar datos reales
+        run: uv run pytest -q
+
+      - name: Ejecutar el pipeline con datos reales
+        run: |
+          FECHA="${{ github.event.inputs.fecha }}"
+          if [ -z "$FECHA" ]; then FECHA=$(date +%F); fi
+          echo "FECHA=$FECHA" >> "$GITHUB_ENV"
+          uv run python -m riesgo_salud.pipeline --fecha "$FECHA"
+
+      - name: Mostrar el resumen en la página de la ejecución
+        run: |
+          cat "resultados/$FECHA/resumen.md" >> "$GITHUB_STEP_SUMMARY"
+          cat "resultados/$FECHA/monitoreo.md" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Guardar MLflow y datos como artefactos descargables
+        uses: actions/upload-artifact@v4
+        with:
+          name: corte-${{ env.FECHA }}
+          path: |
+            mlflow/
+            data/processed/
+          retention-days: 90
+
+      - name: Guardar los resultados en el repositorio
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add resultados/
+          git commit -m "Resultados del corte $FECHA" || echo "Sin cambios para guardar"
+          git push

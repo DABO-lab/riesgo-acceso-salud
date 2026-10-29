@@ -1,21 +1,25 @@
 # Entorno virtual
 .venv/
 
-# Datos: se regeneran con `make data`, no se versionan
+# Datos: se descargan con `make pipeline`, no se versionan
 data/*
 !data/.gitkeep
 
-# Figuras y reportes generados por los notebooks
-reports/
-
-# Artefactos de MLflow (fase 2)
+# MLflow local (experimentos y modelos): se regenera; en GitHub Actions se guarda como artefacto
+mlflow/
 mlruns/
 mlartifacts/
 mlflow.db
 
+# Salidas del modo demo (datos sintéticos)
+resultados_demo/
+
+# OJO: resultados/<fecha>/ SÍ se versiona (salidas pequeñas de cada corte para Power BI)
+
 # Python
 __pycache__/
 *.pyc
+*.egg-info/
 .pytest_cache/
 .ruff_cache/
 
