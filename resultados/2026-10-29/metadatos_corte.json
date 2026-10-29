@@ -1,0 +1,27 @@
+{
+  "fecha_corte": "2026-10-29",
+  "datasets": {
+    "bdua_contributivo": "tq4m-hmg2",
+    "bdua_subsidiado": "d7a5-cnra",
+    "reps": "c36g-9fc2",
+    "divipola": "gdxc-w37w"
+  },
+  "filas": {
+    "bdua_eps_contributivo": 28301,
+    "bdua_eps_subsidiado": 25333,
+    "bdua_demo_contributivo": 26102,
+    "bdua_demo_subsidiado": 26942,
+    "reps_ips": 19551,
+    "reps_resumen_clase": 10,
+    "divipola": 1122
+  },
+  "eps_intervenidas": [
+    "ASMET SALUD",
+    "CAPRESOCA",
+    "COOSALUD",
+    "EMSSANAR",
+    "FAMISANAR",
+    "NUEVA EPS",
+    "SOS"
+  ]
+}

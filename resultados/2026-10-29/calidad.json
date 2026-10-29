@@ -1,0 +1,86 @@
+[
+  {
+    "chequeo": "afiliados_sin_nulos_ni_negativos",
+    "ok": true,
+    "detalle": "la columna afiliados es numérica y no negativa",
+    "critico": true
+  },
+  {
+    "chequeo": "total_afiliados_minimo",
+    "ok": true,
+    "detalle": "total = 50,137,787 (mínimo 45,000,000)",
+    "critico": true
+  },
+  {
+    "chequeo": "vistas_bdua_consistentes",
+    "ok": true,
+    "detalle": "vista EPS = 50,137,787; vista demográfica = 50,137,787",
+    "critico": true
+  },
+  {
+    "chequeo": "regimenes_validos",
+    "ok": true,
+    "detalle": "['CONTRIBUTIVO', 'SUBSIDIADO']",
+    "critico": true
+  },
+  {
+    "chequeo": "grupos_edad_conocidos",
+    "ok": true,
+    "detalle": "todos conocidos",
+    "critico": true
+  },
+  {
+    "chequeo": "cruce_divipola",
+    "ok": true,
+    "detalle": "0.0000% de afiliados sin código DIVIPOLA",
+    "critico": true
+  },
+  {
+    "chequeo": "eps_intervenidas_presentes",
+    "ok": true,
+    "detalle": "todas presentes",
+    "critico": true
+  },
+  {
+    "chequeo": "divipola_completa",
+    "ok": true,
+    "detalle": "1122 municipios",
+    "critico": true
+  },
+  {
+    "chequeo": "reps_con_sedes",
+    "ok": true,
+    "detalle": "19,547 sedes de IPS",
+    "critico": true
+  },
+  {
+    "chequeo": "municipio_unico",
+    "ok": true,
+    "detalle": "una fila por municipio",
+    "critico": true
+  },
+  {
+    "chequeo": "total_conservado",
+    "ok": true,
+    "detalle": "tabla = 50,134,021; BDUA municipal = 50,134,021",
+    "critico": true
+  },
+  {
+    "chequeo": "proporciones_en_rango",
+    "ok": true,
+    "detalle": "todas las proporciones entre 0 y 1",
+    "critico": true
+  },
+  {
+    "chequeo": "hhi_en_rango",
+    "ok": true,
+    "detalle": "HHI entre 0 y 10.000",
+    "critico": true
+  },
+  {
+    "chequeo": "sin_nulos_en_variables_modelo",
+    "ok": true,
+    "detalle": "variables del modelo completas",
+    "critico": false
+  }
+]
