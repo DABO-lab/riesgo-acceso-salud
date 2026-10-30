@@ -73,3 +73,10 @@ def test_clasificar_cuadrante_exploratorio():
     c = features.clasificar_cuadrante(t)
     assert list(c[:4]) == features.CUADRANTES
     assert pd.isna(c.iloc[4])
+
+
+def test_estimar_indice_reproduce_el_indice_del_corte(preparado, cfg):
+    ti = indice.calcular_indice(preparado["tabla"], cfg)
+    est = indice.estimar_indice(ti, ti, cfg)
+    assert np.allclose(est["indice_riesgo"], ti["indice_riesgo"])
+    assert (est["nivel_riesgo"] == ti["nivel_riesgo"].astype(str)).all()
