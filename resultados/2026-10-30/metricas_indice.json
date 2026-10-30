@@ -1,0 +1,15 @@
+{
+  "sens_spearman_mediana": 0.9825704320084504,
+  "sens_spearman_p05": 0.9367749146999708,
+  "sens_jaccard_top10_mediana": 0.751937984496124,
+  "pca_varianza_explicada": 0.3970421756877468,
+  "pca_spearman_vs_indice": 0.6261013217332695,
+  "pca_jaccard_top10": 0.26256983240223464,
+  "pesos_pca": {
+    "dependencia": 0.096,
+    "oferta": 0.051,
+    "concentracion": 0.267,
+    "ruralidad": 0.306,
+    "subsidiado": 0.281
+  }
+}

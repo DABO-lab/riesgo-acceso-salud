@@ -1,0 +1,19 @@
+{
+  "fecha_anterior": "2026-10-29",
+  "fecha_actual": "2026-10-30",
+  "psi": {
+    "pct_intervenidas": 0.0,
+    "hhi": 0.0,
+    "ips_x_10mil": 0.0,
+    "pct_rural": 0.0,
+    "pct_subsidiado": 0.0,
+    "indice_riesgo": 0.0
+  },
+  "pct_municipios_cambian_nivel": 0.0,
+  "pct_municipios_cambian_grupo": 0.0,
+  "variacion_total_afiliados": 0.0,
+  "alertas": [],
+  "reentrenar": false,
+  "ari_modelo_anterior_vs_nuevo": 1.0,
+  "pct_mismo_grupo_modelo_anterior": 1.0
+}
