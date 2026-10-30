@@ -1,4 +1,4 @@
-.PHONY: setup pipeline demo mlflow test lint notebook docker-build docker-run
+.PHONY: setup pipeline demo mlflow api test lint notebook docker-build docker-run api-build api-run
 
 # Fecha del corte: vacío = hoy. Ejemplo: make pipeline FECHA=2026-10-25
 FECHA ?=
@@ -22,6 +22,10 @@ demo:
 mlflow:
 	uv run mlflow ui --backend-store-uri sqlite:///mlflow/mlflow.db --host 127.0.0.1 --port 5001
 
+# API de predicción en http://127.0.0.1:8000 (contrato en /docs); usa resultados/ del último corte
+api:
+	uv run uvicorn riesgo_salud.api.main:app --host 127.0.0.1 --port 8000 --reload
+
 # Pruebas (no necesitan internet: usan datos sintéticos)
 test:
 	uv run pytest -q
@@ -43,3 +47,11 @@ docker-build:
 docker-run:
 	docker run --rm -v "$(CURDIR)/data:/app/data" -v "$(CURDIR)/resultados:/app/resultados" \
 		-v "$(CURDIR)/mlflow:/app/mlflow" riesgo-acceso-salud
+
+# Imagen de la API con el modelo del último corte adentro (ver Dockerfile.api)
+api-build:
+	docker build -f Dockerfile.api -t riesgo-acceso-salud-api .
+
+# Corre la API en http://localhost:8000
+api-run:
+	docker run --rm -p 8000:8000 --name riesgo-api riesgo-acceso-salud-api

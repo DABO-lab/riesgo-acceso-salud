@@ -1,7 +1,6 @@
 # Nada de esto debe entrar a la imagen
 .venv/
 data/
-resultados/
 resultados_demo/
 mlflow/
 notebooks/
