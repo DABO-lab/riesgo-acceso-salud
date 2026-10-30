@@ -3824,6 +3824,7 @@ name = "riesgo-salud"
 version = "1.0.0"
 source = { editable = "." }
 dependencies = [
+    { name = "fastapi" },
     { name = "matplotlib" },
     { name = "mlflow" },
     { name = "numpy", version = "2.4.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12'" },
@@ -3833,10 +3834,12 @@ dependencies = [
     { name = "pyyaml" },
     { name = "requests" },
     { name = "scikit-learn" },
+    { name = "uvicorn" },
 ]
 
 [package.dev-dependencies]
 dev = [
+    { name = "httpx" },
     { name = "jupyter" },
     { name = "plotly" },
     { name = "pre-commit" },
@@ -3846,6 +3849,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
+    { name = "fastapi", specifier = ">=0.162.0" },
     { name = "matplotlib" },
     { name = "mlflow", specifier = ">=3" },
     { name = "numpy" },
@@ -3854,10 +3858,12 @@ requires-dist = [
     { name = "pyyaml" },
     { name = "requests" },
     { name = "scikit-learn" },
+    { name = "uvicorn", specifier = ">=0.30" },
 ]
 
 [package.metadata.requires-dev]
 dev = [
+    { name = "httpx", specifier = ">=0.28.1" },
     { name = "jupyter" },
     { name = "plotly" },
     { name = "pre-commit" },
