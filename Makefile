@@ -1,4 +1,4 @@
-.PHONY: setup pipeline demo mlflow api test lint notebook docker-build docker-run api-build api-run
+.PHONY: setup pipeline demo flujo flujo-programar prefect-ui mlflow api test lint notebook docker-build docker-run api-build api-run
 
 # Fecha del corte: vacío = hoy. Ejemplo: make pipeline FECHA=2026-10-25
 FECHA ?=
@@ -17,6 +17,18 @@ pipeline:
 # El mismo pipeline con datos sintéticos (sin internet, en menos de un minuto)
 demo:
 	uv run python -m riesgo_salud.pipeline --demo --rapido $(ARG_FECHA)
+
+# El mismo pipeline orquestado con Prefect: una task por etapa, reintentos y artifacts
+flujo:
+	uv run python -m riesgo_salud.flujo $(ARG_FECHA)
+
+# Deployment programado: Prefect lanza el flow el día 5 de cada mes a las 8:00 (queda en primer plano)
+flujo-programar:
+	uv run python -m riesgo_salud.flujo --programar
+
+# Interfaz de Prefect en http://127.0.0.1:4200 (en otra terminal; luego export PREFECT_API_URL)
+prefect-ui:
+	uv run prefect server start
 
 # Interfaz de MLflow en http://127.0.0.1:5001 (queda en primer plano; use otra terminal)
 mlflow:

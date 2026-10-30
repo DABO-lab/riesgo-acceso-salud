@@ -37,7 +37,8 @@ jobs:
           FECHA="${{ github.event.inputs.fecha }}"
           if [ -z "$FECHA" ]; then FECHA=$(date +%F); fi
           echo "FECHA=$FECHA" >> "$GITHUB_ENV"
-          uv run python -m riesgo_salud.pipeline --fecha "$FECHA"
+          # Orquestado con Prefect: reintentos en la descarga y estado de cada etapa en el log
+          uv run python -m riesgo_salud.flujo --fecha "$FECHA"
 
       - name: Mostrar el resumen en la página de la ejecución
         run: |
