@@ -105,3 +105,28 @@ def comparar_con_pca(tabla_indice: pd.DataFrame, cfg: dict) -> dict:
         "pca_jaccard_top10": float((top_a & top_b).sum() / (top_a | top_b).sum()),
         "pesos_pca": {k.replace("comp_", ""): round(float(v), 3) for k, v in w_pca.items()},
     }
+
+
+def estimar_indice(valores: pd.DataFrame, referencia: pd.DataFrame, cfg: dict) -> pd.DataFrame:
+    """Índice y nivel de municipios NUEVOS (o con indicadores hipotéticos) frente a un corte de referencia.
+
+    Cada variable se ubica en el percentil que ocuparía entre los municipios de `referencia`, con
+    la misma regla de `componentes` (rango promedio): para un municipio que ya está en la referencia
+    devuelve exactamente su índice. Los niveles usan los cortes por cuantiles de la referencia.
+    Lo usa la API para responder "¿qué riesgo tendría un municipio con estos indicadores?".
+    """
+    out = pd.DataFrame(index=valores.index)
+    n = len(referencia)
+    for nombre, c in cfg["indice"]["componentes"].items():
+        ref = np.sort(referencia[c["variable"]].to_numpy(dtype=float))
+        x = valores[c["variable"]].to_numpy(dtype=float)
+        menores = np.searchsorted(ref, x, side="left")
+        iguales = np.searchsorted(ref, x, side="right") - menores
+        pct = (menores + (iguales + 1) / 2) / n * 100
+        out[f"comp_{nombre}"] = 100 - pct if c["sentido"] == "negativo" else pct
+    w = pesos_config(cfg)
+    out["indice_riesgo"] = out[w.index].to_numpy() @ w.to_numpy()
+    cortes = referencia["indice_riesgo"].quantile(cfg["indice"]["cuantiles_niveles"]).to_numpy()
+    etiquetas = cfg["indice"]["etiquetas_niveles"]
+    out["nivel_riesgo"] = [etiquetas[p] for p in np.searchsorted(cortes, out["indice_riesgo"], side="right")]
+    return out

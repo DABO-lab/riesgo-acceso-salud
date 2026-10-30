@@ -57,10 +57,12 @@ En VS Code, elija `.venv` como intérprete y como kernel de los notebooks.
 | `make pipeline FECHA=2026-10-25` | `... pipeline --fecha 2026-10-25` | Un corte específico |
 | `make demo` | `... pipeline --demo --rapido` | El mismo pipeline con datos sintéticos, sin internet |
 | `make mlflow` | `uv run mlflow ui --backend-store-uri sqlite:///mlflow/mlflow.db --port 5001` | Interfaz de MLflow en http://127.0.0.1:5001 |
+| `make api` | `uv run uvicorn riesgo_salud.api.main:app --port 8000` | API de predicción en http://127.0.0.1:8000 (contrato en `/docs`) |
 | `make test` | `uv run pytest -q` | Pruebas (sin internet) |
 | `make lint` | `uv run ruff check . --fix` y `uv run ruff format .` | Estilo del código |
 | `make notebook` | `uv run jupyter lab notebooks/` | Notebooks narrados |
 | `make docker-build` / `make docker-run` | | El pipeline dentro de un contenedor |
+| `make api-build` / `make api-run` | | La API dentro de un contenedor, con el modelo del último corte adentro |
 
 **En Colab** también funciona: se clona el repo, `pip install -e .` y se fija
 `os.environ["RIESGO_BASE_DIR"] = "/content/drive/MyDrive/proyecto2_salud"` para que datos,
@@ -112,8 +114,36 @@ docs/                     ficha del modelo, arquitectura, decisiones, diccionari
 | Pruebas y pipeline demo en cada cambio | `tests/` + `.github/workflows/ci.yml` |
 | Ejecución programada cada mes | `.github/workflows/pipeline_mensual.yml` |
 | Monitoreo de cambios entre cortes (PSI) y regla de reentrenamiento | `monitoreo.py` → `monitoreo.md` |
-| Contenedor sin root | `Dockerfile` |
+| Servicio de predicción con contrato validado y health check | `src/riesgo_salud/api/` (FastAPI + Pydantic) |
+| Contenedores sin root para el pipeline y para la API | `Dockerfile`, `Dockerfile.api` |
 | Documentación del modelo | `docs/ficha_modelo.md` |
+
+## API de predicción
+
+`make api` levanta un servicio con FastAPI sobre los resultados del último corte
+(`resultados/<fecha>/`): la tabla de municipios y el modelo de grupos de ese corte. En
+http://127.0.0.1:8000 hay una página para consultar municipios y en `/docs` el contrato
+interactivo.
+
+| Endpoint | Qué hace |
+|---|---|
+| `GET /health` | Readiness: datos cargados y el modelo predice un municipio conocido |
+| `GET /municipios/{cod_mpio}` | Índice, nivel, ranking y grupo de un municipio (código DIVIPOLA) |
+| `GET /municipios?dpto=&nivel=&buscar=&limite=` | Ranking nacional con filtros |
+| `POST /predict` | Riesgo que tendría un municipio con ciertos indicadores (escenarios) |
+| `POST /predict/batch` | Lo mismo para varios municipios |
+
+Ejemplo desde PowerShell (¿qué pasa con Argelia si su EPS principal deja de estar intervenida?):
+
+```powershell
+$body = @{ pct_intervenidas = 0.17; hhi = 7138; ips_x_10mil = 0.74; pct_rural = 0.81; pct_subsidiado = 0.97 } | ConvertTo-Json
+Invoke-RestMethod -Method Post -Uri http://127.0.0.1:8000/predict -ContentType application/json -Body $body
+```
+
+`POST /predict` ubica cada indicador en el percentil que tendría entre los municipios del
+corte, con la misma regla del índice: para un municipio existente devuelve exactamente su
+índice. El grupo lo asigna el modelo registrado. Para usar el modelo del Model Registry en
+lugar del archivo del corte: `MODELO_URI=models:/clusters-riesgo-municipal@produccion`.
 
 ## Resultados (corte del 29 de octubre de 2026)
 

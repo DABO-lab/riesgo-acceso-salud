@@ -20,6 +20,7 @@ flowchart TB
     MON --> OUT[resultados/fecha<br/>CSV Power BI, figuras, resumen]
     OUT --> R
     OUT --> PBI[Tablero Power BI]
+    OUT --> SVC[API FastAPI<br/>/predict, /municipios]
 ```
 
 ## Ciclo de vida de cada corte
@@ -33,6 +34,7 @@ flowchart TB
     - Municipios que cambian de nivel.
     - Concordancia (ARI) entre el modelo del mes anterior y el nuevo, como comparación campeón contra retador.
 7. **Publicación:** los resultados se guardan en `resultados/<fecha>/` dentro del repositorio. GitHub Actions muestra el resumen en la página de la ejecución.
+8. **Servicio:** la API (`make api` o `Dockerfile.api`) carga el último corte de `resultados/` y responde consultas por municipio y escenarios con `POST /predict`. Patrón de despliegue: **batch mensual** para el ranking completo + **API online** para consultas y escenarios.
 
 ## Cómo leer el PSI
 | PSI | Lectura | Acción |

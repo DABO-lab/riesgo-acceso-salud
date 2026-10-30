@@ -1,0 +1,28 @@
+# Imagen de la API de predicción (FastAPI + Uvicorn).
+# El modelo y la tabla del último corte (resultados/<fecha>/) quedan DENTRO de la imagen:
+# la versión activa es inequívoca y la imagen corre sin red ni MLflow.
+# Para usar el modelo del Model Registry en su lugar: -e MODELO_URI=models:/clusters-riesgo-municipal@produccion
+FROM python:3.12-slim
+
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
+
+WORKDIR /app
+
+# Capas de menos a más cambiantes: dependencias, código, resultados del corte
+COPY pyproject.toml uv.lock README.md .python-version ./
+COPY src/ src/
+COPY config/ config/
+RUN uv sync --frozen --no-dev
+COPY resultados/ resultados/
+
+# Usuario sin privilegios
+RUN useradd --create-home app && chown -R app /app
+USER app
+
+EXPOSE 8000
+
+# Readiness real: /health carga el modelo y predice un municipio conocido
+HEALTHCHECK --interval=30s --timeout=5s --start-period=20s --retries=3 \
+    CMD ["/app/.venv/bin/python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=4)"]
+
+CMD ["/app/.venv/bin/uvicorn", "riesgo_salud.api.main:app", "--host", "0.0.0.0", "--port", "8000"]
