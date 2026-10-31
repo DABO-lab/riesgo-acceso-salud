@@ -76,6 +76,12 @@ monitoreo:
   psi_critico: 0.25                      # PSI > 0,25 = cambio fuerte: reentrenar
   max_pct_cambio_nivel: 0.15             # alerta si más del 15 % de municipios cambia de nivel
 
+equidad:                                 # auditoría de sesgos en cada corte (equidad.py)
+  poblacion_pequena: 2000                # menos afiliados: la oferta por 10.000 queda inflada
+  vulnerable_rural: 0.50                 # "vulnerable": % rural y % subsidiado altos...
+  vulnerable_subsidiado: 0.80
+  incertidumbre_top10: [0.20, 0.80]      # prob. de estar en el top 10 % que no es ni sí ni no
+
 mlflow:
   experimento: riesgo-acceso-salud
   modelo_registrado: clusters-riesgo-municipal

@@ -96,7 +96,7 @@ notebooks/
 tests/                    pruebas automáticas (pytest), con controles negativos
 resultados/<fecha>/       salidas de cada corte (se versionan: son pequeñas)
 data/, mlflow/            datos crudos/limpios y experimentos (no se versionan)
-docs/                     ficha del modelo, arquitectura, decisiones, diccionario, Power BI
+docs/                     ficha del modelo, ética y usuario, arquitectura, decisiones, Power BI
 .github/workflows/        pruebas en cada cambio + ejecución mensual automática
 ```
 
@@ -116,9 +116,10 @@ docs/                     ficha del modelo, arquitectura, decisiones, diccionari
 | Orquestación: tasks con estado, reintentos en la descarga, artifacts y schedule | Prefect, `src/riesgo_salud/flujo.py` |
 | Ejecución programada cada mes | `.github/workflows/pipeline_mensual.yml` (corre el flow de Prefect) |
 | Monitoreo de cambios entre cortes (PSI) y regla de reentrenamiento | `monitoreo.py` → `monitoreo.md` |
+| Auditoría de sesgos en cada corte (tamaño, oferta inflada, vulnerables en Bajo, incertidumbre) | `equidad.py` → `equidad.md`, métricas `eq_*` en MLflow |
 | Servicio de predicción con contrato validado y health check | `src/riesgo_salud/api/` (FastAPI + Pydantic) |
 | Contenedores sin root para el pipeline y para la API | `Dockerfile`, `Dockerfile.api` |
-| Documentación del modelo | `docs/ficha_modelo.md` |
+| Documentación del modelo, del usuario y de la ética | `docs/ficha_modelo.md`, `docs/etica_usuario_beneficio.md` |
 
 ## Orquestación con Prefect
 
@@ -195,7 +196,11 @@ Detalle en `resultados/<fecha>/resumen.md` y en el notebook 02.
 - **Modelo no supervisado** (índice + clustering), porque no existe una variable que indique
   "este municipio perdió acceso".
 
-Más en [docs/decisiones-y-datos.md](docs/decisiones-y-datos.md) y [docs/ficha_modelo.md](docs/ficha_modelo.md).
+- **Bajo no significa buen acceso:** el índice mide el riesgo que crea la intervención de EPS.
+  Cada corte lista los municipios vulnerables que quedan en Bajo (`equidad.md`).
+
+Más en [docs/decisiones-y-datos.md](docs/decisiones-y-datos.md), [docs/ficha_modelo.md](docs/ficha_modelo.md)
+y [docs/etica_usuario_beneficio.md](docs/etica_usuario_beneficio.md) (usuario, beneficio, privacidad, sesgo e interpretabilidad).
 
 ## Trabajo en equipo
 

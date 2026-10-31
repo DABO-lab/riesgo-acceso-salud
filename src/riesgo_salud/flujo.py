@@ -71,7 +71,7 @@ def t_reportes(cfg, fecha, ind, mod, monit, tracker):
 
 @task(name="artifacts", **_task)
 def t_artifacts(cfg, fecha, monit, elegido):
-    """Evidencia durable y legible en la interfaz de Prefect."""
+    """Evidencia durable y legible en la interfaz de Prefect (incluida la auditoría de equidad)."""
     salida = ruta(cfg, "resultados", fecha)
     calidad = json.loads((salida / "calidad.json").read_text(encoding="utf-8"))
     create_table_artifact(
@@ -88,6 +88,11 @@ def t_artifacts(cfg, fecha, monit, elegido):
         key="monitoreo",
         markdown=monitoreo.informe_markdown(monit),
         description="PSI y cambios frente al corte anterior",
+    )
+    create_markdown_artifact(
+        key="equidad",
+        markdown=(salida / "equidad.md").read_text(encoding="utf-8"),
+        description="Auditoría de sesgos del índice",
     )
     return {
         "modelo": f"{elegido['algoritmo']} k={int(elegido['k'])}",
