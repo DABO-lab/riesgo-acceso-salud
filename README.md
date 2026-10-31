@@ -55,6 +55,7 @@ En VS Code, elija `.venv` como intérprete y como kernel de los notebooks.
 |---|---|---|
 | `make pipeline` | `uv run python -m riesgo_salud.pipeline` | Pipeline completo con datos reales del corte de hoy (usa la caché si ya se descargó) |
 | `make pipeline FECHA=2026-10-25` | `... pipeline --fecha 2026-10-25` | Un corte específico |
+| `make flujo` | `uv run python -m riesgo_salud.flujo` | El mismo pipeline orquestado con Prefect (una task por etapa, reintentos, artifacts) |
 | `make demo` | `... pipeline --demo --rapido` | El mismo pipeline con datos sintéticos, sin internet |
 | `make mlflow` | `uv run mlflow ui --backend-store-uri sqlite:///mlflow/mlflow.db --port 5001` | Interfaz de MLflow en http://127.0.0.1:5001 |
 | `make api` | `uv run uvicorn riesgo_salud.api.main:app --port 8000` | API de predicción en http://127.0.0.1:8000 (contrato en `/docs`) |
@@ -112,11 +113,37 @@ docs/                     ficha del modelo, arquitectura, decisiones, diccionari
 | Registro del modelo con firma y **promoción controlada** al alias `produccion` | MLflow Model Registry |
 | Hooks en cada commit: estilo y notebooks sin salidas | `.pre-commit-config.yaml` (ruff + nbstripout) |
 | Pruebas y pipeline demo en cada cambio | `tests/` + `.github/workflows/ci.yml` |
-| Ejecución programada cada mes | `.github/workflows/pipeline_mensual.yml` |
+| Orquestación: tasks con estado, reintentos en la descarga, artifacts y schedule | Prefect, `src/riesgo_salud/flujo.py` |
+| Ejecución programada cada mes | `.github/workflows/pipeline_mensual.yml` (corre el flow de Prefect) |
 | Monitoreo de cambios entre cortes (PSI) y regla de reentrenamiento | `monitoreo.py` → `monitoreo.md` |
 | Servicio de predicción con contrato validado y health check | `src/riesgo_salud/api/` (FastAPI + Pydantic) |
 | Contenedores sin root para el pipeline y para la API | `Dockerfile`, `Dockerfile.api` |
 | Documentación del modelo | `docs/ficha_modelo.md` |
+
+## Orquestación con Prefect
+
+`make flujo` corre el pipeline como un *flow* de Prefect: cada etapa es una *task* con estado,
+logs y duración. Son las mismas funciones de `pipeline.py`, sin duplicar lógica.
+
+![Flow run del corte 2026-10-29 en Prefect: 7 tasks completadas en 19 s](docs/img/prefect_flow_run.png)
+
+- **Reintentos solo donde tienen sentido:** la descarga de datos.gov.co se reintenta 3 veces
+  (10, 30 y 60 s). Un error de calidad de datos es determinista: detiene el flow y no se entrena.
+- **Artifacts:** cada run publica la tabla de calidad, el resumen del corte y el monitoreo.
+- **Idempotencia:** la fecha del corte es la llave; repetir un run reescribe `resultados/<fecha>/`.
+- **Programación:** el día 5 de cada mes a las 8:00 (hora de Colombia). En GitHub Actions
+  (`pipeline_mensual.yml`) o con un deployment local de Prefect:
+
+```powershell
+# Terminal 1: servidor e interfaz de Prefect en http://127.0.0.1:4200
+make prefect-ui
+# Terminal 2: registrar el deployment programado y dejarlo escuchando
+$env:PREFECT_API_URL = "http://127.0.0.1:4200/api"
+make flujo-programar
+# Opcional, terminal 3: lanzar un run ya mismo
+$env:PREFECT_API_URL = "http://127.0.0.1:4200/api"
+uv run prefect deployment run "riesgo-acceso-salud/corte-mensual"
+```
 
 ## API de predicción
 

@@ -8,7 +8,7 @@ flowchart TB
         M[Pipeline mensual día 5<br/>pipeline_mensual.yml]
     end
     subgraph Ejecución
-        P[python -m riesgo_salud.pipeline]
+        P[Flow de Prefect<br/>python -m riesgo_salud.flujo]
         V{Validaciones<br/>de calidad}
         ML[(MLflow<br/>experimentos + Model Registry)]
         MON[Monitoreo PSI<br/>vs. corte anterior]
@@ -24,7 +24,7 @@ flowchart TB
 ```
 
 ## Ciclo de vida de cada corte
-1. **Disparo:** GitHub Actions lo lanza el día 5 de cada mes, o una persona lo lanza a mano con `make pipeline`, desde la pestaña *Actions* o desde el notebook 02.
+1. **Disparo:** GitHub Actions lanza el flow de Prefect el día 5 de cada mes (o un deployment local de Prefect con el mismo cron), o una persona lo lanza a mano con `make flujo`, `make pipeline`, desde la pestaña *Actions* o desde el notebook 02. Cada etapa es una task con estado y logs; solo la descarga se reintenta (3 veces) y un fallo de calidad detiene el flow.
 2. **Extracción versionada:** los datos crudos se guardan en `data/raw/<fecha>/` con un archivo de metadatos que dice el origen, las filas descargadas y la lista de EPS intervenidas usada.
 3. **Contratos de datos:** chequeos como el total de afiliados, el cruce DIVIPOLA o que todas las EPS intervenidas aparezcan. Si uno crítico falla, **no se entrena**.
 4. **Entrenamiento y comparación:** 15 modelos, cada uno como un *run* de MLflow con sus parámetros y métricas.

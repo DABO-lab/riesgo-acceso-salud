@@ -1,0 +1,4 @@
+# Configuración de Prefect para este proyecto (se lee desde la raíz del repo).
+[server]
+# Sin telemetría hacia Prefect: el servidor local no necesita salir a internet
+analytics_enabled = false
