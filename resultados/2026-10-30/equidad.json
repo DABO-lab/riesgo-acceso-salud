@@ -1,0 +1,522 @@
+{
+  "municipios": 1122,
+  "por_tamano": [
+    {
+      "banda": "< 5.000",
+      "municipios": 274,
+      "indice_promedio": 50.879,
+      "pct_muy_alto": 0.088,
+      "ips_x_10mil_mediana": 4.156
+    },
+    {
+      "banda": "5.000-20.000",
+      "municipios": 504,
+      "indice_promedio": 54.775,
+      "pct_muy_alto": 0.143,
+      "ips_x_10mil_mediana": 2.173
+    },
+    {
+      "banda": "20.000-100.000",
+      "municipios": 273,
+      "indice_promedio": 46.532,
+      "pct_muy_alto": 0.059,
+      "ips_x_10mil_mediana": 2.493
+    },
+    {
+      "banda": "> 100.000",
+      "municipios": 71,
+      "indice_promedio": 26.326,
+      "pct_muy_alto": 0.014,
+      "ips_x_10mil_mediana": 4.472
+    }
+  ],
+  "poblacion_pequena": {
+    "umbral_afiliados": 2000,
+    "municipios": 76,
+    "ips_x_10mil_mediana": 7.482,
+    "ips_x_10mil_mediana_nacional": 2.867,
+    "lista": [
+      {
+        "cod_mpio": 97889,
+        "nom_mpio": "YAVARATÉ",
+        "dpto": "VAUPÉS",
+        "afiliados": 185,
+        "indice_riesgo": 67.331,
+        "nivel_riesgo": "Alto",
+        "ips_x_10mil": 270.27,
+        "sedes_ips": 5
+      },
+      {
+        "cod_mpio": 97511,
+        "nom_mpio": "PACOA",
+        "dpto": "VAUPÉS",
+        "afiliados": 470,
+        "indice_riesgo": 68.017,
+        "nivel_riesgo": "Alto",
+        "ips_x_10mil": 212.766,
+        "sedes_ips": 10
+      },
+      {
+        "cod_mpio": 97777,
+        "nom_mpio": "PAPUNAHUA",
+        "dpto": "VAUPÉS",
+        "afiliados": 57,
+        "indice_riesgo": 66.707,
+        "nivel_riesgo": "Alto",
+        "ips_x_10mil": 175.439,
+        "sedes_ips": 1
+      },
+      {
+        "cod_mpio": 91430,
+        "nom_mpio": "LA VICTORIA",
+        "dpto": "AMAZONAS",
+        "afiliados": 173,
+        "indice_riesgo": 32.496,
+        "nivel_riesgo": "Bajo",
+        "ips_x_10mil": 57.803,
+        "sedes_ips": 1
+      },
+      {
+        "cod_mpio": 94885,
+        "nom_mpio": "LA GUADALUPE",
+        "dpto": "GUAINÍA",
+        "afiliados": 207,
+        "indice_riesgo": 63.24,
+        "nivel_riesgo": "Alto",
+        "ips_x_10mil": 48.309,
+        "sedes_ips": 1
+      },
+      {
+        "cod_mpio": 97666,
+        "nom_mpio": "TARAIRA",
+        "dpto": "VAUPÉS",
+        "afiliados": 1701,
+        "indice_riesgo": 60.611,
+        "nivel_riesgo": "Alto",
+        "ips_x_10mil": 23.516,
+        "sedes_ips": 4
+      },
+      {
+        "cod_mpio": 25580,
+        "nom_mpio": "PULÍ",
+        "dpto": "CUNDINAMARCA",
+        "afiliados": 1320,
+        "indice_riesgo": 29.817,
+        "nivel_riesgo": "Bajo",
+        "ips_x_10mil": 22.727,
+        "sedes_ips": 3
+      },
+      {
+        "cod_mpio": 91530,
+        "nom_mpio": "PUERTO ALEGRÍA",
+        "dpto": "AMAZONAS",
+        "afiliados": 491,
+        "indice_riesgo": 34.474,
+        "nivel_riesgo": "Bajo",
+        "ips_x_10mil": 20.367,
+        "sedes_ips": 1
+      },
+      {
+        "cod_mpio": 25086,
+        "nom_mpio": "BELTRÁN",
+        "dpto": "CUNDINAMARCA",
+        "afiliados": 1076,
+        "indice_riesgo": 27.745,
+        "nivel_riesgo": "Bajo",
+        "ips_x_10mil": 18.587,
+        "sedes_ips": 2
+      },
+      {
+        "cod_mpio": 94886,
+        "nom_mpio": "CACAHUAL",
+        "dpto": "GUAINÍA",
+        "afiliados": 543,
+        "indice_riesgo": 67.955,
+        "nivel_riesgo": "Alto",
+        "ips_x_10mil": 18.416,
+        "sedes_ips": 1
+      },
+      {
+        "cod_mpio": 94888,
+        "nom_mpio": "MORICHAL",
+        "dpto": "GUAINÍA",
+        "afiliados": 628,
+        "indice_riesgo": 67.705,
+        "nivel_riesgo": "Alto",
+        "ips_x_10mil": 15.924,
+        "sedes_ips": 1
+      },
+      {
+        "cod_mpio": 15500,
+        "nom_mpio": "OICATÁ",
+        "dpto": "BOYACÁ",
+        "afiliados": 1923,
+        "indice_riesgo": 52.585,
+        "nivel_riesgo": "Medio",
+        "ips_x_10mil": 15.601,
+        "sedes_ips": 3
+      },
+      {
+        "cod_mpio": 15839,
+        "nom_mpio": "TUTAZÁ",
+        "dpto": "BOYACÁ",
+        "afiliados": 1371,
+        "indice_riesgo": 34.278,
+        "nivel_riesgo": "Bajo",
+        "ips_x_10mil": 14.588,
+        "sedes_ips": 2
+      },
+      {
+        "cod_mpio": 94884,
+        "nom_mpio": "PUERTO COLOMBIA",
+        "dpto": "GUAINÍA",
+        "afiliados": 1400,
+        "indice_riesgo": 68.008,
+        "nivel_riesgo": "Alto",
+        "ips_x_10mil": 14.286,
+        "sedes_ips": 2
+      },
+      {
+        "cod_mpio": 85136,
+        "nom_mpio": "LA SALINA",
+        "dpto": "CASANARE",
+        "afiliados": 785,
+        "indice_riesgo": 53.427,
+        "nivel_riesgo": "Medio",
+        "ips_x_10mil": 12.739,
+        "sedes_ips": 1
+      }
+    ]
+  },
+  "vulnerables_bajo": {
+    "vulnerables": 491,
+    "en_nivel_bajo": 77,
+    "afiliados": 673236,
+    "lista": [
+      {
+        "cod_mpio": 23189,
+        "nom_mpio": "CIÉNAGA DE ORO",
+        "dpto": "CÓRDOBA",
+        "afiliados": 55132,
+        "indice_riesgo": 38.57,
+        "nivel_riesgo": "Bajo",
+        "pct_rural": 0.56,
+        "pct_subsidiado": 0.861,
+        "pct_intervenidas": 0.34
+      },
+      {
+        "cod_mpio": 52838,
+        "nom_mpio": "TÚQUERRES",
+        "dpto": "NARIÑO",
+        "afiliados": 43101,
+        "indice_riesgo": 36.422,
+        "nivel_riesgo": "Bajo",
+        "pct_rural": 0.565,
+        "pct_subsidiado": 0.876,
+        "pct_intervenidas": 0.47
+      },
+      {
+        "cod_mpio": 19548,
+        "nom_mpio": "PIENDAMÓ - TUNÍA",
+        "dpto": "CAUCA",
+        "afiliados": 38387,
+        "indice_riesgo": 40.12,
+        "nivel_riesgo": "Bajo",
+        "pct_rural": 0.604,
+        "pct_subsidiado": 0.833,
+        "pct_intervenidas": 0.632
+      },
+      {
+        "cod_mpio": 23686,
+        "nom_mpio": "SAN PELAYO",
+        "dpto": "CÓRDOBA",
+        "afiliados": 35964,
+        "indice_riesgo": 32.353,
+        "nivel_riesgo": "Bajo",
+        "pct_rural": 0.604,
+        "pct_subsidiado": 0.906,
+        "pct_intervenidas": 0.321
+      },
+      {
+        "cod_mpio": 44090,
+        "nom_mpio": "DIBULLA",
+        "dpto": "LA GUAJIRA",
+        "afiliados": 33916,
+        "indice_riesgo": 24.657,
+        "nivel_riesgo": "Bajo",
+        "pct_rural": 0.532,
+        "pct_subsidiado": 0.928,
+        "pct_intervenidas": 0.173
+      },
+      {
+        "cod_mpio": 52227,
+        "nom_mpio": "CUMBAL",
+        "dpto": "NARIÑO",
+        "afiliados": 33856,
+        "indice_riesgo": 37.335,
+        "nivel_riesgo": "Bajo",
+        "pct_rural": 0.849,
+        "pct_subsidiado": 0.926,
+        "pct_intervenidas": 0.027
+      },
+      {
+        "cod_mpio": 23675,
+        "nom_mpio": "SAN BERNARDO DEL VIENTO",
+        "dpto": "CÓRDOBA",
+        "afiliados": 31912,
+        "indice_riesgo": 35.463,
+        "nivel_riesgo": "Bajo",
+        "pct_rural": 0.581,
+        "pct_subsidiado": 0.909,
+        "pct_intervenidas": 0.182
+      },
+      {
+        "cod_mpio": 52399,
+        "nom_mpio": "LA UNIÓN",
+        "dpto": "NARIÑO",
+        "afiliados": 31477,
+        "indice_riesgo": 34.603,
+        "nivel_riesgo": "Bajo",
+        "pct_rural": 0.573,
+        "pct_subsidiado": 0.857,
+        "pct_intervenidas": 0.732
+      },
+      {
+        "cod_mpio": 23570,
+        "nom_mpio": "PUEBLO NUEVO",
+        "dpto": "CÓRDOBA",
+        "afiliados": 30492,
+        "indice_riesgo": 30.633,
+        "nivel_riesgo": "Bajo",
+        "pct_rural": 0.55,
+        "pct_subsidiado": 0.844,
+        "pct_intervenidas": 0.175
+      },
+      {
+        "cod_mpio": 47318,
+        "nom_mpio": "GUAMAL",
+        "dpto": "MAGDALENA",
+        "afiliados": 25602,
+        "indice_riesgo": 33.761,
+        "nivel_riesgo": "Bajo",
+        "pct_rural": 0.535,
+        "pct_subsidiado": 0.933,
+        "pct_intervenidas": 0.147
+      },
+      {
+        "cod_mpio": 73616,
+        "nom_mpio": "RIOBLANCO",
+        "dpto": "TOLIMA",
+        "afiliados": 22967,
+        "indice_riesgo": 38.004,
+        "nivel_riesgo": "Bajo",
+        "pct_rural": 0.712,
+        "pct_subsidiado": 0.946,
+        "pct_intervenidas": 0.608
+      },
+      {
+        "cod_mpio": 52317,
+        "nom_mpio": "GUACHUCAL",
+        "dpto": "NARIÑO",
+        "afiliados": 17382,
+        "indice_riesgo": 35.963,
+        "nivel_riesgo": "Bajo",
+        "pct_rural": 0.822,
+        "pct_subsidiado": 0.889,
+        "pct_intervenidas": 0.082
+      },
+      {
+        "cod_mpio": 66456,
+        "nom_mpio": "MISTRATÓ",
+        "dpto": "RISARALDA",
+        "afiliados": 17322,
+        "indice_riesgo": 36.956,
+        "nivel_riesgo": "Bajo",
+        "pct_rural": 0.725,
+        "pct_subsidiado": 0.918,
+        "pct_intervenidas": 0.216
+      },
+      {
+        "cod_mpio": 13212,
+        "nom_mpio": "CÓRDOBA",
+        "dpto": "BOLÍVAR",
+        "afiliados": 16265,
+        "indice_riesgo": 32.696,
+        "nivel_riesgo": "Bajo",
+        "pct_rural": 0.572,
+        "pct_subsidiado": 0.911,
+        "pct_intervenidas": 0.009
+      },
+      {
+        "cod_mpio": 52786,
+        "nom_mpio": "TAMINANGO",
+        "dpto": "NARIÑO",
+        "afiliados": 14601,
+        "indice_riesgo": 39.086,
+        "nivel_riesgo": "Bajo",
+        "pct_rural": 0.645,
+        "pct_subsidiado": 0.944,
+        "pct_intervenidas": 0.614
+      }
+    ]
+  },
+  "incertidumbre_top10": {
+    "rango": [
+      0.2,
+      0.8
+    ],
+    "municipios": 74,
+    "lista": [
+      {
+        "cod_mpio": 15047,
+        "nom_mpio": "AQUITANIA",
+        "dpto": "BOYACÁ",
+        "afiliados": 13320,
+        "indice_riesgo": 74.251,
+        "nivel_riesgo": "Muy alto",
+        "prob_top10": 0.792
+      },
+      {
+        "cod_mpio": 15757,
+        "nom_mpio": "SOCHA",
+        "dpto": "BOYACÁ",
+        "afiliados": 8398,
+        "indice_riesgo": 74.234,
+        "nivel_riesgo": "Muy alto",
+        "prob_top10": 0.792
+      },
+      {
+        "cod_mpio": 68020,
+        "nom_mpio": "ALBANIA",
+        "dpto": "SANTANDER",
+        "afiliados": 2478,
+        "indice_riesgo": 73.988,
+        "nivel_riesgo": "Muy alto",
+        "prob_top10": 0.768
+      },
+      {
+        "cod_mpio": 76250,
+        "nom_mpio": "EL DOVIO",
+        "dpto": "VALLE DEL CAUCA",
+        "afiliados": 11817,
+        "indice_riesgo": 73.877,
+        "nivel_riesgo": "Muy alto",
+        "prob_top10": 0.78
+      },
+      {
+        "cod_mpio": 68673,
+        "nom_mpio": "SAN BENITO",
+        "dpto": "SANTANDER",
+        "afiliados": 2132,
+        "indice_riesgo": 73.873,
+        "nivel_riesgo": "Muy alto",
+        "prob_top10": 0.728
+      },
+      {
+        "cod_mpio": 19513,
+        "nom_mpio": "PADILLA",
+        "dpto": "CAUCA",
+        "afiliados": 6834,
+        "indice_riesgo": 73.761,
+        "nivel_riesgo": "Muy alto",
+        "prob_top10": 0.778
+      },
+      {
+        "cod_mpio": 76616,
+        "nom_mpio": "RIOFRÍO",
+        "dpto": "VALLE DEL CAUCA",
+        "afiliados": 15324,
+        "indice_riesgo": 73.708,
+        "nivel_riesgo": "Muy alto",
+        "prob_top10": 0.764
+      },
+      {
+        "cod_mpio": 68296,
+        "nom_mpio": "GALÁN",
+        "dpto": "SANTANDER",
+        "afiliados": 2919,
+        "indice_riesgo": 73.65,
+        "nivel_riesgo": "Muy alto",
+        "prob_top10": 0.786
+      },
+      {
+        "cod_mpio": 76041,
+        "nom_mpio": "ANSERMANUEVO",
+        "dpto": "VALLE DEL CAUCA",
+        "afiliados": 15981,
+        "indice_riesgo": 73.605,
+        "nivel_riesgo": "Muy alto",
+        "prob_top10": 0.732
+      },
+      {
+        "cod_mpio": 41770,
+        "nom_mpio": "SUAZA",
+        "dpto": "HUILA",
+        "afiliados": 23743,
+        "indice_riesgo": 73.574,
+        "nivel_riesgo": "Muy alto",
+        "prob_top10": 0.722
+      },
+      {
+        "cod_mpio": 15109,
+        "nom_mpio": "BUENAVISTA",
+        "dpto": "BOYACÁ",
+        "afiliados": 3939,
+        "indice_riesgo": 73.066,
+        "nivel_riesgo": "Muy alto",
+        "prob_top10": 0.792
+      },
+      {
+        "cod_mpio": 68209,
+        "nom_mpio": "CONFINES",
+        "dpto": "SANTANDER",
+        "afiliados": 2652,
+        "indice_riesgo": 72.981,
+        "nivel_riesgo": "Muy alto",
+        "prob_top10": 0.684
+      },
+      {
+        "cod_mpio": 68368,
+        "nom_mpio": "JESÚS MARÍA",
+        "dpto": "SANTANDER",
+        "afiliados": 2594,
+        "indice_riesgo": 72.848,
+        "nivel_riesgo": "Muy alto",
+        "prob_top10": 0.664
+      },
+      {
+        "cod_mpio": 15600,
+        "nom_mpio": "RÁQUIRA",
+        "dpto": "BOYACÁ",
+        "afiliados": 5743,
+        "indice_riesgo": 72.75,
+        "nivel_riesgo": "Muy alto",
+        "prob_top10": 0.724
+      },
+      {
+        "cod_mpio": 19780,
+        "nom_mpio": "SUÁREZ",
+        "dpto": "CAUCA",
+        "afiliados": 20798,
+        "indice_riesgo": 72.727,
+        "nivel_riesgo": "Muy alto",
+        "prob_top10": 0.624
+      }
+    ]
+  },
+  "spearman_indice": {
+    "log_afiliados": -0.267,
+    "pct_rural": 0.448,
+    "pct_subsidiado": 0.336,
+    "pct_intervenidas": 0.712
+  },
+  "departamentos_sin_alto": [
+    "ARAUCA",
+    "BOGOTÁ, D.C.",
+    "LA GUAJIRA"
+  ],
+  "alertas": [
+    "76 municipios con menos de 2.000 afiliados tienen una oferta mediana de 7,5 IPS por 10.000, contra 2,9 en el país: su componente de oferta subestima el riesgo (no mide distancia).",
+    "77 de 491 municipios vulnerables (rural >= 50 % y subsidiado >= 80 %) quedan en nivel Bajo: su riesgo por EPS intervenidas es bajo, pero no se debe leer como buen acceso."
+  ]
+}

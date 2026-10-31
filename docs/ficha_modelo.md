@@ -50,6 +50,9 @@ Cada variable se lleva a percentiles para que todas queden en la misma escala y 
 5. La lista de EPS intervenidas cambia con el tiempo y es una decisión del equipo. Con Savia Salud como intervenida, los resultados de Antioquia cambian por completo.
 6. El índice no tiene una "respuesta correcta" contra la cual compararlo. Su validez se apoya en la sensibilidad, en la comparación con PCA y en la coherencia de los perfiles.
 
+Cada corte mide estos sesgos de forma automática (`equidad.py` → `resultados/<fecha>/equidad.md`).
+Usuario, beneficio y ética: [etica_usuario_beneficio.md](etica_usuario_beneficio.md).
+
 ## Mantenimiento
 - Se ejecuta cada mes con GitHub Actions.
 - **Se reentrena si** alguna variable tiene un PSI mayor a 0,25 frente al corte anterior, si más del 15 % de los municipios cambia de nivel o si cambia la lista de EPS intervenidas.

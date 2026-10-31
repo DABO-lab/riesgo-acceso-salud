@@ -17,7 +17,18 @@ from datetime import date
 
 import pandas as pd
 
-from . import extraccion, features, indice, limpieza, modelado, monitoreo, reportes, sintetico, validacion
+from . import (
+    equidad,
+    extraccion,
+    features,
+    indice,
+    limpieza,
+    modelado,
+    monitoreo,
+    reportes,
+    sintetico,
+    validacion,
+)
 from .config import cargar_config, ruta
 from .tracking import Tracker
 
@@ -222,6 +233,11 @@ def etapa_reportes(
         json.dumps({**metricas_indice, "pesos_pca": indice_res["pesos_pca"]}, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
+    auditoria = equidad.auditar(final, cfg)
+    equidad.guardar(auditoria, salida)
+    tracker.metricas(equidad.metricas(auditoria))
+    for a in auditoria["alertas"]:
+        print(f"  [equidad] {a}")
     resumen = reportes.resumen_markdown(fecha, ti, perf, resultados, elegido, metricas_indice, monit, cfg)
     (salida / "resumen.md").write_text(resumen, encoding="utf-8")
     shutil.copy(ruta(cfg, "raw", fecha) / "metadatos_corte.json", salida / "metadatos_corte.json")
@@ -233,6 +249,7 @@ def etapa_reportes(
         salida / "resumen.md",
         salida / "calidad.json",
         salida / "monitoreo.json",
+        salida / "equidad.md",
     ]:
         tracker.artefacto(p)
     return final

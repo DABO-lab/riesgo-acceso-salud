@@ -33,8 +33,9 @@ flowchart TB
     - PSI por variable.
     - Municipios que cambian de nivel.
     - Concordancia (ARI) entre el modelo del mes anterior y el nuevo, como comparación campeón contra retador.
-7. **Publicación:** los resultados se guardan en `resultados/<fecha>/` dentro del repositorio. GitHub Actions muestra el resumen en la página de la ejecución.
-8. **Servicio:** la API (`make api` o `Dockerfile.api`) carga el último corte de `resultados/` y responde consultas por municipio y escenarios con `POST /predict`. Patrón de despliegue: **batch mensual** para el ranking completo + **API online** para consultas y escenarios.
+7. **Auditoría de equidad:** `equidad.py` mide en cada corte los sesgos conocidos del índice: municipios muy pequeños con oferta inflada, municipios vulnerables en nivel Bajo, incertidumbre del top 10 % y correlación con el tamaño. Queda en `equidad.md`, como métricas `eq_*` en MLflow y como artifact en Prefect. Solo alerta, no detiene el flujo.
+8. **Publicación:** los resultados se guardan en `resultados/<fecha>/` dentro del repositorio. GitHub Actions muestra el resumen en la página de la ejecución.
+9. **Servicio:** la API (`make api` o `Dockerfile.api`) carga el último corte de `resultados/` y responde consultas por municipio y escenarios con `POST /predict`. Patrón de despliegue: **batch mensual** para el ranking completo + **API online** para consultas y escenarios.
 
 ## Cómo leer el PSI
 | PSI | Lectura | Acción |

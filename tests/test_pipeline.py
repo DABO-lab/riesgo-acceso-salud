@@ -23,6 +23,8 @@ def test_pipeline_dos_cortes_detecta_cambio(tmp_path, monkeypatch):
         "resumen.md",
         "monitoreo.md",
         "calidad.json",
+        "equidad.json",
+        "equidad.md",
         "modelo.pkl",
         "figuras/01_seleccion_modelo.png",
     ]:
