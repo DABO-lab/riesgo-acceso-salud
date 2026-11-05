@@ -1,0 +1,19 @@
+{
+  "fecha_anterior": "2026-10-30",
+  "fecha_actual": "2026-11-05",
+  "psi": {
+    "pct_intervenidas": 0.00017438671553585329,
+    "hhi": 0.00017431058525987472,
+    "ips_x_10mil": 0.00012608771441193942,
+    "pct_rural": 0.00019043221319232353,
+    "pct_subsidiado": 0.0007900890237921716,
+    "indice_riesgo": 0.000443145583855513
+  },
+  "pct_municipios_cambian_nivel": 0.0053475935828877,
+  "pct_municipios_cambian_grupo": 0.0035650623885918,
+  "variacion_total_afiliados": 0.00035584618277476683,
+  "alertas": [],
+  "reentrenar": false,
+  "ari_modelo_anterior_vs_nuevo": 0.9922686467540494,
+  "pct_mismo_grupo_modelo_anterior": 0.9973262032085561
+}
