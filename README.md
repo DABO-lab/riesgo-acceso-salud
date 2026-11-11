@@ -59,6 +59,7 @@ En VS Code, elija `.venv` como intérprete y como kernel de los notebooks.
 | `make demo` | `... pipeline --demo --rapido` | El mismo pipeline con datos sintéticos, sin internet |
 | `make mlflow` | `uv run mlflow ui --backend-store-uri sqlite:///mlflow/mlflow.db --port 5001` | Interfaz de MLflow en http://127.0.0.1:5001 |
 | `make api` | `uv run uvicorn riesgo_salud.api.main:app --port 8000` | API de predicción en http://127.0.0.1:8000 (contrato en `/docs`) |
+| `make dashboard` | `uv run python dashboard/construir.py` y `uv run python -m http.server 8080 --directory _site` | Dashboard web en http://localhost:8080 (el mismo que se publica en GitHub Pages) |
 | `make test` | `uv run pytest -q` | Pruebas (sin internet) |
 | `make lint` | `uv run ruff check . --fix` y `uv run ruff format .` | Estilo del código |
 | `make notebook` | `uv run jupyter lab notebooks/` | Notebooks narrados |
@@ -68,6 +69,20 @@ En VS Code, elija `.venv` como intérprete y como kernel de los notebooks.
 **En Colab** también funciona: se clona el repo, `pip install -e .` y se fija
 `os.environ["RIESGO_BASE_DIR"] = "/content/drive/MyDrive/proyecto2_salud"` para que datos,
 resultados y MLflow queden en Drive.
+
+## Dashboard en línea
+
+**https://dabo-lab.github.io/riesgo-acceso-salud/**
+
+Mapa, ranking, departamentos, grupos del clustering, validaciones de calidad, monitoreo y auditoría
+de equidad del último corte, con filtros y selector para consultar cortes anteriores.
+
+Se actualiza solo: cuando el pipeline mensual termina bien y guarda `resultados/<fecha>/`, el
+workflow `Dashboard` (`.github/workflows/dashboard.yml`) arma el sitio con `dashboard/construir.py`
+y lo publica en GitHub Pages. Si una validación crítica falla, el pipeline se detiene, no se
+publica nada y el tablero sigue mostrando el último corte válido. El botón **Ejecutar nuevo corte**
+abre el pipeline en GitHub Actions ("Run workflow", solo colaboradores del repositorio) y el
+recuadro de estado consulta en vivo si la última ejecución terminó, falló o sigue corriendo.
 
 ## Cómo leer este repositorio
 

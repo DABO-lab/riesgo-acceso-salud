@@ -30,3 +30,6 @@ __pycache__/
 .DS_Store
 Thumbs.db
 ~$*
+
+# Sitio del dashboard generado (se arma en GitHub Actions)
+_site/

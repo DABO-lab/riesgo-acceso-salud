@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Riesgo de acceso a la salud por municipio · Colombia</title>
+  <meta name="description" content="Índice de riesgo de acceso a la salud por municipio: dependencia de EPS intervenidas y oferta de IPS. Se actualiza con cada corte del pipeline.">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<div class="viz-root">
+
+  <header class="barra">
+    <div class="barra-titulo">
+      <h1>Riesgo de acceso a la salud por municipio</h1>
+      <p class="sub">Dependencia de EPS intervenidas × oferta de IPS · Proyecto 2 · Universidad de Medellín</p>
+    </div>
+    <div class="barra-acciones">
+      <label class="campo">Corte
+        <select id="sel-corte" aria-label="Fecha del corte"></select>
+      </label>
+      <a id="btn-actualizar" class="boton" target="_blank" rel="noopener">
+        <span aria-hidden="true">↻</span> Ejecutar nuevo corte
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Estado del corte: validaciones, monitoreo y última ejecución del pipeline -->
+    <section class="estado" aria-label="Estado del corte">
+      <div class="estado-item" id="estado-calidad"></div>
+      <div class="estado-item" id="estado-monitoreo"></div>
+      <div class="estado-item" id="estado-ejecucion"></div>
+    </section>
+
+    <section class="kpis" id="kpis" aria-label="Indicadores principales"></section>
+
+    <section class="filtros" aria-label="Filtros">
+      <label class="campo">Departamento <select id="f-dpto"><option value="">Todos</option></select></label>
+      <label class="campo">Nivel de riesgo <select id="f-nivel"><option value="">Todos</option></select></label>
+      <label class="campo">Grupo <select id="f-grupo"><option value="">Todos</option></select></label>
+      <label class="campo">EPS principal <select id="f-eps"><option value="">Todas</option></select></label>
+      <label class="campo campo-ancho">Municipio <input id="f-buscar" type="search" placeholder="Buscar por nombre…"></label>
+      <button id="f-limpiar" class="boton boton-sec" type="button">Limpiar</button>
+      <span class="conteo" id="conteo"></span>
+    </section>
+
+    <section class="grid-mapa">
+      <article class="tarjeta tarjeta-mapa">
+        <div class="tarjeta-cab">
+          <h2>Mapa de municipios</h2>
+          <div class="seg" role="group" aria-label="Colorear por">
+            <button type="button" data-color="nivel" class="activo">Nivel de riesgo</button>
+            <button type="button" data-color="grupo">Grupo (clustering)</button>
+          </div>
+        </div>
+        <div id="mapa" role="img" aria-label="Mapa de municipios de Colombia coloreados por nivel de riesgo"></div>
+        <div class="leyenda" id="leyenda-mapa"></div>
+        <p class="nota">Cada punto es un municipio; el tamaño es proporcional a sus afiliados.</p>
+      </article>
+
+      <aside class="col-lateral">
+        <article class="tarjeta">
+          <h2>Municipios por nivel</h2>
+          <div id="dist-niveles" class="barras-h"></div>
+        </article>
+        <article class="tarjeta" id="detalle">
+          <h2>Detalle del municipio</h2>
+          <p class="vacio">Pase el cursor o haga clic en un punto del mapa o en una fila del ranking.</p>
+        </article>
+      </aside>
+    </section>
+
+    <article class="tarjeta">
+      <div class="tarjeta-cab">
+        <h2>Ranking de municipios</h2>
+        <span class="nota">Clic en un encabezado para ordenar</span>
+      </div>
+      <div class="tabla-envoltura">
+        <table class="tabla" id="tabla-ranking">
+          <thead><tr>
+            <th data-k="ranking_riesgo" class="num">#</th>
+            <th data-k="nom_mpio">Municipio</th>
+            <th data-k="dpto">Departamento</th>
+            <th data-k="indice_riesgo" class="num">Índice</th>
+            <th data-k="nivel_riesgo">Nivel</th>
+            <th data-k="afiliados" class="num">Afiliados</th>
+            <th data-k="pct_intervenidas" class="num">% en EPS interv.</th>
+            <th data-k="ips_x_10mil" class="num">IPS × 10 mil</th>
+            <th data-k="eps_principal">EPS principal</th>
+            <th data-k="prob_top10" class="num">Prob. top 10 %</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="paginacion">
+        <button type="button" class="boton boton-sec" id="pag-ant">Anterior</button>
+        <span id="pag-info"></span>
+        <button type="button" class="boton boton-sec" id="pag-sig">Siguiente</button>
+        <button type="button" class="boton boton-sec" id="descargar">Descargar CSV filtrado</button>
+      </div>
+    </article>
+
+    <section class="grid-2">
+      <article class="tarjeta">
+        <h2>Departamentos según índice ponderado por afiliados</h2>
+        <div id="barras-dptos" class="barras-h barras-largas"></div>
+      </article>
+      <article class="tarjeta">
+        <h2>Grupos encontrados por el clustering</h2>
+        <div id="grupos"></div>
+      </article>
+    </section>
+
+    <section class="grid-2">
+      <article class="tarjeta">
+        <h2>Validaciones de calidad del corte</h2>
+        <p class="nota">Si una regla crítica falla, el pipeline se detiene y el corte no se publica.</p>
+        <div class="tabla-envoltura"><table class="tabla" id="tabla-calidad"></table></div>
+      </article>
+      <article class="tarjeta">
+        <h2>Monitoreo frente al corte anterior</h2>
+        <div id="monitoreo"></div>
+      </article>
+    </section>
+
+    <section class="grid-2">
+      <article class="tarjeta">
+        <h2>EPS con más afiliados</h2>
+        <div id="barras-eps" class="barras-h barras-largas"></div>
+      </article>
+      <article class="tarjeta">
+        <h2>Auditoría de equidad</h2>
+        <div id="equidad"></div>
+      </article>
+    </section>
+
+    <article class="tarjeta">
+      <h2>Cómo se calcula</h2>
+      <div id="metodo" class="metodo"></div>
+    </article>
+  </main>
+
+  <footer class="pie">
+    <p>Fuentes: BDUA (ADRES), REPS (MinSalud) y DIVIPOLA (DANE) en <a href="https://www.datos.gov.co" target="_blank" rel="noopener">datos.gov.co</a>, licencia CC BY-SA 4.0.
+    El tablero se publica automáticamente cada vez que el pipeline guarda un corte nuevo en
+    <a id="enlace-repo" target="_blank" rel="noopener">GitHub</a>.</p>
+  </footer>
+
+  <div id="tooltip" class="tooltip" role="tooltip" hidden></div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="app.js"></script>
+</body>
+</html>

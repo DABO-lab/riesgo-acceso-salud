@@ -1,4 +1,4 @@
-.PHONY: setup pipeline demo flujo flujo-programar prefect-ui mlflow api test lint notebook docker-build docker-run api-build api-run
+.PHONY: setup pipeline demo flujo flujo-programar prefect-ui mlflow api test lint notebook docker-build docker-run api-build api-run dashboard
 
 # Fecha del corte: vacío = hoy. Ejemplo: make pipeline FECHA=2026-10-25
 FECHA ?=
@@ -67,3 +67,8 @@ api-build:
 # Corre la API en http://localhost:8000
 api-run:
 	docker run --rm -p 8000:8000 --name riesgo-api riesgo-acceso-salud-api
+
+# Dashboard web (lo mismo que se publica en GitHub Pages) en http://localhost:8080
+dashboard:
+	uv run python dashboard/construir.py
+	uv run python -m http.server 8080 --directory _site
