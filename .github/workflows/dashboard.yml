@@ -1,0 +1,56 @@
+# Publica el dashboard en GitHub Pages: https://dabo-lab.github.io/riesgo-acceso-salud/
+# Se ejecuta solo cuando el pipeline mensual termina bien (corte nuevo), cuando alguien cambia
+# el dashboard o los resultados en main, o a mano desde Actions -> "Dashboard" -> "Run workflow".
+# Nota: los commits que hace el pipeline con GITHUB_TOKEN no disparan otros workflows por "push";
+# por eso se escucha también el evento workflow_run del pipeline.
+name: Dashboard
+
+on:
+  workflow_run:
+    workflows: ["Pipeline mensual"]
+    types: [completed]
+    branches: [main]
+  push:
+    branches: [main]
+    paths: ["dashboard/**", "resultados/**", ".github/workflows/dashboard.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  publicar:
+    # Si el pipeline falló (por ejemplo, una validación crítica), no se republica:
+    # el dashboard sigue mostrando el último corte válido.
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main            # incluye el commit de resultados que acaba de hacer el pipeline
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Armar el sitio con todos los cortes de resultados/
+        run: python dashboard/construir.py --salida _site
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Publicar en GitHub Pages
+        id: despliegue
+        uses: actions/deploy-pages@v4
