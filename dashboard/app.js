@@ -190,9 +190,11 @@ function iniciarMapa() {
   mapa = L.map("mapa", { zoomControl: true, preferCanvas: true, attributionControl: true, zoomSnap: 0.25 });
   vistaPais();
   const oscuro = matchMedia("(prefers-color-scheme: dark)").matches;
-  L.tileLayer(`https://{s}.basemaps.cartocdn.com/${oscuro ? "dark_all" : "light_all"}/{z}/{x}/{y}{r}.png`, {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-    subdomains: "abcd", maxZoom: 12, minZoom: 4,
+  // Mapa base gris de Esri (sin API key); en modo oscuro, su versión oscura
+  const base = oscuro ? "Dark_Gray_Base" : "Light_Gray_Base";
+  L.tileLayer(`https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_${base}/MapServer/tile/{z}/{y}/{x}`, {
+    attribution: "Mapa base &copy; Esri, HERE, Garmin, &copy; colaboradores de OpenStreetMap",
+    maxZoom: 12, minZoom: 4,
   }).addTo(mapa);
   capaPuntos = L.layerGroup().addTo(mapa);
 }
