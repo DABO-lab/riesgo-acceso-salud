@@ -66,7 +66,8 @@ async function cargarCorte(corte) {
   const tiene = new Set(corte.archivos);
   const pedir = async (nombre) => (tiene.has(nombre) ? obtener(base + nombre, nombre.endsWith(".csv") ? "csv" : "json") : null);
   const nombres = ["municipios_riesgo.csv", "resumen_departamentos.csv", "resumen_eps.csv", "perfiles_grupos.csv",
-    "comparacion_modelos.csv", "calidad.json", "monitoreo.json", "metadatos_corte.json", "metricas_indice.json", "equidad.json"];
+    "comparacion_modelos.csv", "calidad.json", "monitoreo.json", "metadatos_corte.json", "metricas_indice.json", "equidad.json",
+    "contraste_noticias.json", "noticias.json"];
   const res = await Promise.all(nombres.map(pedir));
   const d = Object.fromEntries(nombres.map((n, i) => [n.replace(/\.(csv|json)$/, ""), res[i]]));
   d.municipios_riesgo.forEach((m) => { m.cod_mpio = String(m.cod_mpio).padStart(5, "0"); });
@@ -412,6 +413,53 @@ function pintarEquidad() {
     ${eq.incertidumbre_top10 ? `<p class="nota" style="margin-top:10px">${eq.incertidumbre_top10.municipios} municipios tienen una probabilidad de estar en el 10 % de mayor riesgo entre ${rangoTexto(eq.incertidumbre_top10.rango)}: su posición depende de los pesos elegidos.</p>` : ""}`;
 }
 
+const TIPOS_NOTICIA = { medicamentos: "Medicamentos", cierre_servicios: "Cierre de servicios", deudas_pagos: "Deudas y pagos",
+  tutelas_quejas: "Tutelas y quejas", intervencion_supersalud: "Intervención Supersalud", protesta: "Protesta", otro: "Otro" };
+const GRAVEDAD = { 1: "Advertencia", 2: "Afectación", 3: "Sin atención" };
+const enlaceSeguro = (u) => (/^https?:\/\//i.test(u || "") ? u : "#");
+
+function pintarNoticias() {
+  const c = estado.datos.contraste_noticias, lista = estado.datos.noticias || [];
+  const cuerpo = $("#noticias-cuerpo"), meta = $("#noticias-meta");
+  if (!c || c.estado !== "ok") {
+    meta.textContent = "";
+    cuerpo.innerHTML = `<p class="vacio">Este corte no tiene contraste con noticias${c?.motivo ? ` (${esc(c.motivo)})` : ""}.
+      El agente corre con cada ejecución del pipeline cuando la clave de Gemini está configurada.</p>`;
+    return;
+  }
+  meta.textContent = `Últimos ${c.ventana_dias} días · ${c.noticias_relevantes} de ${c.noticias_total} noticias relevantes · ${c.modelo_ia}`;
+  const k = (etq, val, det) => `<div class="kpi"><div class="etq">${etq}</div><div class="val">${val}</div><div class="det">${det}</div></div>`;
+  const co = c.correlacion || {};
+  const num = (x) => (x == null ? "—" : x.toFixed(2).replace(".", ","));
+  const cats = { coinciden: [], riesgo_silencioso: [], posible_punto_ciego: [] };
+  (c.departamentos || []).forEach((d) => cats[d.categoria]?.push(titulo(d.dpto)));
+  const caja = (t, desc, l) => `<div class="categoria"><h3>${t} (${l.length})</h3><p>${desc}</p><div class="lista">${l.length ? esc(l.join(", ")) : "Ninguno"}</div></div>`;
+  const top = [...lista].filter((n) => n.relevante).sort((a, b) => b.gravedad - a.gravedad || String(b.fecha).localeCompare(String(a.fecha))).slice(0, 10);
+  const tabla = (c.departamentos || []).filter((d) => d.menciones > 0).slice(0, 12);
+  cuerpo.innerHTML = `<p class="informe">${esc(c.informe)}</p>
+    <div class="correl">
+      ${k("Noticias vs. índice de riesgo", co.suficiente ? num(co.spearman_indice) : "—", co.suficiente ? `Spearman · p = ${num(co.p_valor_indice)}` : "Pocos departamentos con noticias")}
+      ${k("Noticias vs. tamaño de la población", co.suficiente ? num(co.spearman_tamano) : "—", "Control: ¿las noticias siguen solo el tamaño?")}
+      ${k("Noticias sobre EPS intervenidas", fmtPct(c.pct_sobre_eps_intervenidas, 0), `${c.noticias_nacionales} noticias son nacionales (sin departamento)`)}
+    </div>
+    <p class="nota" style="margin:-4px 0 12px">${esc(co.lectura || "")} La correlación la calcula el código; la IA solo lee y clasifica las noticias.</p>
+    <div class="categorias">
+      ${caja("Coinciden", "Riesgo alto y noticias de problemas: el índice ve lo que ya está pasando.", cats.coinciden)}
+      ${caja("Riesgo silencioso", "Riesgo alto sin noticias: lo que el índice busca anticipar.", cats.riesgo_silencioso)}
+      ${caja("Posible punto ciego", "Noticias de problemas con riesgo bajo: revisar qué no está midiendo el índice.", cats.posible_punto_ciego)}
+    </div>
+    <section class="grid-2">
+      <div><h3 style="font-size:13px;margin:0 0 8px">Departamentos con más noticias</h3>
+        <div class="tabla-envoltura"><table class="tabla"><thead><tr><th>Departamento</th><th class="num">Índice</th><th class="num">Noticias</th><th class="num">Gravedad sumada</th></tr></thead><tbody>
+        ${tabla.map((d) => `<tr><td>${esc(titulo(d.dpto))}</td><td class="num">${fmt1.format(d.indice_ponderado)}</td><td class="num">${d.menciones}</td><td class="num">${d.senal}</td></tr>`).join("") || '<tr><td colspan="4" class="vacio">Sin noticias por departamento</td></tr>'}
+        </tbody></table></div></div>
+      <div><h3 style="font-size:13px;margin:0 0 8px">Noticias más graves</h3>
+        <ul class="lista-noticias">${top.map((n) => `<li><span class="grav">${GRAVEDAD[n.gravedad] || ""}</span>
+          <a href="${esc(enlaceSeguro(n.enlace))}" target="_blank" rel="noopener noreferrer">${esc(n.titulo)}</a>
+          <div class="meta">${esc(n.fuente)} · ${esc(n.fecha || "")} · ${esc(TIPOS_NOTICIA[n.tipo] || n.tipo)} · ${esc((n.departamentos || []).map(titulo).join(", ") || "Nacional")}</div></li>`).join("")}</ul></div>
+    </section>`;
+}
+
 function pintarMetodo() {
   const mi = estado.datos.metricas_indice || {}, md = estado.datos.metadatos_corte || {};
   const ei = md.eps_intervenidas || {};
@@ -429,7 +477,7 @@ async function mostrarCorte(corte) {
   estado.municipios = estado.datos.municipios_riesgo;
   estado.seleccionado = null;
   crearMarcadores(); llenarFiltros();
-  pintarEstado(); pintarGrupos(); pintarCalidad(); pintarMonitoreo(); pintarEPS(); pintarEquidad(); pintarMetodo();
+  pintarEstado(); pintarGrupos(); pintarCalidad(); pintarMonitoreo(); pintarEPS(); pintarEquidad(); pintarNoticias(); pintarMetodo();
   aplicarFiltros();
   const top = estado.municipios.find((m) => m.ranking_riesgo === 1);
   if (top) seleccionar(top, false);

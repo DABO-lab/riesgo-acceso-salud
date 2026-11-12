@@ -33,6 +33,8 @@ jobs:
         run: uv run pytest -q
 
       - name: Ejecutar el pipeline con datos reales
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}   # agente de noticias; sin clave se omite
         run: |
           FECHA="${{ github.event.inputs.fecha }}"
           if [ -z "$FECHA" ]; then FECHA=$(date +%F); fi
