@@ -1,0 +1,382 @@
+{
+  "noticias_total": 150,
+  "noticias_relevantes": 146,
+  "noticias_nacionales": 112,
+  "pct_sobre_eps_intervenidas": 0.226,
+  "por_tipo": {
+    "medicamentos": 75,
+    "deudas_pagos": 30,
+    "tutelas_quejas": 22,
+    "intervencion_supersalud": 9,
+    "cierre_servicios": 5,
+    "otro": 4,
+    "protesta": 1
+  },
+  "menciones_eps": {
+    "NUEVA EPS": 28,
+    "ASMET SALUD": 3,
+    "SOS": 2,
+    "COOSALUD": 1
+  },
+  "correlacion": {
+    "departamentos_con_noticias": 9,
+    "suficiente": true,
+    "spearman_indice": -0.11,
+    "p_valor_indice": 0.541,
+    "spearman_tamano": 0.533,
+    "p_valor_tamano": 0.0014,
+    "lectura": "Correlación débil negativa (Spearman -0,11), no significativa (p ≥ 0,05)."
+  },
+  "departamentos": [
+    {
+      "dpto": "BOGOTÁ, D.C.",
+      "indice_ponderado": 17.53,
+      "municipios_muy_alto": 0,
+      "afiliados": 7749518,
+      "menciones": 11,
+      "senal": 21,
+      "afiliados_intervenidas": 1694325,
+      "categoria": "posible_punto_ciego"
+    },
+    {
+      "dpto": "CAUCA",
+      "indice_ponderado": 49.28,
+      "municipios_muy_alto": 11,
+      "afiliados": 1323878,
+      "menciones": 6,
+      "senal": 12,
+      "afiliados_intervenidas": 885312,
+      "categoria": "coinciden"
+    },
+    {
+      "dpto": "VALLE DEL CAUCA",
+      "indice_ponderado": 30.11,
+      "municipios_muy_alto": 10,
+      "afiliados": 4625429,
+      "menciones": 5,
+      "senal": 11,
+      "afiliados_intervenidas": 2936714,
+      "categoria": "sin_contraste"
+    },
+    {
+      "dpto": "SANTANDER",
+      "indice_ponderado": 31.2,
+      "municipios_muy_alto": 21,
+      "afiliados": 2272160,
+      "menciones": 6,
+      "senal": 9,
+      "afiliados_intervenidas": 1349485,
+      "categoria": "sin_contraste"
+    },
+    {
+      "dpto": "NORTE DE SANTANDER",
+      "indice_ponderado": 42.5,
+      "municipios_muy_alto": 6,
+      "afiliados": 1741283,
+      "menciones": 2,
+      "senal": 3,
+      "afiliados_intervenidas": 1175909,
+      "categoria": "coinciden"
+    },
+    {
+      "dpto": "CUNDINAMARCA",
+      "indice_ponderado": 35.45,
+      "municipios_muy_alto": 4,
+      "afiliados": 2784066,
+      "menciones": 1,
+      "senal": 2,
+      "afiliados_intervenidas": 1498901,
+      "categoria": "sin_contraste"
+    },
+    {
+      "dpto": "ATLÁNTICO",
+      "indice_ponderado": 21.16,
+      "municipios_muy_alto": 1,
+      "afiliados": 2803660,
+      "menciones": 1,
+      "senal": 2,
+      "afiliados_intervenidas": 758083,
+      "categoria": "sin_contraste"
+    },
+    {
+      "dpto": "GUAINÍA",
+      "indice_ponderado": 64.24,
+      "municipios_muy_alto": 1,
+      "afiliados": 53605,
+      "menciones": 1,
+      "senal": 1,
+      "afiliados_intervenidas": 53605,
+      "categoria": "sin_contraste"
+    },
+    {
+      "dpto": "QUINDÍO",
+      "indice_ponderado": 29.45,
+      "municipios_muy_alto": 0,
+      "afiliados": 569075,
+      "menciones": 1,
+      "senal": 1,
+      "afiliados_intervenidas": 294396,
+      "categoria": "sin_contraste"
+    },
+    {
+      "dpto": "VICHADA",
+      "indice_ponderado": 71.06,
+      "municipios_muy_alto": 2,
+      "afiliados": 92211,
+      "menciones": 0,
+      "senal": 0,
+      "afiliados_intervenidas": 45223,
+      "categoria": "riesgo_silencioso"
+    },
+    {
+      "dpto": "GUAVIARE",
+      "indice_ponderado": 66.6,
+      "municipios_muy_alto": 3,
+      "afiliados": 86073,
+      "menciones": 0,
+      "senal": 0,
+      "afiliados_intervenidas": 86073,
+      "categoria": "riesgo_silencioso"
+    },
+    {
+      "dpto": "CAQUETÁ",
+      "indice_ponderado": 59.2,
+      "municipios_muy_alto": 12,
+      "afiliados": 410038,
+      "menciones": 0,
+      "senal": 0,
+      "afiliados_intervenidas": 368310,
+      "categoria": "riesgo_silencioso"
+    },
+    {
+      "dpto": "VAUPÉS",
+      "indice_ponderado": 48.6,
+      "municipios_muy_alto": 0,
+      "afiliados": 32216,
+      "menciones": 0,
+      "senal": 0,
+      "afiliados_intervenidas": 27072,
+      "categoria": "riesgo_silencioso"
+    },
+    {
+      "dpto": "PUTUMAYO",
+      "indice_ponderado": 48.57,
+      "municipios_muy_alto": 1,
+      "afiliados": 332809,
+      "menciones": 0,
+      "senal": 0,
+      "afiliados_intervenidas": 261403,
+      "categoria": "riesgo_silencioso"
+    },
+    {
+      "dpto": "ARAUCA",
+      "indice_ponderado": 47.64,
+      "municipios_muy_alto": 0,
+      "afiliados": 319358,
+      "menciones": 0,
+      "senal": 0,
+      "afiliados_intervenidas": 269584,
+      "categoria": "riesgo_silencioso"
+    },
+    {
+      "dpto": "AMAZONAS",
+      "indice_ponderado": 44.47,
+      "municipios_muy_alto": 1,
+      "afiliados": 76894,
+      "menciones": 0,
+      "senal": 0,
+      "afiliados_intervenidas": 35172,
+      "categoria": "riesgo_silencioso"
+    },
+    {
+      "dpto": "HUILA",
+      "indice_ponderado": 44.16,
+      "municipios_muy_alto": 4,
+      "afiliados": 1187911,
+      "menciones": 0,
+      "senal": 0,
+      "afiliados_intervenidas": 726857,
+      "categoria": "riesgo_silencioso"
+    },
+    {
+      "dpto": "BOYACÁ",
+      "indice_ponderado": 42.13,
+      "municipios_muy_alto": 19,
+      "afiliados": 1167854,
+      "menciones": 0,
+      "senal": 0,
+      "afiliados_intervenidas": 849612,
+      "categoria": "sin_contraste"
+    },
+    {
+      "dpto": "NARIÑO",
+      "indice_ponderado": 39.25,
+      "municipios_muy_alto": 2,
+      "afiliados": 1439697,
+      "menciones": 0,
+      "senal": 0,
+      "afiliados_intervenidas": 976420,
+      "categoria": "sin_contraste"
+    },
+    {
+      "dpto": "CHOCÓ",
+      "indice_ponderado": 37.25,
+      "municipios_muy_alto": 0,
+      "afiliados": 443023,
+      "menciones": 0,
+      "senal": 0,
+      "afiliados_intervenidas": 228565,
+      "categoria": "sin_contraste"
+    },
+    {
+      "dpto": "CASANARE",
+      "indice_ponderado": 36.46,
+      "municipios_muy_alto": 2,
+      "afiliados": 432294,
+      "menciones": 0,
+      "senal": 0,
+      "afiliados_intervenidas": 324020,
+      "categoria": "sin_contraste"
+    },
+    {
+      "dpto": "TOLIMA",
+      "indice_ponderado": 35.24,
+      "municipios_muy_alto": 4,
+      "afiliados": 1299430,
+      "menciones": 0,
+      "senal": 0,
+      "afiliados_intervenidas": 709427,
+      "categoria": "sin_contraste"
+    },
+    {
+      "dpto": "CALDAS",
+      "indice_ponderado": 32.13,
+      "municipios_muy_alto": 2,
+      "afiliados": 907836,
+      "menciones": 0,
+      "senal": 0,
+      "afiliados_intervenidas": 395711,
+      "categoria": "sin_contraste"
+    },
+    {
+      "dpto": "ARCHIPIÉLAGO DE SAN ANDRÉS, PROVIDENCIA Y SANTA CATALINA",
+      "indice_ponderado": 31.63,
+      "municipios_muy_alto": 0,
+      "afiliados": 60214,
+      "menciones": 0,
+      "senal": 0,
+      "afiliados_intervenidas": 32777,
+      "categoria": "sin_contraste"
+    },
+    {
+      "dpto": "CÓRDOBA",
+      "indice_ponderado": 31.15,
+      "municipios_muy_alto": 0,
+      "afiliados": 1665776,
+      "menciones": 0,
+      "senal": 0,
+      "afiliados_intervenidas": 639829,
+      "categoria": "sin_contraste"
+    },
+    {
+      "dpto": "CESAR",
+      "indice_ponderado": 29.99,
+      "municipios_muy_alto": 0,
+      "afiliados": 1282014,
+      "menciones": 0,
+      "senal": 0,
+      "afiliados_intervenidas": 649599,
+      "categoria": "sin_contraste"
+    },
+    {
+      "dpto": "LA GUAJIRA",
+      "indice_ponderado": 28.92,
+      "municipios_muy_alto": 0,
+      "afiliados": 1146460,
+      "menciones": 0,
+      "senal": 0,
+      "afiliados_intervenidas": 161300,
+      "categoria": "sin_contraste"
+    },
+    {
+      "dpto": "RISARALDA",
+      "indice_ponderado": 28.34,
+      "municipios_muy_alto": 0,
+      "afiliados": 1074287,
+      "menciones": 0,
+      "senal": 0,
+      "afiliados_intervenidas": 437096,
+      "categoria": "sin_contraste"
+    },
+    {
+      "dpto": "BOLÍVAR",
+      "indice_ponderado": 27.9,
+      "municipios_muy_alto": 1,
+      "afiliados": 2342740,
+      "menciones": 0,
+      "senal": 0,
+      "afiliados_intervenidas": 669336,
+      "categoria": "sin_contraste"
+    },
+    {
+      "dpto": "ANTIOQUIA",
+      "indice_ponderado": 27.47,
+      "municipios_muy_alto": 6,
+      "afiliados": 7015413,
+      "menciones": 0,
+      "senal": 0,
+      "afiliados_intervenidas": 1389850,
+      "categoria": "sin_contraste"
+    },
+    {
+      "dpto": "SUCRE",
+      "indice_ponderado": 26.9,
+      "municipios_muy_alto": 0,
+      "afiliados": 940922,
+      "menciones": 0,
+      "senal": 0,
+      "afiliados_intervenidas": 310017,
+      "categoria": "sin_contraste"
+    },
+    {
+      "dpto": "MAGDALENA",
+      "indice_ponderado": 25.89,
+      "municipios_muy_alto": 0,
+      "afiliados": 1395029,
+      "menciones": 0,
+      "senal": 0,
+      "afiliados_intervenidas": 622330,
+      "categoria": "sin_contraste"
+    },
+    {
+      "dpto": "META",
+      "indice_ponderado": 21.77,
+      "municipios_muy_alto": 0,
+      "afiliados": 1078688,
+      "menciones": 0,
+      "senal": 0,
+      "afiliados_intervenidas": 296758,
+      "categoria": "sin_contraste"
+    }
+  ],
+  "estado": "ok",
+  "fecha_corte": "2026-11-12",
+  "generado": "2026-11-12T04:01:11+00:00",
+  "ventana_dias": 30,
+  "modelo_ia": "gemini-3.5-flash-lite",
+  "consultas": [
+    "\"NUEVA EPS\" salud",
+    "COOSALUD salud",
+    "EMSSANAR salud",
+    "\"ASMET SALUD\" salud",
+    "FAMISANAR salud",
+    "EPS SOS salud",
+    "CAPRESOCA salud",
+    "EPS intervenida pacientes",
+    "Supersalud EPS",
+    "hospital cierre servicios EPS deuda",
+    "falta de medicamentos EPS",
+    "crisis de salud municipio EPS"
+  ],
+  "informe": "El análisis de los datos muestra que existe una correlación débil negativa de menos 0,11 con un valor p de 0,541, lo cual indica que no es significativa. Como el valor de spearman_tamano es 0,533 y resulta mayor que spearman_indice, se advierte que las noticias siguen más el tamaño de la población que el riesgo. En cuanto a los departamentos evaluados, los que coinciden son Cauca y Norte de Santander. Por otro lado, los departamentos clasificados con riesgo silencioso, es decir, con riesgo alto sin noticias, son Vichada, Guaviare, Caquetá, Vaupés, Putumayo, Arauca, Amazonas y Huila. El único departamento identificado como posible punto ciego, que corresponde a noticias con riesgo bajo, es Bogotá, D.C. Para finalizar, se debe tener en cuenta como limitación que la prensa cubre más las ciudades y las EPS grandes."
+}
