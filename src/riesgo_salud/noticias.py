@@ -428,13 +428,13 @@ def ejecutar(cfg: dict, fecha: str, gemini: Gemini | None = None, obtener=None) 
     return contraste
 
 
-def etapa(cfg: dict, fecha: str, demo: bool = False) -> dict:
+def etapa(cfg: dict, fecha: str, demo: bool = False, gemini: Gemini | None = None) -> dict:
     """Versión segura para el pipeline: si falla o no hay clave, deja constancia y sigue."""
     salida = ruta(cfg, "resultados", fecha)
     if demo or not cfg.get("noticias", {}).get("activo", False):
         return {"estado": "omitido", "motivo": "desactivado o modo demo"}
     try:
-        return ejecutar(cfg, fecha)
+        return ejecutar(cfg, fecha, gemini)
     except SinClave:
         estado = {"estado": "omitido", "motivo": "no hay GEMINI_API_KEY configurada"}
     except Exception as e:  # noqa: BLE001 - nunca bloquea la publicación del corte

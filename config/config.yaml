@@ -110,9 +110,9 @@ noticias:
 # registrada el 2026-11-12, antes de calcular cualquier cruce. El historial de git lo demuestra.
 # No se cambian los umbrales después de ver los resultados.
 vulnerabilidad:
-  fuentes:
-    ipm: config/referencias/ipm_municipal_2018.csv     # DANE, IPM municipal fuente censal CNPV 2018
-    pdet: config/referencias/municipios_pdet.csv       # ART, 170 municipios PDET (datos.gov.co idrk-ba8y)
+  fuentes:                                           # se descargan en cada corte (oficiales)
+    ipm_url: "https://www.dane.gov.co/files/investigaciones/condiciones_vida/pobreza/2018/informacion-censal/anexo-censal-pobreza-municipal-2018.xlsx"
+    pdet_dataset: idrk-ba8y                            # ART, 170 municipios PDET (datos.gov.co)
   rubrica:
     fecha_registro: "2026-11-12"
     alfa: 0.05                                         # nivel de significancia de todas las pruebas
@@ -137,6 +137,9 @@ vulnerabilidad:
       prueba: binomial
       cuantil: 0.80
       razon_minima: 1.5
+
+fichas:                                  # fichas redactadas por el agente (fichas.py)
+  municipios: 5                          # los N municipios de mayor riesgo
 
 mlflow:
   experimento: riesgo-acceso-salud
