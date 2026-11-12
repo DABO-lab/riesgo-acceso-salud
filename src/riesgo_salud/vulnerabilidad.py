@@ -31,6 +31,17 @@ def _coma(x) -> str:
     return str(x).replace(".", ",")
 
 
+def sin_nan(x):
+    """JSON válido: los NaN de pandas (municipios sin dato, como los creados después del censo) -> null."""
+    if isinstance(x, dict):
+        return {k: sin_nan(v) for k, v in x.items()}
+    if isinstance(x, list):
+        return [sin_nan(v) for v in x]
+    if isinstance(x, float) and np.isnan(x):
+        return None
+    return x
+
+
 # --- Fuentes -----------------------------------------------------------------------------------
 
 
@@ -269,5 +280,7 @@ def etapa(cfg: dict, fecha: str, gemini=None, demo: bool = False) -> dict:
     except Exception as e:  # noqa: BLE001 - complementario: nunca bloquea la publicación
         r = {"estado": "error", "motivo": f"{type(e).__name__}: {e}"[:300], "fecha_corte": fecha}
         print(f"  [vulnerabilidad] error: {r['motivo']}")
-    (salida / "vulnerabilidad.json").write_text(json.dumps(r, ensure_ascii=False, indent=1), encoding="utf-8")
+    (salida / "vulnerabilidad.json").write_text(
+        json.dumps(sin_nan(r), ensure_ascii=False, indent=1, allow_nan=False), encoding="utf-8"
+    )
     return r

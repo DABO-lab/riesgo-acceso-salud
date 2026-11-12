@@ -136,3 +136,9 @@ def test_validacion_ia(cfg_copia, tmp_path):
     assert r["revisadas"] == 20
     assert r["relevancia"]["acuerdo"] == pytest.approx(0.95)
     assert r["departamentos"]["acuerdo"] == 1.0 and r["tipo"]["acuerdo"] == 1.0
+
+
+def test_json_sin_nan():
+    r = vulnerabilidad.sin_nan({"a": float("nan"), "b": [1.0, float("nan")], "c": {"d": np.nan}})
+    assert r == {"a": None, "b": [1.0, None], "c": {"d": None}}
+    json.dumps(r, allow_nan=False)

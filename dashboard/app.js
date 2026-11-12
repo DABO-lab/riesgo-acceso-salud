@@ -64,7 +64,17 @@ async function obtener(ruta, tipo) {
 async function cargarCorte(corte) {
   const base = `datos/${corte.fecha}/`;
   const tiene = new Set(corte.archivos);
-  const pedir = async (nombre) => (tiene.has(nombre) ? obtener(base + nombre, nombre.endsWith(".csv") ? "csv" : "json") : null);
+  const esenciales = new Set(["municipios_riesgo.csv", "calidad.json"]);
+  const pedir = async (nombre) => {
+    if (!tiene.has(nombre)) return null;
+    try {
+      return await obtener(base + nombre, nombre.endsWith(".csv") ? "csv" : "json");
+    } catch (e) {
+      if (esenciales.has(nombre)) throw e;
+      console.warn(`No se pudo leer ${nombre}:`, e);
+      return null;  // solo esa sección queda vacía
+    }
+  };
   const nombres = ["municipios_riesgo.csv", "resumen_departamentos.csv", "resumen_eps.csv", "perfiles_grupos.csv",
     "comparacion_modelos.csv", "calidad.json", "monitoreo.json", "metadatos_corte.json", "metricas_indice.json", "equidad.json",
     "contraste_noticias.json", "noticias.json", "vulnerabilidad.json", "fichas_municipios.json", "validacion_ia.json"];

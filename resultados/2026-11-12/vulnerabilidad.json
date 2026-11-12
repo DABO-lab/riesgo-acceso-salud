@@ -6132,8 +6132,8 @@
   },
   {
    "cod_mpio": "27493",
-   "ipm": NaN,
-   "barreras_salud": NaN,
+   "ipm": null,
+   "barreras_salud": null,
    "pdet": false
   },
   {
