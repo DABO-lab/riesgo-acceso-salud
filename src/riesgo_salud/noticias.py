@@ -353,6 +353,8 @@ def informe(contraste: dict, noticias: list[dict], gemini: Gemini | None) -> str
 para un equipo que mide el riesgo de perder el acceso a la salud por municipio.
 Reglas estrictas:
 - Usa SOLO las cifras y hechos de los datos de abajo. No inventes cifras, causas ni noticias.
+- Escribe para personas no técnicas: nunca uses nombres de variables (como spearman_tamano o
+  p_valor) ni la palabra "Spearman" sin explicarla; di "la relación entre noticias y riesgo".
 - Di con claridad si hay correlación o no entre las noticias y el índice, tal como dice "lectura".
 - Si spearman_tamano es mayor que spearman_indice, advierte que las noticias siguen más el tamaño
   de la población que el riesgo.
