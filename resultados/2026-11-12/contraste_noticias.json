@@ -1,15 +1,15 @@
 {
   "noticias_total": 150,
   "noticias_relevantes": 146,
-  "noticias_nacionales": 112,
+  "noticias_nacionales": 118,
   "pct_sobre_eps_intervenidas": 0.226,
   "por_tipo": {
-    "medicamentos": 75,
-    "deudas_pagos": 30,
-    "tutelas_quejas": 22,
-    "intervencion_supersalud": 9,
+    "medicamentos": 74,
+    "tutelas_quejas": 25,
+    "intervencion_supersalud": 22,
+    "deudas_pagos": 17,
     "cierre_servicios": 5,
-    "otro": 4,
+    "otro": 2,
     "protesta": 1
   },
   "menciones_eps": {
@@ -21,11 +21,11 @@
   "correlacion": {
     "departamentos_con_noticias": 9,
     "suficiente": true,
-    "spearman_indice": -0.11,
-    "p_valor_indice": 0.541,
-    "spearman_tamano": 0.533,
-    "p_valor_tamano": 0.0014,
-    "lectura": "Correlación débil negativa (Spearman -0,11), no significativa (p ≥ 0,05)."
+    "spearman_indice": -0.13,
+    "p_valor_indice": 0.4708,
+    "spearman_tamano": 0.524,
+    "p_valor_tamano": 0.0018,
+    "lectura": "Correlación débil negativa (Spearman -0,13), no significativa (p ≥ 0,05)."
   },
   "departamentos": [
     {
@@ -33,60 +33,50 @@
       "indice_ponderado": 17.53,
       "municipios_muy_alto": 0,
       "afiliados": 7749518,
-      "menciones": 11,
-      "senal": 21,
+      "menciones": 10,
+      "senal": 17,
       "afiliados_intervenidas": 1694325,
       "categoria": "posible_punto_ciego"
-    },
-    {
-      "dpto": "CAUCA",
-      "indice_ponderado": 49.28,
-      "municipios_muy_alto": 11,
-      "afiliados": 1323878,
-      "menciones": 6,
-      "senal": 12,
-      "afiliados_intervenidas": 885312,
-      "categoria": "coinciden"
-    },
-    {
-      "dpto": "VALLE DEL CAUCA",
-      "indice_ponderado": 30.11,
-      "municipios_muy_alto": 10,
-      "afiliados": 4625429,
-      "menciones": 5,
-      "senal": 11,
-      "afiliados_intervenidas": 2936714,
-      "categoria": "sin_contraste"
     },
     {
       "dpto": "SANTANDER",
       "indice_ponderado": 31.2,
       "municipios_muy_alto": 21,
       "afiliados": 2272160,
-      "menciones": 6,
-      "senal": 9,
+      "menciones": 7,
+      "senal": 10,
       "afiliados_intervenidas": 1349485,
       "categoria": "sin_contraste"
+    },
+    {
+      "dpto": "VALLE DEL CAUCA",
+      "indice_ponderado": 30.11,
+      "municipios_muy_alto": 10,
+      "afiliados": 4625429,
+      "menciones": 4,
+      "senal": 8,
+      "afiliados_intervenidas": 2936714,
+      "categoria": "sin_contraste"
+    },
+    {
+      "dpto": "CAUCA",
+      "indice_ponderado": 49.28,
+      "municipios_muy_alto": 11,
+      "afiliados": 1323878,
+      "menciones": 2,
+      "senal": 4,
+      "afiliados_intervenidas": 885312,
+      "categoria": "coinciden"
     },
     {
       "dpto": "NORTE DE SANTANDER",
       "indice_ponderado": 42.5,
       "municipios_muy_alto": 6,
       "afiliados": 1741283,
-      "menciones": 2,
-      "senal": 3,
-      "afiliados_intervenidas": 1175909,
-      "categoria": "coinciden"
-    },
-    {
-      "dpto": "CUNDINAMARCA",
-      "indice_ponderado": 35.45,
-      "municipios_muy_alto": 4,
-      "afiliados": 2784066,
       "menciones": 1,
       "senal": 2,
-      "afiliados_intervenidas": 1498901,
-      "categoria": "sin_contraste"
+      "afiliados_intervenidas": 1175909,
+      "categoria": "coinciden"
     },
     {
       "dpto": "ATLÁNTICO",
@@ -96,7 +86,7 @@
       "menciones": 1,
       "senal": 2,
       "afiliados_intervenidas": 758083,
-      "categoria": "sin_contraste"
+      "categoria": "posible_punto_ciego"
     },
     {
       "dpto": "GUAINÍA",
@@ -106,6 +96,16 @@
       "menciones": 1,
       "senal": 1,
       "afiliados_intervenidas": 53605,
+      "categoria": "sin_contraste"
+    },
+    {
+      "dpto": "CUNDINAMARCA",
+      "indice_ponderado": 35.45,
+      "municipios_muy_alto": 4,
+      "afiliados": 2784066,
+      "menciones": 1,
+      "senal": 1,
+      "afiliados_intervenidas": 1498901,
       "categoria": "sin_contraste"
     },
     {
@@ -361,7 +361,7 @@
   ],
   "estado": "ok",
   "fecha_corte": "2026-11-12",
-  "generado": "2026-11-12T04:01:11+00:00",
+  "generado": "2026-11-12T04:38:23+00:00",
   "ventana_dias": 30,
   "modelo_ia": "gemini-3.5-flash-lite",
   "consultas": [
@@ -378,5 +378,5 @@
     "falta de medicamentos EPS",
     "crisis de salud municipio EPS"
   ],
-  "informe": "El análisis de los datos muestra que existe una correlación débil negativa de menos 0,11 con un valor p de 0,541, lo cual indica que no es significativa. Como el valor de spearman_tamano es 0,533 y resulta mayor que spearman_indice, se advierte que las noticias siguen más el tamaño de la población que el riesgo. En cuanto a los departamentos evaluados, los que coinciden son Cauca y Norte de Santander. Por otro lado, los departamentos clasificados con riesgo silencioso, es decir, con riesgo alto sin noticias, son Vichada, Guaviare, Caquetá, Vaupés, Putumayo, Arauca, Amazonas y Huila. El único departamento identificado como posible punto ciego, que corresponde a noticias con riesgo bajo, es Bogotá, D.C. Para finalizar, se debe tener en cuenta como limitación que la prensa cubre más las ciudades y las EPS grandes."
+  "informe": "El análisis de la relación entre noticias y riesgo muestra una correlación débil negativa y no significativa, lo que indica que no hay una relación directa entre la cantidad de noticias y el nivel de riesgo de perder el acceso a la salud. Además, se advierte que las noticias siguen más el tamaño de la población que el riesgo, ya que este factor muestra una correlación positiva y significativa mayor. En cuanto a los departamentos, Cauca y Norte de Santander figuran como aquellos que coinciden entre las alertas y la cobertura. Por otro lado, Vichada, Guaviare, Caquetá, Vaupés, Putumayo, Arauca, Amazonas y Huila representan un riesgo silencioso al registrar un alto riesgo sin presencia en las noticias. Finalmente, Bogotá, D.C. y Atlántico se identifican como posibles puntos ciegos al tener noticias a pesar de presentar un riesgo bajo, lo que evidencia que la prensa cubre más las ciudades y las EPS grandes."
 }

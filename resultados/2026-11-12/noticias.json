@@ -314,19 +314,6 @@
   "gravedad": 2
  },
  {
-  "titulo": "Supersalud impone medida cautelar a Colsubsidio por retrasos en la entrega de medicamentos a usuarios de EPS Sanitas",
-  "fuente": "El Tiempo",
-  "fecha": "2026-11-11",
-  "enlace": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPTG9JNGdkTk5TMC1GOFFFVm9XejJwUlVFUTBGZTQ5dW13TGFRbGFMdlowMTlYUnFRMGhUbjg0MENURktVTjF5YjhWQkVIdmVaai1EUTFTc0pCakFORWRoRFdYN2hMblkySm1XalRWVnhEbG9WT3RiUTJwakFVWDl3VlNIbEcyQm1BMjhMT1NoTjFnOWFJakI0ajZWUmNiNzBVVm0tSllCcUw2SEFsZUZxLUNCTWV2cW5leExkQkVWM250alVvSFhtVkRwTkF4UExlLV9UbXhyR09rUEZvTkdLZWhaREpnVWVtRVRr0gHwAUFVX3lxTFB2M0NGMHgtZ2FjMjlHMEJCOEFjWlFGa0tEZXctamNwa2lZU2UtOHZ5N3VLQXkyTjN2UnhzY3Z0WDVmZXNZZUsxcFhEdGtMbnhHYjBNV0txbHJMc0ZIeU9SVUVtY1pFVFlxNDVUa2JBUXlHQ3hZZ0ZPbFhnTFJUbmdLa2EweXJSMnpxTW9wODdFaWJxeFpTMlAwcndkbldJNE14YUdHdXlTOVZMSmktVy1TRzh6WFJwZWhFZ0k3SFM2TlRxODBsVnJGN0tFanNKVkRjV1YyMl9YbUZFUkY1QVllanFCc3ZBREYzc3BqYlFCQQ?oc=5",
-  "consulta": "Supersalud EPS",
-  "relevante": true,
-  "eps": [],
-  "departamentos": [],
-  "municipios": [],
-  "tipo": "medicamentos",
-  "gravedad": 2
- },
- {
   "titulo": "Supersalud ordena medida cautelar a EPS Sanitas por crisis en entrega de medicamentos",
   "fuente": "El Expreso",
   "fecha": "2026-11-11",
@@ -405,6 +392,19 @@
   "gravedad": 2
  },
  {
+  "titulo": "Supersalud impone medida cautelar a Colsubsidio por retrasos en la entrega de medicamentos a usuarios de EPS Sanitas",
+  "fuente": "El Tiempo",
+  "fecha": "2026-11-11",
+  "enlace": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPTG9JNGdkTk5TMC1GOFFFVm9XejJwUlVFUTBGZTQ5dW13TGFRbGFMdlowMTlYUnFRMGhUbjg0MENURktVTjF5YjhWQkVIdmVaai1EUTFTc0pCakFORWRoRFdYN2hMblkySm1XalRWVnhEbG9WT3RiUTJwakFVWDl3VlNIbEcyQm1BMjhMT1NoTjFnOWFJakI0ajZWUmNiNzBVVm0tSllCcUw2SEFsZUZxLUNCTWV2cW5leExkQkVWM250alVvSFhtVkRwTkF4UExlLV9UbXhyR09rUEZvTkdLZWhaREpnVWVtRVRr0gHwAUFVX3lxTFB2M0NGMHgtZ2FjMjlHMEJCOEFjWlFGa0tEZXctamNwa2lZU2UtOHZ5N3VLQXkyTjN2UnhzY3Z0WDVmZXNZZUsxcFhEdGtMbnhHYjBNV0txbHJMc0ZIeU9SVUVtY1pFVFlxNDVUa2JBUXlHQ3hZZ0ZPbFhnTFJUbmdLa2EweXJSMnpxTW9wODdFaWJxeFpTMlAwcndkbldJNE14YUdHdXlTOVZMSmktVy1TRzh6WFJwZWhFZ0k3SFM2TlRxODBsVnJGN0tFanNKVkRjV1YyMl9YbUZFUkY1QVllanFCc3ZBREYzc3BqYlFCQQ?oc=5",
+  "consulta": "Supersalud EPS",
+  "relevante": true,
+  "eps": [],
+  "departamentos": [],
+  "municipios": [],
+  "tipo": "medicamentos",
+  "gravedad": 2
+ },
+ {
   "titulo": "Imponen medida cautelar a Sanitas por demoras en entregas de medicamentos",
   "fuente": "Revista Semana",
   "fecha": "2026-11-11",
@@ -428,26 +428,13 @@
   "departamentos": [],
   "municipios": [],
   "tipo": "medicamentos",
-  "gravedad": 1
+  "gravedad": 2
  },
  {
   "titulo": "Supersalud impone medida cautelar a Sanitas por retrasos en la entrega de medicamentos",
   "fuente": "ELHERALDO.CO",
   "fecha": "2026-11-11",
   "enlace": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOZ2ZCeHlwSXRFNXp6ejlIMGdGcnh6TFdNdmZMcEh1T2dDcndyOWpsVkFHY2wtYW9pRGRJWGl5TldmVHhUUDNMU2xjNDBENm8tRWtPV1FQOWpxd1NzN3NaVnBpR2loSkwyZGxXMGx3TGdXa2pDaERSTGYtX2d6NktFSHhLSUZCQW52TEtwYWp3SC1VaE1adkVaY09WUGtCbkZiWXFPRUoxcms1VVYyRW42ZEViUXJ6R1g1ZFJ3cXZLZWVuX0hGVHpkNFhLUkk?oc=5",
-  "consulta": "Supersalud EPS",
-  "relevante": true,
-  "eps": [],
-  "departamentos": [],
-  "municipios": [],
-  "tipo": "medicamentos",
-  "gravedad": 2
- },
- {
-  "titulo": "Supersalud impone medida cautelar a Colsubsidio por fallas en la entrega de medicamentos",
-  "fuente": "Blu Radio",
-  "fecha": "2026-11-11",
-  "enlace": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQSm96dUVDZWNHRVdEU01OandSejluUzQtdDlXRXU0bzNGVXpUekc3WEt1MDhvWGExaXE0OWJjS3YyYW5KZWMycVE1YmdhaHhib283SGg3WjlyNkZkRG40U1NjczhhUDNUdkVvVV9PNmFnNy1GTmVNNUhCUHZ3c3JCdDB1MGhKdGx3Q25SbXZDeDFpMEYyNGFoWnhhVTZBZlo4OEhFelFPNFo1RUZLa1dnZ2N4LXFMbzNRRXFHX0RyM1R3d9IBzwFBVV95cUxNcXZnc19GbWZqaWRKVkpNazl6YXpXOXA4cTlDdmZwYkpHV2RWT0s0X3dTOFQ4UFdEN1RNOHFXdXMwU3hERjUzTUl4ZFRoTkFKcnpVNWhfczF3cDBkemVpREo1NlJFbWdsUUtodmJNTHV1cXdIVElvOVlvLVdIX05zamZJWlRMMEpadnF6eWpqamxlcUVQb2NCajhPNjZUZDI0LTk0dl92LXVkWDhDbGNZcDdia3Nmb2pZdWVlRllIUG84bmJ3eU1KUzBKelJJRFU?oc=5",
   "consulta": "Supersalud EPS",
   "relevante": true,
   "eps": [],
@@ -467,7 +454,7 @@
   "departamentos": [],
   "municipios": [],
   "tipo": "medicamentos",
-  "gravedad": 1
+  "gravedad": 2
  },
  {
   "titulo": "Usuarios de EPS Sanitas: Supersalud ordena garantizar la entrega de medicamentos",
@@ -480,7 +467,7 @@
   "departamentos": [],
   "municipios": [],
   "tipo": "medicamentos",
-  "gravedad": 1
+  "gravedad": 2
  },
  {
   "titulo": "Por demoras en la entrega de medicamentos, Supersalud impone medida cautelar a EPS Sanitas",
@@ -496,10 +483,10 @@
   "gravedad": 2
  },
  {
-  "titulo": "Supersalud ordenó a la EPS Sanitas corregir de inmediato las fallas en la entrega de medicamentos",
-  "fuente": "IFM Noticias",
+  "titulo": "Medida cautelar a EPS Sanitas por demoras en entrega de medicamentos",
+  "fuente": "El Espectador",
   "fecha": "2026-11-11",
-  "enlace": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQWVdLMDhRdzFRMWJCUTFlWTNiSDQ0M24wb1JvdmNlSDJBN2NaRVg3bm9QbllTUVJOYjJOOEx3Ry13QVhRVF9kRWtYQVI0d2ZrUU84bE1nT1lKMVZvd2lRcThUbjJZek5iOFFNNDZveDNtQi15eURManhSNkRoeGlNWmMwa3dFYVhqNFlBRnc5ZGFzSERzREl0MFE0Ymkyb3FOa2dTRXhxMFlEbGFOTWVaRUZkTjI?oc=5",
+  "enlace": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOektWQkFNN3Q0aHA1LVBMUGx6Q0RxZmZoQjN4eS1BMkpRYkluWm0tOFF2alo5SF9Bb3IwUlNDUl9xTnNPQWIxVEV1bU82by0wVlNuNXhiSldoOFVmWGkzWWFfR0YwRFpfMlltM21GWldqM19WVnMzWUtzdlBXcmg0VlQzanBmU3QtSVZ6Y0FKSDlHOWRhbTFlNmFnS3hvQkFTNjgzNdIBuAFBVV95cUxQM24wRHh2dzJRU1JpMUdOWHExVWNmcTdqcVlKT2tEcnhLWXB4LU9GRmFEaVNkeHlwR0RTaEJXSHNMbTlKUVd6UEpOTzRXVElDN1E4ZTNZbUhxeW5oU2c3VWE5NGltemt0b2huRXRVMmJfNXh6OU9MdDJnaFp4YmdDRVhrd3JuVmY3V1MyM3d6dzlHdFpPNE9MX2MzNl9UbnhubDlfZGlKazlHQU15YzhKc0FuOXM2RDZP?oc=5",
   "consulta": "Supersalud EPS",
   "relevante": true,
   "eps": [],
@@ -509,10 +496,10 @@
   "gravedad": 2
  },
  {
-  "titulo": "Medida cautelar a EPS Sanitas por demoras en entrega de medicamentos",
-  "fuente": "El Espectador",
+  "titulo": "Supersalud ordenó a la EPS Sanitas corregir de inmediato las fallas en la entrega de medicamentos",
+  "fuente": "IFM Noticias",
   "fecha": "2026-11-11",
-  "enlace": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOektWQkFNN3Q0aHA1LVBMUGx6Q0RxZmZoQjN4eS1BMkpRYkluWm0tOFF2alo5SF9Bb3IwUlNDUl9xTnNPQWIxVEV1bU82by0wVlNuNXhiSldoOFVmWGkzWWFfR0YwRFpfMlltM21GWldqM19WVnMzWUtzdlBXcmg0VlQzanBmU3QtSVZ6Y0FKSDlHOWRhbTFlNmFnS3hvQkFTNjgzNdIBuAFBVV95cUxQM24wRHh2dzJRU1JpMUdOWHExVWNmcTdqcVlKT2tEcnhLWXB4LU9GRmFEaVNkeHlwR0RTaEJXSHNMbTlKUVd6UEpOTzRXVElDN1E4ZTNZbUhxeW5oU2c3VWE5NGltemt0b2huRXRVMmJfNXh6OU9MdDJnaFp4YmdDRVhrd3JuVmY3V1MyM3d6dzlHdFpPNE9MX2MzNl9UbnhubDlfZGlKazlHQU15YzhKc0FuOXM2RDZP?oc=5",
+  "enlace": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQWVdLMDhRdzFRMWJCUTFlWTNiSDQ0M24wb1JvdmNlSDJBN2NaRVg3bm9QbllTUVJOYjJOOEx3Ry13QVhRVF9kRWtYQVI0d2ZrUU84bE1nT1lKMVZvd2lRcThUbjJZek5iOFFNNDZveDNtQi15eURManhSNkRoeGlNWmMwa3dFYVhqNFlBRnc5ZGFzSERzREl0MFE0Ymkyb3FOa2dTRXhxMFlEbGFOTWVaRUZkTjI?oc=5",
   "consulta": "Supersalud EPS",
   "relevante": true,
   "eps": [],
@@ -565,6 +552,19 @@
   "gravedad": 2
  },
  {
+  "titulo": "Supersalud impone medida cautelar a Colsubsidio por fallas en la entrega de medicamentos",
+  "fuente": "Blu Radio",
+  "fecha": "2026-11-11",
+  "enlace": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQSm96dUVDZWNHRVdEU01OandSejluUzQtdDlXRXU0bzNGVXpUekc3WEt1MDhvWGExaXE0OWJjS3YyYW5KZWMycVE1YmdhaHhib283SGg3WjlyNkZkRG40U1NjczhhUDNUdkVvVV9PNmFnNy1GTmVNNUhCUHZ3c3JCdDB1MGhKdGx3Q25SbXZDeDFpMEYyNGFoWnhhVTZBZlo4OEhFelFPNFo1RUZLa1dnZ2N4LXFMbzNRRXFHX0RyM1R3d9IBzwFBVV95cUxNcXZnc19GbWZqaWRKVkpNazl6YXpXOXA4cTlDdmZwYkpHV2RWT0s0X3dTOFQ4UFdEN1RNOHFXdXMwU3hERjUzTUl4ZFRoTkFKcnpVNWhfczF3cDBkemVpREo1NlJFbWdsUUtodmJNTHV1cXdIVElvOVlvLVdIX05zamZJWlRMMEpadnF6eWpqamxlcUVQb2NCajhPNjZUZDI0LTk0dl92LXVkWDhDbGNZcDdia3Nmb2pZdWVlRllIUG84bmJ3eU1KUzBKelJJRFU?oc=5",
+  "consulta": "Supersalud EPS",
+  "relevante": true,
+  "eps": [],
+  "departamentos": [],
+  "municipios": [],
+  "tipo": "medicamentos",
+  "gravedad": 1
+ },
+ {
   "titulo": "Para resolver los problemas en la entrega de medicamentos en Colsubsidio, estas son las medidas de contingencia que anunció la EPS Sanitas: la Superintendencia de Salud le impuso medidas cautelares",
   "fuente": "Infobae",
   "fecha": "2026-11-11",
@@ -575,7 +575,7 @@
   "departamentos": [],
   "municipios": [],
   "tipo": "medicamentos",
-  "gravedad": 2
+  "gravedad": 1
  },
  {
   "titulo": "Sanitas anuncia medidas para normalizar entrega de medicamentos tras intervención de la Supersalud",
@@ -588,7 +588,7 @@
   "departamentos": [],
   "municipios": [],
   "tipo": "medicamentos",
-  "gravedad": 2
+  "gravedad": 1
  },
  {
   "titulo": "Supersalud impuso medida cautelar a Colsubsidio por fallas en entrega de medicamentos",
@@ -601,7 +601,7 @@
   "departamentos": [],
   "municipios": [],
   "tipo": "medicamentos",
-  "gravedad": 2
+  "gravedad": 1
  },
  {
   "titulo": "Demoras en medicamentos: qué implica la medida de la Supersalud contra Sanitas y qué responde la EPS",
@@ -614,7 +614,7 @@
   "departamentos": [],
   "municipios": [],
   "tipo": "medicamentos",
-  "gravedad": 2
+  "gravedad": 1
  },
  {
   "titulo": "Supersalud impone medida cautelar a Colsubsidio por fallas en entrega de medicamentos a usuarios de EPS Sanitas | El Colombiano",
@@ -627,7 +627,7 @@
   "departamentos": [],
   "municipios": [],
   "tipo": "medicamentos",
-  "gravedad": 2
+  "gravedad": 1
  },
  {
   "titulo": "Supersalud ordena a Sanitas responder por demoras en medicam",
@@ -637,12 +637,10 @@
   "consulta": "Supersalud EPS",
   "relevante": true,
   "eps": [],
-  "departamentos": [
-   "CAUCA"
-  ],
+  "departamentos": [],
   "municipios": [],
   "tipo": "medicamentos",
-  "gravedad": 2
+  "gravedad": 1
  },
  {
   "titulo": "Medidas cautelares a Sanitas por demoras con medicamentos; Supersalud exige respuestas",
@@ -655,7 +653,7 @@
   "departamentos": [],
   "municipios": [],
   "tipo": "medicamentos",
-  "gravedad": 2
+  "gravedad": 1
  },
  {
   "titulo": "Entrega de medicamentos de Sanitas: Supersalud impone medida cautelar a Colsubsidio",
@@ -668,7 +666,7 @@
   "departamentos": [],
   "municipios": [],
   "tipo": "medicamentos",
-  "gravedad": 2
+  "gravedad": 1
  },
  {
   "titulo": "Supersalud impone medida cautelar a Sanitas por demoras en l",
@@ -678,12 +676,10 @@
   "consulta": "Supersalud EPS",
   "relevante": true,
   "eps": [],
-  "departamentos": [
-   "CAUCA"
-  ],
+  "departamentos": [],
   "municipios": [],
   "tipo": "medicamentos",
-  "gravedad": 2
+  "gravedad": 1
  },
  {
   "titulo": "Supersalud ordenó medida cautelar contra Colsubsidio por retrasos en entrega de medicamentos a la EPS Sanitas",
@@ -693,12 +689,10 @@
   "consulta": "Supersalud EPS",
   "relevante": true,
   "eps": [],
-  "departamentos": [
-   "VALLE DEL CAUCA"
-  ],
+  "departamentos": [],
   "municipios": [],
   "tipo": "medicamentos",
-  "gravedad": 2
+  "gravedad": 1
  },
  {
   "titulo": "Supersalud amplía la presión sobre la dispensación de Sanitas con una medida contra Colsubsidio",
@@ -711,7 +705,7 @@
   "departamentos": [],
   "municipios": [],
   "tipo": "medicamentos",
-  "gravedad": 2
+  "gravedad": 1
  },
  {
   "titulo": "Supersalud impone medida cautelar a Colsubsidio por fallas en entrega de medicamentos a Sanitas",
@@ -724,7 +718,7 @@
   "departamentos": [],
   "municipios": [],
   "tipo": "medicamentos",
-  "gravedad": 2
+  "gravedad": 1
  },
  {
   "titulo": "Estos son los 19 puntos que entregan medicamentos de Sanitas desde las 6 a. m. en Bogotá",
@@ -741,7 +735,7 @@
    "Bogotá"
   ],
   "tipo": "medicamentos",
-  "gravedad": 2
+  "gravedad": 1
  },
  {
   "titulo": "Demoras en la entrega de medicamentos encienden las alarmas en Colombia.",
@@ -751,12 +745,10 @@
   "consulta": "Supersalud EPS",
   "relevante": true,
   "eps": [],
-  "departamentos": [
-   "CAUCA"
-  ],
+  "departamentos": [],
   "municipios": [],
   "tipo": "medicamentos",
-  "gravedad": 2
+  "gravedad": 1
  },
  {
   "titulo": "Tatequieto a EPS Sanitas en el Gobierno De La Espriella: Supersalud avisa a millones de afiliados las medidas",
@@ -769,7 +761,7 @@
   "departamentos": [],
   "municipios": [],
   "tipo": "medicamentos",
-  "gravedad": 2
+  "gravedad": 1
  },
  {
   "titulo": "Supersalud ordena medida cautelar a EPS Sanitas por sus medicamentos",
@@ -786,7 +778,7 @@
    "Buenaventura"
   ],
   "tipo": "medicamentos",
-  "gravedad": 2
+  "gravedad": 1
  },
  {
   "titulo": "Supersalud ordena a EPS Sanitas entregar medicamentos sin más demoras: pacientes de alto riesgo con prioridad",
@@ -799,7 +791,7 @@
   "departamentos": [],
   "municipios": [],
   "tipo": "medicamentos",
-  "gravedad": 2
+  "gravedad": 1
  },
  {
   "titulo": "Sanitas bajo presión por demoras en la entrega de medicamentos",
@@ -812,7 +804,7 @@
   "departamentos": [],
   "municipios": [],
   "tipo": "medicamentos",
-  "gravedad": 2
+  "gravedad": 1
  },
  {
   "titulo": "SuperSalud impuso medida cautelar a EPS Sanitas por demoras y entregas incompletas de medicamentos",
@@ -825,7 +817,7 @@
   "departamentos": [],
   "municipios": [],
   "tipo": "medicamentos",
-  "gravedad": 2
+  "gravedad": 1
  },
  {
   "titulo": "Por inconvenientes en la entrega de medicamentos a usuarios de EPS Sanitas, imponen medida cautelar contra Colsubsidio",
@@ -839,6 +831,19 @@
   "municipios": [],
   "tipo": "medicamentos",
   "gravedad": 2
+ },
+ {
+  "titulo": "Sanitas, a espabilarse con la entrega de medicamentos; Supersalud le cayó y le puso tareas claras",
+  "fuente": "Alerta",
+  "fecha": "2026-11-11",
+  "enlace": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNVTdHTENBOUtER0VLM0thRzUwVU1uc1Yycm9wZm55OVctTmFnN3c5d3RFREk5OXFrZ0xMSmtXZkVMRklRaUlJVjZsaUV6N0hKTm5mc18zZVlfS1VIWG9pel9OQVNxanhLQ2VUSzc2V1FuSDJDdjhtSUd4VVlfYmRaaW9MZy1WYktLMDVvdG1ham90ZVpseUZ5cXdLX2gwTURyaGFkSElyamVNQ0VaTzlyWDNjYlFwWWRtRmNJ0gG7AUFVX3lxTFA1Q3BEM1JqRkN4NXo5SzRfOWh6UTl6QWJQbGN5VUdpQnpXUUUyanFoT1ltckZDcGRKYWsyWWlaQUVJeXl1Z2xkMDNvRFpCb2dPanFxOHhBMXAxR3hGNmdHUGZIMDlxNzlTZkZVWW45bTFIZ2pTWlF2b1N0ZFhRdnNEb0VBUmZCQldNRm5UVDhLYkhYUTRhc3VHR1VWc21fbENYSUtMcVRvV1RNelFna01Lckw1OFowZm40QXM?oc=5",
+  "consulta": "Supersalud EPS",
+  "relevante": true,
+  "eps": [],
+  "departamentos": [],
+  "municipios": [],
+  "tipo": "medicamentos",
+  "gravedad": 1
  },
  {
   "titulo": "“No es falta de medicamentos, es un problema de congestión”: EPS Sanitas responde por largas filas",
@@ -887,8 +892,12 @@
   "consulta": "crisis de salud municipio EPS",
   "relevante": false,
   "eps": [],
-  "departamentos": [],
-  "municipios": [],
+  "departamentos": [
+   "CUNDINAMARCA"
+  ],
+  "municipios": [
+   "Tocancipá"
+  ],
   "tipo": "otro",
   "gravedad": 1
  },
@@ -977,9 +986,11 @@
   "eps": [
    "NUEVA EPS"
   ],
-  "departamentos": [],
+  "departamentos": [
+   "SANTANDER"
+  ],
   "municipios": [],
-  "tipo": "deudas_pagos",
+  "tipo": "cierre_servicios",
   "gravedad": 1
  },
  {
@@ -1164,7 +1175,7 @@
   "eps": [],
   "departamentos": [],
   "municipios": [],
-  "tipo": "deudas_pagos",
+  "tipo": "intervencion_supersalud",
   "gravedad": 1
  },
  {
@@ -1177,7 +1188,7 @@
   "eps": [],
   "departamentos": [],
   "municipios": [],
-  "tipo": "deudas_pagos",
+  "tipo": "intervencion_supersalud",
   "gravedad": 1
  },
  {
@@ -1190,7 +1201,7 @@
   "eps": [],
   "departamentos": [],
   "municipios": [],
-  "tipo": "deudas_pagos",
+  "tipo": "intervencion_supersalud",
   "gravedad": 1
  },
  {
@@ -1203,7 +1214,7 @@
   "eps": [],
   "departamentos": [],
   "municipios": [],
-  "tipo": "deudas_pagos",
+  "tipo": "intervencion_supersalud",
   "gravedad": 1
  },
  {
@@ -1217,6 +1228,19 @@
   "departamentos": [],
   "municipios": [],
   "tipo": "medicamentos",
+  "gravedad": 1
+ },
+ {
+  "titulo": "Supersalud identificó inconsistencias por $356 mil millones en giros solicitados por EPS",
+  "fuente": "Seguimiento.co",
+  "fecha": "2026-11-10",
+  "enlace": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNQU5yc050NjBNVHJaSU4zLUFBbTBXTXQ3MzVQcXVjVF9yaTdybks1ZEZvR2I5ems5cDdjb3l2amlIT1Q5S0NxeDVRTWlydXdKOTJXdW14V1c5ZE8xR1dPemlEbC04dVM2UnJMajc1WUNGS0lFWXlETk9ZRkVwSzJVWkhPaXhfU0FmMmU5NlVveGExZVAtS185LUVhUGE0MEpYTTdKTzRVX0IxQ2JNVkl4bXlHeDBKbkU1ZDJ4dXRweDZxQm9MMHdXNC1R?oc=5",
+  "consulta": "Supersalud EPS",
+  "relevante": true,
+  "eps": [],
+  "departamentos": [],
+  "municipios": [],
+  "tipo": "intervencion_supersalud",
   "gravedad": 1
  },
  {
@@ -1274,19 +1298,6 @@
   "gravedad": 1
  },
  {
-  "titulo": "Supersalud detectó posibles inconsistencias por $356.500 millones en giros directos de las EPS",
-  "fuente": "Caracol Radio",
-  "fecha": "2026-11-09",
-  "enlace": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNYnF3SWZmSmtsQUNZMTBjRmVIRzZZSUo2NElLOEN2a0pkaDJFRERTQU5rWXhIRXpfTldoSDI0ZjVYYWxRZHloeFR0ZHRSdVVZNkg1N2wzQzU4TktTQUVUc3g3OUk1Y3dwMGlmekI5RHJuNFdyUlBwcnVOM2VrcnRNNGJwWHl5dDQ4d2M4UkgxNUI2ZXdiS3VkRkhCYmVvdm5JVmRkWkdlckZLSFczRmFucTlUeWU4RUN3bndXZDdMVndUY21Vc1HSAdoBQVVfeXFMTWdLQkU5cVh3RGtJWGxuWlZaRUhQXzZTWmxvenA0V3Rna1NZeGRjWDNSbmxqTXZCejMxUzloNS1XT0dYczJLNENjcEFkX1hTNjNSaXlFaUhVZTAyR213cFAxU0ZrYk52Z1VmQTNKQ05vRHExVElXYTIwVlpBbU1mSmNTVThjQzZVaFRVUUlQT0NQRGd2QkM0ak1FM09fOGVVdnE2bWRHOFFiQ2ZFcGpkbE84azRTOWx0cllCR1RSYnJLcll2M2syWDZJcW5hbHpCbXh1VjNzQ3pPdUE?oc=5",
-  "consulta": "Supersalud EPS",
-  "relevante": true,
-  "eps": [],
-  "departamentos": [],
-  "municipios": [],
-  "tipo": "deudas_pagos",
-  "gravedad": 1
- },
- {
   "titulo": "Supersalud detecta alertas por $356.500 millones en el giro directo tras revisar $4,3 billones",
   "fuente": "consultorsalud",
   "fecha": "2026-11-09",
@@ -1296,7 +1307,20 @@
   "eps": [],
   "departamentos": [],
   "municipios": [],
-  "tipo": "deudas_pagos",
+  "tipo": "intervencion_supersalud",
+  "gravedad": 1
+ },
+ {
+  "titulo": "Supersalud detectó posibles inconsistencias por $356.500 millones en giros directos de las EPS",
+  "fuente": "Caracol Radio",
+  "fecha": "2026-11-09",
+  "enlace": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNYnF3SWZmSmtsQUNZMTBjRmVIRzZZSUo2NElLOEN2a0pkaDJFRERTQU5rWXhIRXpfTldoSDI0ZjVYYWxRZHloeFR0ZHRSdVVZNkg1N2wzQzU4TktTQUVUc3g3OUk1Y3dwMGlmekI5RHJuNFdyUlBwcnVOM2VrcnRNNGJwWHl5dDQ4d2M4UkgxNUI2ZXdiS3VkRkhCYmVvdm5JVmRkWkdlckZLSFczRmFucTlUeWU4RUN3bndXZDdMVndUY21Vc1HSAdoBQVVfeXFMTWdLQkU5cVh3RGtJWGxuWlZaRUhQXzZTWmxvenA0V3Rna1NZeGRjWDNSbmxqTXZCejMxUzloNS1XT0dYczJLNENjcEFkX1hTNjNSaXlFaUhVZTAyR213cFAxU0ZrYk52Z1VmQTNKQ05vRHExVElXYTIwVlpBbU1mSmNTVThjQzZVaFRVUUlQT0NQRGd2QkM0ak1FM09fOGVVdnE2bWRHOFFiQ2ZFcGpkbE84azRTOWx0cllCR1RSYnJLcll2M2syWDZJcW5hbHpCbXh1VjNzQ3pPdUE?oc=5",
+  "consulta": "Supersalud EPS",
+  "relevante": true,
+  "eps": [],
+  "departamentos": [],
+  "municipios": [],
+  "tipo": "intervencion_supersalud",
   "gravedad": 1
  },
  {
@@ -1309,7 +1333,7 @@
   "eps": [],
   "departamentos": [],
   "municipios": [],
-  "tipo": "deudas_pagos",
+  "tipo": "intervencion_supersalud",
   "gravedad": 1
  },
  {
@@ -1322,20 +1346,7 @@
   "eps": [],
   "departamentos": [],
   "municipios": [],
-  "tipo": "deudas_pagos",
-  "gravedad": 1
- },
- {
-  "titulo": "Supersalud detectó posibles inconsistencias por $356.500 millones en el giro directo de las EPS",
-  "fuente": "La FM",
-  "fecha": "2026-11-09",
-  "enlace": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOVzJFSXgxU0w1T0otbHhsYks4WC1lVFV2a2poc2NDc0R4M3ViTFlndDFNd1cyRTF1ejJYTzhWbE14WHltMUZ2VG12R1FjcXgweWVScm9vYjcyQnNNWjZNX0hWd0JMbnVLWVpQT1BrejFhTnFFVGFBOTNJOW05T0VIM0R5clJhcHBHRkwwM05Wc3c3TXNuWDdjVThsU2pHMjg4NG16QW9tYmVWWVFjblV3bEpMVHNTWHk0M3NNYXpJaHpBajZFM3VWSFEyMS16cUtBYm1UdmtQQTBNZ9IB2gFBVV95cUxOM054cWgtczVIVGhjQWpaVEJUblYtdjdna250ZDRQYXVVUGd0dTY2c1o2d0lVZy1iLUJaUGNTLVZkZk8wRnV6YlFpeXlFcmdoMHdYVjRiUjU4b3FXSzBrT3AzbUE4bHNCRThKb2dpbUd1czh3ZlU0TVN1eElQVUY3bTBlSTN3YVA5UmJwb0hXNTJwNjJ3eDdwRFowcC1SVGppV3p0ZTRuQkFqT2dwclJadGdEYWRROFg1MWZZakdoeDUxXzRuRl9oYVQ1ZGdFMmxfVGxxN2xJeWhiUQ?oc=5",
-  "consulta": "Supersalud EPS",
-  "relevante": true,
-  "eps": [],
-  "departamentos": [],
-  "municipios": [],
-  "tipo": "deudas_pagos",
+  "tipo": "intervencion_supersalud",
   "gravedad": 1
  },
  {
@@ -1348,37 +1359,33 @@
   "eps": [],
   "departamentos": [],
   "municipios": [],
-  "tipo": "deudas_pagos",
+  "tipo": "intervencion_supersalud",
   "gravedad": 1
  },
  {
   "titulo": "Supersalud detectó posibles inconsistencias por $356.500 millones en giros de las EPS",
-  "fuente": "La Opinión Cúcuta",
+  "fuente": "laopinion.com.co",
   "fecha": "2026-11-09",
-  "enlace": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNVk16Qy1ORThNV29OUml6MVdxOVJaMFh0dnlHaU5rUDV3bmhzYjJzVVZfZXJkVnlHczFnMkNwLWVIVHpCckQ2RjdtSS1QVjRWMVdPSEdqOU9fSDFtLVRYZVNFY2tlNlVjM1I4NlQ5eHRuVG1PRzRQeXNNb1pOMEVianFHSnZNU1gwV0p0Qi00bXdXVkRGMHdHRThvRVpUWmhCZWxGeHY4MUpXbHp5MjVxb0J5OA?oc=5",
-  "consulta": "Supersalud EPS",
-  "relevante": true,
-  "eps": [],
-  "departamentos": [
-   "NORTE DE SANTANDER"
-  ],
-  "municipios": [
-   "Cúcuta"
-  ],
-  "tipo": "deudas_pagos",
-  "gravedad": 1
- },
- {
-  "titulo": "Supersalud identificó \"inconsistencias\" por $356 mil millones en giros solicitados por EPS",
-  "fuente": "Zona Cero",
-  "fecha": "2026-11-09",
-  "enlace": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQYlVBV0hmVW5HeWhmNFdsU1ZUYTBFZWw4SVQ1eWpCX2M0OGR6Q1Y3MnFoT3hJLTZzYzFzdllEODI4cnk4TWhvMGhtaThTMkVXUENvckZ2Y3hLUFctZ0lkZ2xRT0pzWHRCLWp0d3d2V3Z2UnF0WTllVEJ3Q1FaX1BEUXgyazVjanVqbGFkOGdyUU9COFlkVFlUWUpXaDZpbHp4Mkk0bmR4Q2xIRWdJeGlmMXAyc01XMV9l?oc=5",
+  "enlace": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPZ0kwZml5SHY4NGFhc3R2cFE5VWZjUm1tQktGa2t1OWJyS05XSkkwTnBkYmZkSjg4VHdkZUpJa2l5a1dnbkVyTkcxVUFwbWVHMUNzR21iRGd0YzJMYUNUQjBvQXkwMWhvSHdJV0dzYkR2SzFyMDFkVjBOUVpwaUFFZ0J3VGtOTEhxam5rV2ZMQi1LTExMQTJJcEV5SWgza3JqcjYzZG5UZk1GaldxTlJkMlEyNlk5OW9kWXlXc1V3?oc=5",
   "consulta": "Supersalud EPS",
   "relevante": true,
   "eps": [],
   "departamentos": [],
   "municipios": [],
-  "tipo": "deudas_pagos",
+  "tipo": "intervencion_supersalud",
+  "gravedad": 1
+ },
+ {
+  "titulo": "Supersalud detectó posibles inconsistencias por $356.500 millones en el giro directo de las EPS",
+  "fuente": "La FM",
+  "fecha": "2026-11-09",
+  "enlace": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOVzJFSXgxU0w1T0otbHhsYks4WC1lVFV2a2poc2NDc0R4M3ViTFlndDFNd1cyRTF1ejJYTzhWbE14WHltMUZ2VG12R1FjcXgweWVScm9vYjcyQnNNWjZNX0hWd0JMbnVLWVpQT1BrejFhTnFFVGFBOTNJOW05T0VIM0R5clJhcHBHRkwwM05Wc3c3TXNuWDdjVThsU2pHMjg4NG16QW9tYmVWWVFjblV3bEpMVHNTWHk0M3NNYXpJaHpBajZFM3VWSFEyMS16cUtBYm1UdmtQQTBNZ9IB2gFBVV95cUxOM054cWgtczVIVGhjQWpaVEJUblYtdjdna250ZDRQYXVVUGd0dTY2c1o2d0lVZy1iLUJaUGNTLVZkZk8wRnV6YlFpeXlFcmdoMHdYVjRiUjU4b3FXSzBrT3AzbUE4bHNCRThKb2dpbUd1czh3ZlU0TVN1eElQVUY3bTBlSTN3YVA5UmJwb0hXNTJwNjJ3eDdwRFowcC1SVGppV3p0ZTRuQkFqT2dwclJadGdEYWRROFg1MWZZakdoeDUxXzRuRl9oYVQ1ZGdFMmxfVGxxN2xJeWhiUQ?oc=5",
+  "consulta": "Supersalud EPS",
+  "relevante": true,
+  "eps": [],
+  "departamentos": [],
+  "municipios": [],
+  "tipo": "intervencion_supersalud",
   "gravedad": 1
  },
  {
@@ -1399,19 +1406,6 @@
   "fuente": "Blu Radio",
   "fecha": "2026-11-09",
   "enlace": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPMjhoTDIzcjJMT1RhQW15Q1BER1lfWmdudlZFeFVFVDBsdnI1cVpYQ3VUNmFrUjZOOWVYSEN6dml6dUVhLWdhSl9zTHR6VzdSclJIaHROUG1Ham91ZHFmLW8xWmpXbTNYLVpMZy03dmN4anJBalVPSGVGU1ZwOVlyOW9paFZoMkFOck5NblBFV2l3M2gzR3NqbE9GVnU5U25tQ1g3a0dEemVZTGhvSEJza0VxbGhzX1M0alBCOVhZU1JicjlvRlJqSlNMT2JBSknSAdwBQVVfeXFMTVJ6a1ZDX01XZ2FacVpTZDZ3VGFpWjFvWXF2dy1vNEgtVm1Pd1N2ZE53SEtiMmpMWEhCS0hSQ2w3RU5jV1FwLVFIdUY1dE9IMDFaUTNueTdrNElzWTByUVNEZEV6aE93SFB3c2NFR21hUnhNM2NHUmViYUtOc3oyS0JibE9Odnhzb1VzSndHcll1S2dKUWhpRWgwZnF0MHVnQnZLOE5uR0ZyX0lFNUVKUEpSaHhGMVY3WXJfdUZqMVVXWm9ZbWVsYkZsRlU1YW53WFQyMVp4Ym9jcUNZNA?oc=5",
-  "consulta": "Supersalud EPS",
-  "relevante": true,
-  "eps": [],
-  "departamentos": [],
-  "municipios": [],
-  "tipo": "intervencion_supersalud",
-  "gravedad": 1
- },
- {
-  "titulo": "Supersalud detectó posibles inconsistencias por COP 356.500 millones en giros directos",
-  "fuente": "El Espectador",
-  "fecha": "2026-11-09",
-  "enlace": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOZmlMV3pHVTFVV0VTYkNVdDdYY01TMnhaeTUtQkk5YVVad0w1UUFXNkUzTklLbjM5dGlMTDlXdG4yTDNNdGQ1U2NSbU1kdXMyRi1XTWZ6SDFiSGFoeGJ5SHdIelR5bWhpR3dRQlEzQnFsLUtQandUOTBQY0VWWHBmMTk1blVqRXJYR0VIV1NzTmlrSldhVWdZOXlqLXdHdl95MW9ROTJvVjhuQWk0M1VCeGlCNWtJMy1RcG5GOW93WdIB0wFBVV95cUxNVThHT1NDXzI2bFFLd0JSU29qbF9sYmRVMFkwOTlwUThFTGIyRi0tbEk2eENzdjhhMDZIUk5vSVR6NUhLMGZvdFo4MmkycHNJNTNZbjBPejdoRFRranNrM3ZJSnNsWmJQeEhEbnJJUHFFN3p1bUJaS0tRcHJtemxneERWZHBPeGsycUFySHItck5XTWRQcWc0RThHSWRuNWZqMkJrN1Y0U1lzUWd3YjBQeVVMUXBlc3JqRmF3cDlsUklUa1RrN0FEdURpOXJTNVZLZU9R?oc=5",
   "consulta": "Supersalud EPS",
   "relevante": true,
   "eps": [],
@@ -1461,32 +1455,6 @@
   "departamentos": [],
   "municipios": [],
   "tipo": "medicamentos",
-  "gravedad": 1
- },
- {
-  "titulo": "Supersalud puso bajo la lupa $356.500 millones en recursos de las EPS por posibles inconsistencias",
-  "fuente": "Diario La Libertad",
-  "fecha": "2026-11-09",
-  "enlace": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOaWxkWURLdkw4bTd4U3V5ajFlMHIzbWJleXI0YlhsVjYxNkJXaGNrY1VFbXNHOFpDWHlMblVkZE1NSmNpaUFxWXNZRmhyRmhkWnYyYXpCc0pRQVhfMmpiNFA2bC13b2x4MjBPUXdkWl9SejJYRDI0UzR2NHM2WjFGWkdRcWNNb3pBdDhrVUhFRlJwaWxRYzl4U21EaDNsLXFKQWlha29LNFZZLTVraHEzaktIS0dLcVI4b0VKVEFqc2pxamZQdy15OFB6cXRSSnN2UEV4bQ?oc=5",
-  "consulta": "Supersalud EPS",
-  "relevante": true,
-  "eps": [],
-  "departamentos": [],
-  "municipios": [],
-  "tipo": "intervencion_supersalud",
-  "gravedad": 1
- },
- {
-  "titulo": "Detectan posibles inconsistencias en recursos girados a las EPS: alerta Supersalud",
-  "fuente": "Eluniversal.com.co",
-  "fecha": "2026-11-09",
-  "enlace": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPT0ZDeTVfbHQ5YzJ0QUZWWnlLbm92WDVILVkyLXN1NzNwdUdEZE5ZY0VnSlJwSENjWU5BbzNFTk9aNE53a1FIVW9RcHhDTHhPaWgtOEZRclFTS1dMWk9xT2FwWDd5aDFtcklBWmNvLXM0SThvM3l4SHl1US1sVnhmWDdndGQ1NXBma2NUejdqTnJIRk1ZZkdlQVBWdmRfbU5acktjTjFHbk4wN0hXU2k1dDFWNm1oZUhyNG41RjdwV0FoOGhvZm0wWVVfejY4dw?oc=5",
-  "consulta": "Supersalud EPS",
-  "relevante": true,
-  "eps": [],
-  "departamentos": [],
-  "municipios": [],
-  "tipo": "intervencion_supersalud",
   "gravedad": 1
  },
  {
@@ -1548,7 +1516,7 @@
   "municipios": [
    "Bogotá"
   ],
-  "tipo": "otro",
+  "tipo": "tutelas_quejas",
   "gravedad": 2
  },
  {
@@ -1565,7 +1533,7 @@
   "municipios": [
    "Bogotá"
   ],
-  "tipo": "medicamentos",
+  "tipo": "intervencion_supersalud",
   "gravedad": 2
  },
  {
@@ -1582,7 +1550,7 @@
   "municipios": [
    "Bogotá"
   ],
-  "tipo": "medicamentos",
+  "tipo": "intervencion_supersalud",
   "gravedad": 2
  },
  {
@@ -1626,7 +1594,7 @@
   "departamentos": [],
   "municipios": [],
   "tipo": "deudas_pagos",
-  "gravedad": 2
+  "gravedad": 1
  },
  {
   "titulo": "Personería ha recibido más de 11.000 quejas por el mar servicio en las EPS",
@@ -1688,9 +1656,7 @@
   "departamentos": [
    "SANTANDER"
   ],
-  "municipios": [
-   "Floridablanca"
-  ],
+  "municipios": [],
   "tipo": "cierre_servicios",
   "gravedad": 1
  },
@@ -1751,7 +1717,7 @@
    "GUAINÍA"
   ],
   "municipios": [],
-  "tipo": "otro",
+  "tipo": "tutelas_quejas",
   "gravedad": 1
  },
  {
@@ -1771,7 +1737,7 @@
    "Soacha"
   ],
   "tipo": "medicamentos",
-  "gravedad": 2
+  "gravedad": 1
  },
  {
   "titulo": "Coosalud y Nueva EPS, las que más enfrentan quejas por fallas en atención médica: Personería Cúcuta",
@@ -1805,7 +1771,7 @@
   ],
   "departamentos": [],
   "municipios": [],
-  "tipo": "cierre_servicios",
+  "tipo": "tutelas_quejas",
   "gravedad": 3
  },
  {
@@ -1871,9 +1837,7 @@
   "departamentos": [
    "VALLE DEL CAUCA"
   ],
-  "municipios": [
-   "Cali"
-  ],
+  "municipios": [],
   "tipo": "deudas_pagos",
   "gravedad": 2
  },
@@ -1885,13 +1849,22 @@
   "consulta": "EPS intervenida pacientes",
   "relevante": true,
   "eps": [],
-  "departamentos": [
-   "CAUCA"
-  ],
-  "municipios": [
-   "Popayán"
-  ],
+  "departamentos": [],
+  "municipios": [],
   "tipo": "cierre_servicios",
+  "gravedad": 2
+ },
+ {
+  "titulo": "Supersalud intensifica vigilancia y exige resultados a la EPS Sanitas: miles de usuarios a la espera de sus medicamentos",
+  "fuente": "Revista Semana",
+  "fecha": "2026-11-06",
+  "enlace": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPMXFiby1jU2staWVpaEJDUFB2aFN2VUxscURyd3dXM0g4VXJqaUNQQk13MS03RmpTUEF6bUM3QzdMZktLMm91aWxVd3dDN2ZQdV9hOEI2TFRoUjVfZGpZeWVkWWd5TEUzNmZtTzE0dlhoQ2hNdlNZTXhCQUJVczQ1Y054TUJNWTQ3UUszOEladzFmRFAtbU1QMWtpRnRwc2Y2bXNxQXJVSVFDYXV2Zmk2eHlGcmdPUlVnZWJPb2FZSVVfWURjWnhfcEJIS3R2aUt5MzN5a19QTmhBNHkxOV9uQ0JySTRtblVUTnU1QVJUZ1M4dXNXM3Y2ZtIB_gFBVV95cUxNS0JiMWZqSEFmcldXNWs4Y2d2ZUJmUE5VS0VPdG0yVDJVYmFIc3FaWmowNHVQNmd4anB2bTlDTzN3cjl0VnZqMkp5SEU4QkU3UWx1ODUwZDV4LWlDX0FwZ0EtQlJzUDJQVGV5MjZoaVlZLTNMZGRacEd2OEZCLXUxSVk3NnRTT3Q4clpwaGJVTWtwc1RtemkxODN5Y2t5dm9XRVhFdmM3TmszU3puQlo4MnpTM0wwclZGcWtUX0xxZndNeU1WTk9hWl90TmtLMEtISXpoaThKcFJOSWlaUG05cFF5UWttT2RFRDVZSFkwdnQ4SzFzY3hlMU1ac3JyQQ?oc=5",
+  "consulta": "Supersalud EPS",
+  "relevante": true,
+  "eps": [],
+  "departamentos": [],
+  "municipios": [],
+  "tipo": "medicamentos",
   "gravedad": 2
  },
  {
@@ -1908,19 +1881,6 @@
   "municipios": [
    "Bogotá"
   ],
-  "tipo": "medicamentos",
-  "gravedad": 2
- },
- {
-  "titulo": "Supersalud intensifica vigilancia y exige resultados a la EPS Sanitas: miles de usuarios a la espera de sus medicamentos",
-  "fuente": "Revista Semana",
-  "fecha": "2026-11-06",
-  "enlace": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPMXFiby1jU2staWVpaEJDUFB2aFN2VUxscURyd3dXM0g4VXJqaUNQQk13MS03RmpTUEF6bUM3QzdMZktLMm91aWxVd3dDN2ZQdV9hOEI2TFRoUjVfZGpZeWVkWWd5TEUzNmZtTzE0dlhoQ2hNdlNZTXhCQUJVczQ1Y054TUJNWTQ3UUszOEladzFmRFAtbU1QMWtpRnRwc2Y2bXNxQXJVSVFDYXV2Zmk2eHlGcmdPUlVnZWJPb2FZSVVfWURjWnhfcEJIS3R2aUt5MzN5a19QTmhBNHkxOV9uQ0JySTRtblVUTnU1QVJUZ1M4dXNXM3Y2ZtIB_gFBVV95cUxNS0JiMWZqSEFmcldXNWs4Y2d2ZUJmUE5VS0VPdG0yVDJVYmFIc3FaWmowNHVQNmd4anB2bTlDTzN3cjl0VnZqMkp5SEU4QkU3UWx1ODUwZDV4LWlDX0FwZ0EtQlJzUDJQVGV5MjZoaVlZLTNMZGRacEd2OEZCLXUxSVk3NnRTT3Q4clpwaGJVTWtwc1RtemkxODN5Y2t5dm9XRVhFdmM3TmszU3puQlo4MnpTM0wwclZGcWtUX0xxZndNeU1WTk9hWl90TmtLMEtISXpoaThKcFJOSWlaUG05cFF5UWttT2RFRDVZSFkwdnQ4SzFzY3hlMU1ac3JyQQ?oc=5",
-  "consulta": "Supersalud EPS",
-  "relevante": true,
-  "eps": [],
-  "departamentos": [],
-  "municipios": [],
   "tipo": "medicamentos",
   "gravedad": 2
  },
@@ -1978,7 +1938,7 @@
    "Bogotá"
   ],
   "tipo": "medicamentos",
-  "gravedad": 2
+  "gravedad": 1
  },
  {
   "titulo": "Sanitas activa plan de choque por fallas en dispensarios: SuperSalud intensifica vigilancia",
@@ -1988,12 +1948,8 @@
   "consulta": "Supersalud EPS",
   "relevante": true,
   "eps": [],
-  "departamentos": [
-   "BOGOTÁ, D.C."
-  ],
-  "municipios": [
-   "Bogotá"
-  ],
+  "departamentos": [],
+  "municipios": [],
   "tipo": "medicamentos",
   "gravedad": 2
  },
@@ -2116,6 +2072,32 @@
   "fuente": "CAMBIO Colombia",
   "fecha": "2026-11-05",
   "enlace": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPSUlSWlB5dnFubzF2ajRuZ0tpZ1pmX1hYbjRHXy1KN0xhaDVLWFFjMk12ME5NQUdxVFI3bkstUTdBOHBxMUNVVF9jdFhtTURDTFdtbzZ5NjRpbldCRGVjRTdrQ2ZWNFBHM0tvc1pzTEJjVFE5NmxKamVyek9BYWwwN2NYYzFNaTJ2bklCRHk3UW9SQV84eTRXVGRPa19sSE5SYnJXdExaTmotZUZkS3Vab0Nwd1VZRVBCUlhGS1JKWDAwS0xpYklnbGREelBWTTJFZERR?oc=5",
+  "consulta": "EPS SOS salud",
+  "relevante": true,
+  "eps": [],
+  "departamentos": [],
+  "municipios": [],
+  "tipo": "intervencion_supersalud",
+  "gravedad": 1
+ },
+ {
+  "titulo": "So pena de retiro, Abelardo prohíbe a interventores hablar con Mario Urán",
+  "fuente": "La Silla Vacía",
+  "fecha": "2026-11-05",
+  "enlace": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQTUg0NVhfaUpoMnp3QTZNSjR2MTlqZkVoY2tWVjJzQ2JHa3FjZjAyRkhwdDUtdWNSZDN6ZlNJWFhTeHk2a3hHYmFyckdDVnQ2bC1uUXh2MUVJZExMZnoybkVXZElqcFpMUzYteHFzZzd2c21IMGhaYzA1aVJ2MnFoU2hoVHo5WEtra1lzcUE1cHo3cHptaEh5Um94cEFSZHR4U1dCZHIxNU1tRkJkNks4?oc=5",
+  "consulta": "EPS SOS salud",
+  "relevante": true,
+  "eps": [],
+  "departamentos": [],
+  "municipios": [],
+  "tipo": "intervencion_supersalud",
+  "gravedad": 1
+ },
+ {
+  "titulo": "¿Quién es Mario Urán, con el que los interventores de EPS tienen prohibido reunirse?: ADLE lo llamó “siniestro”",
+  "fuente": "ELHERALDO.CO",
+  "fecha": "2026-11-05",
+  "enlace": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQRDhzeVFWTTVFRHhBS2F1bkJxZEFGYlJRR194amdoMTZFVFZjWkVtSG9kUWxtbkxmMWR5c2liRmoxanpnMUFRME90MmhLZ1JFeXp6WjBSR1ptLXNITU1tUkJmaF9leHhaNi1rR3E4NFdqaHVtclF1TmYxRFdleEVneUY4dS1iNGhReEdLY1RlOHhUWTRRM05SV3hkZTczczY0cC1kZzVYblQxTzVUQ25tdzlQXzBWbzczUzJ2MmdPRERhbjlyOVF3QkxteVBMeHZrcXd5bHdOeE5hQmJiUHVPVzJ3Mk9rZw?oc=5",
   "consulta": "EPS SOS salud",
   "relevante": true,
   "eps": [],

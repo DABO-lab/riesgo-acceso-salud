@@ -1,0 +1,360 @@
+{
+ "estado": "ok",
+ "fecha_corte": "2026-11-12",
+ "generado": "2026-11-12T04:40:06+00:00",
+ "redactado_por": "gemini-3.5-flash-lite",
+ "fichas": [
+  {
+   "hechos": {
+    "municipio": "Argelia",
+    "departamento": "Cauca",
+    "cod_mpio": "19050",
+    "ranking": 1,
+    "indice_riesgo": 92.9,
+    "nivel_riesgo": "Muy alto",
+    "grupo": "Grupo 1 (mayor riesgo)",
+    "afiliados": 26894,
+    "pct_en_eps_intervenidas": 100.0,
+    "eps_principal": "ASMET SALUD",
+    "pct_eps_principal": 82.7,
+    "eps_principal_intervenida": true,
+    "numero_eps": 3,
+    "sedes_ips": 2,
+    "ips_por_10mil_afiliados": 0.74,
+    "pct_rural": 81.0,
+    "pct_subsidiado": 97.0,
+    "prob_estar_en_top10": 100,
+    "componentes_de_mayor_a_menor": [
+     [
+      "régimen subsidiado",
+      98.8
+     ],
+     [
+      "baja oferta de IPS",
+      97.0
+     ],
+     [
+      "dependencia de EPS intervenidas",
+      94.6
+     ],
+     [
+      "ruralidad",
+      93.5
+     ],
+     [
+      "afiliación concentrada en pocas EPS",
+      76.3
+     ]
+    ],
+    "ipm_dane_2018": 50.1,
+    "barreras_acceso_salud_dane_2018": 13.8,
+    "municipio_pdet": true,
+    "noticias_del_municipio": [],
+    "noticias_del_departamento": [
+     {
+      "titulo": "Supersalud impone medida cautelar a EPS Sanitas por fallas e",
+      "fuente": "Diario del Cauca",
+      "fecha": "2026-11-11",
+      "enlace": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPeXU2Ym1NZFZuRnRXLS00S1ZtbGZnd2pIcE9UaGxVcHVhT2ZpOTdraUJ2UlFHRFNEVHltOEpzX0hBRE1xdTNWQ3FIaFlhTlBHRE1LUjlNZ0RXN0ZCYXZaTnZpemlfSTR4UDFKX3FYdjN1TXJnNGVUVWJiTC1UQ1ZreVZYdy0wX3VZallXak8wVTJZZjAyTHlmMDhuMjk3WWxrSmlBcmFtR3pPR3R1RERJcFZXd3h3WXZs?oc=5"
+     },
+     {
+      "titulo": "Al Hospital San José le deben $447.690 millones: ¿quién responde por la salud de los caucanos?",
+      "fuente": ":.Periodicovirtual.com.:",
+      "fecha": "2026-11-05",
+      "enlace": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNNndXX0NMdnAwS3ZQUHRoeGEtOUpxM0trVWFLWnJwN0R1TjNubXlxVllmcDg2RDBud1VSa2prcU8tcWh2NXhRSlo1VXc4Z3pHWjNYOXFCZHliVXN0dml5OHZMbFFfd1lYSmg2V25uR1FTejRkZVVoWVJxd3A5NjRUMTBZQ1FrWGhYNGtGX3FZU1NEbjJRZExhRkhqWGlnY2RIMFpqOTFhdDItZ0xZZkFSYmZVSDI0NEY2YjZmSw?oc=5"
+     }
+    ]
+   },
+   "resumen": "El municipio de Argelia presenta un nivel de riesgo muy alto de perder el acceso a la salud, ocupando el primer puesto en vulnerabilidad. Su población de 26894 afiliados enfrenta graves dificultades por la alta dependencia de EPS intervenidas.",
+   "por_que": [
+    "El 100.0 por ciento de los afiliados se encuentra en EPS intervenidas.",
+    "La EPS principal es ASMET SALUD y concentra el 82.7 por ciento de los afiliados.",
+    "Existe una baja oferta de IPS con apenas 0.74 sedes por cada 10000 afiliados.",
+    "El porcentaje de población rural es del 81.0 por ciento y el régimen subsidiado alcanza el 97.0 por ciento."
+   ],
+   "accion_recomendada": "Se debe resolver la situación de la EPS principal o preparar la reasignación de afiliados, y reforzar la red pública del municipio.",
+   "advertencias": [
+    "Se cuentan sedes y no camas hospitalarias.",
+    "El indicador de pobreza multidimensional IPM es del año 2018.",
+    "Las noticias recopiladas son del departamento de Cauca y no necesariamente del municipio de Argelia."
+   ]
+  },
+  {
+   "hechos": {
+    "municipio": "Leiva",
+    "departamento": "Nariño",
+    "cod_mpio": "52405",
+    "ranking": 2,
+    "indice_riesgo": 89.9,
+    "nivel_riesgo": "Muy alto",
+    "grupo": "Grupo 1 (mayor riesgo)",
+    "afiliados": 8757,
+    "pct_en_eps_intervenidas": 100.0,
+    "eps_principal": "ASMET SALUD",
+    "pct_eps_principal": 98.1,
+    "eps_principal_intervenida": true,
+    "numero_eps": 3,
+    "sedes_ips": 1,
+    "ips_por_10mil_afiliados": 1.14,
+    "pct_rural": 65.2,
+    "pct_subsidiado": 97.0,
+    "prob_estar_en_top10": 100,
+    "componentes_de_mayor_a_menor": [
+     [
+      "régimen subsidiado",
+      98.8
+     ],
+     [
+      "afiliación concentrada en pocas EPS",
+      94.7
+     ],
+     [
+      "baja oferta de IPS",
+      90.9
+     ],
+     [
+      "dependencia de EPS intervenidas",
+      88.6
+     ],
+     [
+      "ruralidad",
+      75.7
+     ]
+    ],
+    "ipm_dane_2018": 55.3,
+    "barreras_acceso_salud_dane_2018": 5.5,
+    "municipio_pdet": true,
+    "noticias_del_municipio": [],
+    "noticias_del_departamento": []
+   },
+   "resumen": "El municipio de Leiva presenta un nivel de riesgo muy alto de perder el acceso a la salud, ubicándose en el puesto 2 de riesgo. Toda la población está afiliada a EPS intervenidas y existe una dependencia casi total de una sola entidad.",
+   "por_que": [
+    "El 100 por ciento de los 8757 afiliados se encuentra en EPS intervenidas.",
+    "La EPS principal, ASMET SALUD, concentra el 98.1 por ciento de los afiliados y está intervenida.",
+    "Hay una baja oferta de IPS con apenas 1 sede, lo que equivale a 1.14 IPS por cada 10 mil afiliados.",
+    "El régimen subsidiado abarca al 97 por ciento de la población y la ruralidad llega al 65.2 por ciento."
+   ],
+   "accion_recomendada": "Se debe resolver la situación de la EPS principal o preparar la reasignación de los afiliados a otras entidades. Asimismo, es necesario reforzar de manera urgente la red pública del municipio.",
+   "advertencias": [
+    "Los datos de pobreza multidimensional y barreras de acceso corresponden al Censo DANE de 2018.",
+    "La capacidad instalada se mide contando sedes y no el número real de camas disponibles."
+   ]
+  },
+  {
+   "hechos": {
+    "municipio": "Mogotes",
+    "departamento": "Santander",
+    "cod_mpio": "68464",
+    "ranking": 3,
+    "indice_riesgo": 88.6,
+    "nivel_riesgo": "Muy alto",
+    "grupo": "Grupo 1 (mayor riesgo)",
+    "afiliados": 9269,
+    "pct_en_eps_intervenidas": 100.0,
+    "eps_principal": "NUEVA EPS",
+    "pct_eps_principal": 100.0,
+    "eps_principal_intervenida": true,
+    "numero_eps": 1,
+    "sedes_ips": 1,
+    "ips_por_10mil_afiliados": 1.08,
+    "pct_rural": 63.4,
+    "pct_subsidiado": 88.5,
+    "prob_estar_en_top10": 100,
+    "componentes_de_mayor_a_menor": [
+     [
+      "afiliación concentrada en pocas EPS",
+      98.4
+     ],
+     [
+      "dependencia de EPS intervenidas",
+      94.6
+     ],
+     [
+      "baja oferta de IPS",
+      91.9
+     ],
+     [
+      "ruralidad",
+      73.3
+     ],
+     [
+      "régimen subsidiado",
+      57.9
+     ]
+    ],
+    "ipm_dane_2018": 49.4,
+    "barreras_acceso_salud_dane_2018": 11.4,
+    "municipio_pdet": false,
+    "noticias_del_municipio": [],
+    "noticias_del_departamento": [
+     {
+      "titulo": "Clínica Foscal advierte riesgo de cierres por falta de pagos de Nueva EPS y Fomag",
+      "fuente": "Canal 1 En vivo",
+      "fecha": "2026-11-10",
+      "enlace": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNUGZ1alVKdHdaVzR1MFNSdzhILVZnbU1vRDIzekVUYTZqcnA1aEtTSm03cTFpb3Z0b3pEcXJKQkdSRUZNTE5LYkZxQ1pPU3BuME9SN0hRUTh2Sl9MNm03SWVRNkZRek9qdlBUTWZXcWtqN193Y0lCbUY0R1E2M2RENUhxQ1htWUdrYUFJeXdHTkVKVWJSdkRUWEtmeWNSMDV6VENLbWtfN09NS0JTVlVrcC1LbnV2T21PaWZqTEViTdIBxAFBVV95cUxOaWVGZ2NtUVV5VlJ5ZDRxVjBmNXhKVWRxYU9IQUJpSlpMSVV0TXllYXRYd2xPZmo3Y0ZlcndRcHE0Nnh4em0wWHB1LWhoQnRNanhlY1dXMXRWRFFBZGFMS3pvbWI4aHNDbjFKa3dzSU8wMnI1MXhOTXlGdnFOZjk3TUVmUDJjVHNNVS1mLS1mMWc2aVo4TVFpS1N6NGlGTER0eFdVUGpIcklHNFZWSU5mY2RqamRTWnNrNkFjR0RMcG13NkFI?oc=5"
+     },
+     {
+      "titulo": "Gobernador de Santander pide intervención del Gobierno ante millonarias deudas de las EPS",
+      "fuente": "Blu Radio",
+      "fecha": "2026-11-10",
+      "enlace": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPUWFhTm1raXJ1WE5IZ013cHhnbmVQRk9udHRrYVotVUVoSGxYQkNwTnNqWU44QnRGaDcybVJVamxLSy1wSDNaU2dXWFFRRzA2UEtnTFppTk5tNWYwaVBfY2ZvVkFubWJtSWdMX1E5VnlQWmN0ZGpTSG5nZlZFS0Fma0p2ZzZwU0xhSVh1cEkycHhQbGZLZ3R1blgtRllpblo2enN0eWJwTlBEamhudHNHdUtORERXaFpxM1E1MGtqMXpndEl1SU9rckw2Nl9wTXgybHBFVkQ0a9IB5AFBVV95cUxOSDVFY1E2MGNkTUJ4NjJrY3oxMms1TlFHOVRhOXpTa0RwOG9Wd29uLW1kWVJIcTMyMzFMdldzbmwyb2U3aFMxWndzY3JIMTU2YW5mLW0tWjZtXzl1SDFZYmI5OXpmVV8taGplZVlVWjRGbFNReEF0R3cxd2tGWFZiMzhid05MWjIzbnJjSlFHUlVnd0R6bWZwbXlfeWt4a2JqdzNQWkJvSGxoQnpyczBQMk9RZVJjd25XZElNNF9vZzdaclEtMlUteUZGUTZnaVktV0lKQVd4Xy1LSXlySXBjTUN0OE4?oc=5"
+     },
+     {
+      "titulo": "En 'jaque' la salud de Santander por deudas de las EPS: gobernador asegura que se deben más de dos billones de pesos; 'se van a quedar sin centros'",
+      "fuente": "El Tiempo",
+      "fecha": "2026-11-09",
+      "enlace": "https://news.google.com/rss/articles/CBMingJBVV95cUxOX3Zab1ZKN1NhTVl3Vm5xQ25Da25YTkVnOWRVSEV3Y0xnNy12WmlLelgzVHFoeml0bEhTODl0c2tVYXZTb0tKT29XdzVtUHhxMlh3M1ROSDJHMU0tT2g3ZVRUcEd2V2N0M3Y5MGdkNF9mT29hXzNRcl9Qbnc4Q01sRDdVdmY4QTU2ZGt5TzRxNzZtLXdTV2hzdGRNYVA5eG55RGllY21LWEZfQUprSUhRU3ZRU2dydUZTcUhiTTdLdnZqYnBXUG1DS201b1Z0SmNWWkRqOEY4T0QzOGM5WXVwQV9FRFk4dlVLR2JNazVDTzdiNllvM1pkRGlwdUV4czY0N092SjVsOFduRVpacjc4Nmk1b3NNbTBlWDgtSm1B0gGjAkFVX3lxTE5lejhSU1p3SWZLTjM4eTRzT1BSSmJLWFpJRVdEdFp0dGNPNnZLdFN1Sm5MVDZINTBZbV9sUVBsWTJ2Nk9WdFJuelBhVkNlbEd4ZnNOSU5xVEh1UDBFSUx3ak9SdEhYSWIzRFRmemZTX3NFU2ZIUUNwenhLeU1HOWFEYWRqcU5nUXNSczRGQ1VQUjhGOXNVSy1RdHJwcEZ3ck9hY3NZNHBtOGl3dHZNYlB6M0VRRmdnYWFDdV9Ta0pMY1BtMDU1bEw2QlpJWjFXNHc2M1FRT3ZQRHQ2Yk15cDdKQ0RNOXhvREpWMVc3OUk1YXVCVkNvRDVnZDNxVmRJRXhOdzJtSkxzUlBvenE2dWt5c1Fnbk1mYkdEd3J4ZjR5VUhmWQ?oc=5"
+     }
+    ]
+   },
+   "resumen": "El municipio de Mogotes presenta un nivel de riesgo muy alto de perder el acceso a la salud para su población. Esta situación se ve agravada por deudas departamentales de las EPS que generan alertas en la región.",
+   "por_que": [
+    "El 100 por ciento de los afiliados depende de la NUEVA EPS, la cual se encuentra intervenida.",
+    "Existe una baja oferta con solo 1.08 sedes de IPS por cada 10 mil afiliados.",
+    "El municipio cuenta con una alta ruralidad del 63.4 por ciento.",
+    "El 88.5 por ciento de la población pertenece al régimen subsidiado."
+   ],
+   "accion_recomendada": "Resolver la situación de la EPS principal o preparar la reasignación de afiliados, y reforzar la red pública.",
+   "advertencias": [
+    "Se cuenta el número de sedes y no la cantidad de camas disponibles.",
+    "Las noticias corresponden al nivel departamental y no necesariamente al municipio de Mogotes.",
+    "El indicador de pobreza multidimensional y las barreras de acceso son del año 2018."
+   ]
+  },
+  {
+   "hechos": {
+    "municipio": "La Montañita",
+    "departamento": "Caquetá",
+    "cod_mpio": "18410",
+    "ranking": 4,
+    "indice_riesgo": 88.3,
+    "nivel_riesgo": "Muy alto",
+    "grupo": "Grupo 1 (mayor riesgo)",
+    "afiliados": 13254,
+    "pct_en_eps_intervenidas": 100.0,
+    "eps_principal": "ASMET SALUD",
+    "pct_eps_principal": 92.2,
+    "eps_principal_intervenida": true,
+    "numero_eps": 2,
+    "sedes_ips": 2,
+    "ips_por_10mil_afiliados": 1.51,
+    "pct_rural": 71.1,
+    "pct_subsidiado": 94.8,
+    "prob_estar_en_top10": 100,
+    "componentes_de_mayor_a_menor": [
+     [
+      "dependencia de EPS intervenidas",
+      94.6
+     ],
+     [
+      "régimen subsidiado",
+      91.4
+     ],
+     [
+      "afiliación concentrada en pocas EPS",
+      86.8
+     ],
+     [
+      "ruralidad",
+      83.9
+     ],
+     [
+      "baja oferta de IPS",
+      82.2
+     ]
+    ],
+    "ipm_dane_2018": 56.2,
+    "barreras_acceso_salud_dane_2018": 8.9,
+    "municipio_pdet": true,
+    "noticias_del_municipio": [],
+    "noticias_del_departamento": []
+   },
+   "resumen": "El municipio de La Montañita presenta un nivel de riesgo muy alto de perder el acceso a la salud, ubicándose en el grupo 1 con un puntaje de 88.3. Toda la población afiliada depende actualmente de EPS que se encuentran intervenidas.",
+   "por_que": [
+    "El 100.0 por ciento de los afiliados se encuentra en EPS intervenidas, siendo ASMET SALUD la principal con el 92.2 por ciento de participación.",
+    "Existe una baja oferta de IPS con apenas 2 sedes disponibles, lo que equivale a 1.51 IPS por cada 10 mil afiliados.",
+    "El municipio cuenta con una alta ruralidad del 71.1 por ciento y un porcentaje de régimen subsidiado del 94.8 por ciento.",
+    "El índice de pobreza multidimensional del DANE en 2018 se situaba en el 56.2 por ciento."
+   ],
+   "accion_recomendada": "Se debe resolver la situación de la EPS principal o preparar la reasignación de los 13254 afiliados, además de reforzar la red pública del municipio.",
+   "advertencias": [
+    "Los datos de pobreza y barreras de acceso corresponden al censo IPM del DANE de 2018.",
+    "La capacidad instalada se mide contando sedes de IPS y no el número total de camas hospitalarias."
+   ]
+  },
+  {
+   "hechos": {
+    "municipio": "Florencia",
+    "departamento": "Cauca",
+    "cod_mpio": "19290",
+    "ranking": 5,
+    "indice_riesgo": 87.7,
+    "nivel_riesgo": "Muy alto",
+    "grupo": "Grupo 1 (mayor riesgo)",
+    "afiliados": 5730,
+    "pct_en_eps_intervenidas": 100.0,
+    "eps_principal": "ASMET SALUD",
+    "pct_eps_principal": 95.9,
+    "eps_principal_intervenida": true,
+    "numero_eps": 2,
+    "sedes_ips": 1,
+    "ips_por_10mil_afiliados": 1.75,
+    "pct_rural": 74.5,
+    "pct_subsidiado": 94.9,
+    "prob_estar_en_top10": 100,
+    "componentes_de_mayor_a_menor": [
+     [
+      "dependencia de EPS intervenidas",
+      94.6
+     ],
+     [
+      "régimen subsidiado",
+      91.6
+     ],
+     [
+      "afiliación concentrada en pocas EPS",
+      91.0
+     ],
+     [
+      "ruralidad",
+      87.7
+     ],
+     [
+      "baja oferta de IPS",
+      76.6
+     ]
+    ],
+    "ipm_dane_2018": 36.3,
+    "barreras_acceso_salud_dane_2018": 4.7,
+    "municipio_pdet": false,
+    "noticias_del_municipio": [],
+    "noticias_del_departamento": [
+     {
+      "titulo": "Supersalud impone medida cautelar a EPS Sanitas por fallas e",
+      "fuente": "Diario del Cauca",
+      "fecha": "2026-11-11",
+      "enlace": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPeXU2Ym1NZFZuRnRXLS00S1ZtbGZnd2pIcE9UaGxVcHVhT2ZpOTdraUJ2UlFHRFNEVHltOEpzX0hBRE1xdTNWQ3FIaFlhTlBHRE1LUjlNZ0RXN0ZCYXZaTnZpemlfSTR4UDFKX3FYdjN1TXJnNGVUVWJiTC1UQ1ZreVZYdy0wX3VZallXak8wVTJZZjAyTHlmMDhuMjk3WWxrSmlBcmFtR3pPR3R1RERJcFZXd3h3WXZs?oc=5"
+     },
+     {
+      "titulo": "Al Hospital San José le deben $447.690 millones: ¿quién responde por la salud de los caucanos?",
+      "fuente": ":.Periodicovirtual.com.:",
+      "fecha": "2026-11-05",
+      "enlace": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNNndXX0NMdnAwS3ZQUHRoeGEtOUpxM0trVWFLWnJwN0R1TjNubXlxVllmcDg2RDBud1VSa2prcU8tcWh2NXhRSlo1VXc4Z3pHWjNYOXFCZHliVXN0dml5OHZMbFFfd1lYSmg2V25uR1FTejRkZVVoWVJxd3A5NjRUMTBZQ1FrWGhYNGtGX3FZU1NEbjJRZExhRkhqWGlnY2RIMFpqOTFhdDItZ0xZZkFSYmZVSDI0NEY2YjZmSw?oc=5"
+     }
+    ]
+   },
+   "resumen": "El municipio de Florencia, en el Cauca, presenta un nivel de riesgo muy alto de perder el acceso a la salud. Su población total de 5730 afiliados depende en su totalidad de EPS que se encuentran intervenidas.",
+   "por_que": [
+    "El 100.0 por ciento de los afiliados se encuentra en EPS intervenidas.",
+    "El 95.9 por ciento de la afiliación está concentrada en la EPS principal, ASMET SALUD, la cual está intervenida.",
+    "Existe una baja oferta de IPS con apenas 1 sede disponible, lo que equivale a 1.75 IPS por cada 10mil afiliados.",
+    "El municipio registra una alta ruralidad del 74.5 por ciento y un régimen subsidiado del 94.9 por ciento."
+   ],
+   "accion_recomendada": "Se debe resolver la situación de la EPS principal o preparar la reasignación de afiliados, y reforzar la red pública para garantizar la atención en el municipio.",
+   "advertencias": [
+    "Las noticias provienen del nivel departamental y no corresponden de manera directa al municipio.",
+    "Los datos de pobreza multidimensional y barreras de acceso corresponden al Censo DANE de 2018 y se cuentan sedes, no camas."
+   ]
+  }
+ ]
+}

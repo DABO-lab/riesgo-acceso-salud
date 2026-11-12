@@ -1,0 +1,7217 @@
+{
+ "municipios": 1122,
+ "con_ipm": 1121,
+ "pdet": 170,
+ "hipotesis": {
+  "H1_pobreza": {
+   "descripcion": "El índice de riesgo aumenta con la pobreza multidimensional (IPM)",
+   "prueba": "Correlación de Spearman",
+   "estadistico": 0.234,
+   "p_valor": 2.02e-15,
+   "n": 1121,
+   "umbral": "rho ≥ 0.3 y p < 0.05",
+   "resultado": "debil"
+  },
+  "H3_barreras_salud": {
+   "descripcion": "El índice aumenta con el % de hogares con barreras de acceso a servicios de salud (DANE)",
+   "prueba": "Correlación de Spearman",
+   "estadistico": 0.043,
+   "p_valor": 0.154,
+   "n": 1121,
+   "umbral": "rho ≥ 0.2 y p < 0.05",
+   "resultado": "no_se_cumple"
+  },
+  "H2_pdet": {
+   "descripcion": "Los municipios PDET tienen al menos 1,5 veces más probabilidad de estar en riesgo Muy alto",
+   "prueba": "Prueba exacta de Fisher (una cola)",
+   "estadistico": 2.21,
+   "p_valor": 0.000106,
+   "detalle": "Muy alto: 32 de 170 PDET (18,8%) frente a 81 de 952 no PDET (8,5%)",
+   "umbral": "razón ≥ 1.5 y p < 0.05",
+   "resultado": "se_cumple"
+  },
+  "H4_doble_vulnerabilidad": {
+   "descripcion": "Hay más municipios en el 20 % más alto de riesgo Y de pobreza que lo esperado por azar",
+   "prueba": "Prueba binomial frente a la independencia (una cola)",
+   "estadistico": 1.14,
+   "p_valor": 0.192,
+   "detalle": "52 municipios observados frente a 46 esperados por azar",
+   "umbral": "observados/esperados ≥ 1.5 y p < 0.05",
+   "resultado": "no_se_cumple"
+  }
+ },
+ "fecha_registro_rubrica": "2026-11-12",
+ "doble_vulnerabilidad": {
+  "municipios": 52,
+  "afiliados": 696982,
+  "pdet": 23,
+  "lista": [
+   {
+    "cod_mpio": "18410",
+    "nom_mpio": "LA MONTAÑITA",
+    "dpto": "CAQUETÁ",
+    "indice_riesgo": 88.3,
+    "nivel_riesgo": "Muy alto",
+    "ipm": 56.2,
+    "afiliados": 13254,
+    "pdet": true
+   },
+   {
+    "cod_mpio": "18785",
+    "nom_mpio": "SOLITA",
+    "dpto": "CAQUETÁ",
+    "indice_riesgo": 86.8,
+    "nivel_riesgo": "Muy alto",
+    "ipm": 58.1,
+    "afiliados": 8711,
+    "pdet": true
+   },
+   {
+    "cod_mpio": "54670",
+    "nom_mpio": "SAN CALIXTO",
+    "dpto": "NORTE DE SANTANDER",
+    "indice_riesgo": 84.8,
+    "nivel_riesgo": "Muy alto",
+    "ipm": 73.5,
+    "afiliados": 10286,
+    "pdet": true
+   },
+   {
+    "cod_mpio": "54344",
+    "nom_mpio": "HACARÍ",
+    "dpto": "NORTE DE SANTANDER",
+    "indice_riesgo": 84.4,
+    "nivel_riesgo": "Muy alto",
+    "ipm": 73.4,
+    "afiliados": 10698,
+    "pdet": true
+   },
+   {
+    "cod_mpio": "18756",
+    "nom_mpio": "SOLANO",
+    "dpto": "CAQUETÁ",
+    "indice_riesgo": 83.9,
+    "nivel_riesgo": "Muy alto",
+    "ipm": 71.9,
+    "afiliados": 9747,
+    "pdet": true
+   },
+   {
+    "cod_mpio": "05854",
+    "nom_mpio": "VALDIVIA",
+    "dpto": "ANTIOQUIA",
+    "indice_riesgo": 82.3,
+    "nivel_riesgo": "Muy alto",
+    "ipm": 59.3,
+    "afiliados": 13701,
+    "pdet": true
+   },
+   {
+    "cod_mpio": "19130",
+    "nom_mpio": "CAJIBÍO",
+    "dpto": "CAUCA",
+    "indice_riesgo": 82.2,
+    "nivel_riesgo": "Muy alto",
+    "ipm": 56.9,
+    "afiliados": 32586,
+    "pdet": true
+   },
+   {
+    "cod_mpio": "15223",
+    "nom_mpio": "CUBARÁ",
+    "dpto": "BOYACÁ",
+    "indice_riesgo": 82.2,
+    "nivel_riesgo": "Muy alto",
+    "ipm": 69.7,
+    "afiliados": 11230,
+    "pdet": false
+   },
+   {
+    "cod_mpio": "99524",
+    "nom_mpio": "LA PRIMAVERA",
+    "dpto": "VICHADA",
+    "indice_riesgo": 81.9,
+    "nivel_riesgo": "Muy alto",
+    "ipm": 63.2,
+    "afiliados": 8844,
+    "pdet": false
+   },
+   {
+    "cod_mpio": "05495",
+    "nom_mpio": "NECHÍ",
+    "dpto": "ANTIOQUIA",
+    "indice_riesgo": 81.8,
+    "nivel_riesgo": "Muy alto",
+    "ipm": 61.5,
+    "afiliados": 28216,
+    "pdet": true
+   },
+   {
+    "cod_mpio": "19785",
+    "nom_mpio": "SUCRE",
+    "dpto": "CAUCA",
+    "indice_riesgo": 81.5,
+    "nivel_riesgo": "Muy alto",
+    "ipm": 75.5,
+    "afiliados": 6432,
+    "pdet": false
+   },
+   {
+    "cod_mpio": "99001",
+    "nom_mpio": "PUERTO CARREÑO",
+    "dpto": "VICHADA",
+    "indice_riesgo": 80.8,
+    "nivel_riesgo": "Muy alto",
+    "ipm": 55.7,
+    "afiliados": 30945,
+    "pdet": false
+   },
+   {
+    "cod_mpio": "18150",
+    "nom_mpio": "CARTAGENA DEL CHAIRÁ",
+    "dpto": "CAQUETÁ",
+    "indice_riesgo": 80.0,
+    "nivel_riesgo": "Muy alto",
+    "ipm": 63.3,
+    "afiliados": 33962,
+    "pdet": true
+   },
+   {
+    "cod_mpio": "18460",
+    "nom_mpio": "MILÁN",
+    "dpto": "CAQUETÁ",
+    "indice_riesgo": 79.6,
+    "nivel_riesgo": "Muy alto",
+    "ipm": 64.6,
+    "afiliados": 7560,
+    "pdet": true
+   },
+   {
+    "cod_mpio": "18753",
+    "nom_mpio": "SAN VICENTE DEL CAGUÁN",
+    "dpto": "CAQUETÁ",
+    "indice_riesgo": 78.9,
+    "nivel_riesgo": "Muy alto",
+    "ipm": 56.3,
+    "afiliados": 58510,
+    "pdet": true
+   },
+   {
+    "cod_mpio": "18205",
+    "nom_mpio": "CURILLO",
+    "dpto": "CAQUETÁ",
+    "indice_riesgo": 78.2,
+    "nivel_riesgo": "Muy alto",
+    "ipm": 55.4,
+    "afiliados": 9182,
+    "pdet": true
+   },
+   {
+    "cod_mpio": "95015",
+    "nom_mpio": "CALAMAR",
+    "dpto": "GUAVIARE",
+    "indice_riesgo": 77.3,
+    "nivel_riesgo": "Muy alto",
+    "ipm": 58.0,
+    "afiliados": 8739,
+    "pdet": true
+   },
+   {
+    "cod_mpio": "05120",
+    "nom_mpio": "CÁCERES",
+    "dpto": "ANTIOQUIA",
+    "indice_riesgo": 77.3,
+    "nivel_riesgo": "Muy alto",
+    "ipm": 66.4,
+    "afiliados": 24577,
+    "pdet": true
+   },
+   {
+    "cod_mpio": "13473",
+    "nom_mpio": "MORALES",
+    "dpto": "BOLÍVAR",
+    "indice_riesgo": 76.9,
+    "nivel_riesgo": "Muy alto",
+    "ipm": 57.6,
+    "afiliados": 14059,
+    "pdet": true
+   },
+   {
+    "cod_mpio": "05842",
+    "nom_mpio": "URAMITA",
+    "dpto": "ANTIOQUIA",
+    "indice_riesgo": 76.3,
+    "nivel_riesgo": "Muy alto",
+    "ipm": 55.6,
+    "afiliados": 6002,
+    "pdet": false
+   },
+   {
+    "cod_mpio": "68271",
+    "nom_mpio": "FLORIÁN",
+    "dpto": "SANTANDER",
+    "indice_riesgo": 75.9,
+    "nivel_riesgo": "Muy alto",
+    "ipm": 56.0,
+    "afiliados": 4408,
+    "pdet": false
+   },
+   {
+    "cod_mpio": "73555",
+    "nom_mpio": "PLANADAS",
+    "dpto": "TOLIMA",
+    "indice_riesgo": 75.6,
+    "nivel_riesgo": "Muy alto",
+    "ipm": 55.4,
+    "afiliados": 31934,
+    "pdet": true
+   },
+   {
+    "cod_mpio": "95200",
+    "nom_mpio": "MIRAFLORES",
+    "dpto": "GUAVIARE",
+    "indice_riesgo": 75.2,
+    "nivel_riesgo": "Muy alto",
+    "ipm": 66.7,
+    "afiliados": 3645,
+    "pdet": true
+   },
+   {
+    "cod_mpio": "54385",
+    "nom_mpio": "LA ESPERANZA",
+    "dpto": "NORTE DE SANTANDER",
+    "indice_riesgo": 75.2,
+    "nivel_riesgo": "Muy alto",
+    "ipm": 57.1,
+    "afiliados": 9004,
+    "pdet": false
+   },
+   {
+    "cod_mpio": "85225",
+    "nom_mpio": "NUNCHÍA",
+    "dpto": "CASANARE",
+    "indice_riesgo": 74.9,
+    "nivel_riesgo": "Muy alto",
+    "ipm": 56.4,
+    "afiliados": 6754,
+    "pdet": false
+   },
+   {
+    "cod_mpio": "68250",
+    "nom_mpio": "EL PEÑÓN",
+    "dpto": "SANTANDER",
+    "indice_riesgo": 74.9,
+    "nivel_riesgo": "Muy alto",
+    "ipm": 57.8,
+    "afiliados": 3811,
+    "pdet": false
+   },
+   {
+    "cod_mpio": "86571",
+    "nom_mpio": "PUERTO GUZMÁN",
+    "dpto": "PUTUMAYO",
+    "indice_riesgo": 74.8,
+    "nivel_riesgo": "Muy alto",
+    "ipm": 62.2,
+    "afiliados": 15415,
+    "pdet": true
+   },
+   {
+    "cod_mpio": "05895",
+    "nom_mpio": "ZARAGOZA",
+    "dpto": "ANTIOQUIA",
+    "indice_riesgo": 74.7,
+    "nivel_riesgo": "Muy alto",
+    "ipm": 58.0,
+    "afiliados": 26682,
+    "pdet": true
+   },
+   {
+    "cod_mpio": "73043",
+    "nom_mpio": "ANZOÁTEGUI",
+    "dpto": "TOLIMA",
+    "indice_riesgo": 74.2,
+    "nivel_riesgo": "Muy alto",
+    "ipm": 55.8,
+    "afiliados": 8745,
+    "pdet": false
+   },
+   {
+    "cod_mpio": "94883",
+    "nom_mpio": "SAN FELIPE",
+    "dpto": "GUAINÍA",
+    "indice_riesgo": 72.2,
+    "nivel_riesgo": "Muy alto",
+    "ipm": 88.3,
+    "afiliados": 1693,
+    "pdet": false
+   },
+   {
+    "cod_mpio": "91540",
+    "nom_mpio": "PUERTO NARIÑO",
+    "dpto": "AMAZONAS",
+    "indice_riesgo": 72.2,
+    "nivel_riesgo": "Muy alto",
+    "ipm": 70.4,
+    "afiliados": 7263,
+    "pdet": false
+   },
+   {
+    "cod_mpio": "52473",
+    "nom_mpio": "MOSQUERA",
+    "dpto": "NARIÑO",
+    "indice_riesgo": 70.6,
+    "nivel_riesgo": "Alto",
+    "ipm": 70.2,
+    "afiliados": 6715,
+    "pdet": true
+   },
+   {
+    "cod_mpio": "05234",
+    "nom_mpio": "DABEIBA",
+    "dpto": "ANTIOQUIA",
+    "indice_riesgo": 69.9,
+    "nivel_riesgo": "Alto",
+    "ipm": 60.5,
+    "afiliados": 23955,
+    "pdet": true
+   },
+   {
+    "cod_mpio": "54398",
+    "nom_mpio": "LA PLAYA",
+    "dpto": "NORTE DE SANTANDER",
+    "indice_riesgo": 69.6,
+    "nivel_riesgo": "Alto",
+    "ipm": 67.9,
+    "afiliados": 7707,
+    "pdet": false
+   },
+   {
+    "cod_mpio": "13222",
+    "nom_mpio": "CLEMENCIA",
+    "dpto": "BOLÍVAR",
+    "indice_riesgo": 69.5,
+    "nivel_riesgo": "Alto",
+    "ipm": 63.0,
+    "afiliados": 12366,
+    "pdet": false
+   },
+   {
+    "cod_mpio": "54003",
+    "nom_mpio": "ÁBREGO",
+    "dpto": "NORTE DE SANTANDER",
+    "indice_riesgo": 69.5,
+    "nivel_riesgo": "Alto",
+    "ipm": 55.8,
+    "afiliados": 31532,
+    "pdet": false
+   },
+   {
+    "cod_mpio": "99624",
+    "nom_mpio": "SANTA ROSALÍA",
+    "dpto": "VICHADA",
+    "indice_riesgo": 69.4,
+    "nivel_riesgo": "Alto",
+    "ipm": 56.8,
+    "afiliados": 3745,
+    "pdet": false
+   },
+   {
+    "cod_mpio": "94887",
+    "nom_mpio": "PANA PANA",
+    "dpto": "GUAINÍA",
+    "indice_riesgo": 69.2,
+    "nivel_riesgo": "Alto",
+    "ipm": 98.5,
+    "afiliados": 1141,
+    "pdet": false
+   },
+   {
+    "cod_mpio": "13667",
+    "nom_mpio": "SAN MARTÍN DE LOBA",
+    "dpto": "BOLÍVAR",
+    "indice_riesgo": 68.9,
+    "nivel_riesgo": "Alto",
+    "ipm": 60.6,
+    "afiliados": 15854,
+    "pdet": false
+   },
+   {
+    "cod_mpio": "52250",
+    "nom_mpio": "EL CHARCO",
+    "dpto": "NARIÑO",
+    "indice_riesgo": 68.3,
+    "nivel_riesgo": "Alto",
+    "ipm": 75.9,
+    "afiliados": 20732,
+    "pdet": true
+   }
+  ]
+ },
+ "por_grupo": [
+  {
+   "nombre_grupo": "Grupo 1 (mayor riesgo)",
+   "municipios": 450,
+   "ipm_mediana": 43.25,
+   "barreras_mediana": 4.1,
+   "pct_pdet": 0.189
+  },
+  {
+   "nombre_grupo": "Grupo 2",
+   "municipios": 388,
+   "ipm_mediana": 47.3,
+   "barreras_mediana": 4.8,
+   "pct_pdet": 0.157
+  },
+  {
+   "nombre_grupo": "Grupo 3 (menor riesgo)",
+   "municipios": 284,
+   "ipm_mediana": 23.25,
+   "barreras_mediana": 3.9,
+   "pct_pdet": 0.085
+  }
+ ],
+ "por_municipio": [
+  {
+   "cod_mpio": "19050",
+   "ipm": 50.1,
+   "barreras_salud": 13.8,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "52405",
+   "ipm": 55.3,
+   "barreras_salud": 5.5,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "68464",
+   "ipm": 49.4,
+   "barreras_salud": 11.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "18410",
+   "ipm": 56.2,
+   "barreras_salud": 8.9,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "19290",
+   "ipm": 36.3,
+   "barreras_salud": 4.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "18785",
+   "ipm": 58.1,
+   "barreras_salud": 8.9,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "68377",
+   "ipm": 36.1,
+   "barreras_salud": 0.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "54670",
+   "ipm": 73.5,
+   "barreras_salud": 29.4,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "54344",
+   "ipm": 73.4,
+   "barreras_salud": 9.9,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "19075",
+   "ipm": 47.1,
+   "barreras_salud": 7.2,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "95025",
+   "ipm": 51.5,
+   "barreras_salud": 6.6,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "18756",
+   "ipm": 71.9,
+   "barreras_salud": 10.1,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "18860",
+   "ipm": 50.0,
+   "barreras_salud": 4.3,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "68385",
+   "ipm": 49.1,
+   "barreras_salud": 11.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68051",
+   "ipm": 40.6,
+   "barreras_salud": 1.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05854",
+   "ipm": 59.3,
+   "barreras_salud": 3.9,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "19130",
+   "ipm": 56.9,
+   "barreras_salud": 7.8,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "15223",
+   "ipm": 69.7,
+   "barreras_salud": 2.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "99524",
+   "ipm": 63.2,
+   "barreras_salud": 9.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76828",
+   "ipm": 34.9,
+   "barreras_salud": 6.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76243",
+   "ipm": 43.5,
+   "barreras_salud": 2.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05495",
+   "ipm": 61.5,
+   "barreras_salud": 9.7,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "68101",
+   "ipm": 45.5,
+   "barreras_salud": 1.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "19785",
+   "ipm": 75.5,
+   "barreras_salud": 1.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "99001",
+   "ipm": 55.7,
+   "barreras_salud": 7.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "17867",
+   "ipm": 34.9,
+   "barreras_salud": 2.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68855",
+   "ipm": 36.6,
+   "barreras_salud": 3.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "18150",
+   "ipm": 63.3,
+   "barreras_salud": 7.4,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "19532",
+   "ipm": 44.1,
+   "barreras_salud": 1.7,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "18460",
+   "ipm": 64.6,
+   "barreras_salud": 5.4,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "05038",
+   "ipm": 53.8,
+   "barreras_salud": 10.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "18753",
+   "ipm": 56.3,
+   "barreras_salud": 7.0,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "76020",
+   "ipm": 31.9,
+   "barreras_salud": 7.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "18256",
+   "ipm": 45.5,
+   "barreras_salud": 13.7,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "18205",
+   "ipm": 55.4,
+   "barreras_salud": 10.1,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "68720",
+   "ipm": 47.9,
+   "barreras_salud": 3.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68229",
+   "ipm": 35.7,
+   "barreras_salud": 10.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25873",
+   "ipm": 31.4,
+   "barreras_salud": 6.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52694",
+   "ipm": 54.6,
+   "barreras_salud": 6.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76823",
+   "ipm": 32.1,
+   "barreras_salud": 4.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "95015",
+   "ipm": 58.0,
+   "barreras_salud": 4.2,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "05120",
+   "ipm": 66.4,
+   "barreras_salud": 9.7,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "68498",
+   "ipm": 38.6,
+   "barreras_salud": 2.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13473",
+   "ipm": 57.6,
+   "barreras_salud": 6.4,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "76863",
+   "ipm": 30.6,
+   "barreras_salud": 5.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15531",
+   "ipm": 47.4,
+   "barreras_salud": 2.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05842",
+   "ipm": 55.6,
+   "barreras_salud": 2.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76246",
+   "ipm": 35.8,
+   "barreras_salud": 4.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15804",
+   "ipm": 47.0,
+   "barreras_salud": 1.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "18029",
+   "ipm": 38.8,
+   "barreras_salud": 4.1,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "68324",
+   "ipm": 40.4,
+   "barreras_salud": 1.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68271",
+   "ipm": 56.0,
+   "barreras_salud": 7.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41006",
+   "ipm": 51.0,
+   "barreras_salud": 4.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68502",
+   "ipm": 55.1,
+   "barreras_salud": 4.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73555",
+   "ipm": 55.4,
+   "barreras_salud": 2.9,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "17614",
+   "ipm": 29.3,
+   "barreras_salud": 4.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15837",
+   "ipm": 32.8,
+   "barreras_salud": 4.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "18094",
+   "ipm": 50.0,
+   "barreras_salud": 4.2,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "95200",
+   "ipm": 66.7,
+   "barreras_salud": 8.6,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "54385",
+   "ipm": 57.1,
+   "barreras_salud": 10.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "85225",
+   "ipm": 56.4,
+   "barreras_salud": 9.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68250",
+   "ipm": 57.8,
+   "barreras_salud": 1.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "86571",
+   "ipm": 62.2,
+   "barreras_salud": 8.1,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "15822",
+   "ipm": 47.9,
+   "barreras_salud": 0.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15476",
+   "ipm": 49.8,
+   "barreras_salud": 2.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68020",
+   "ipm": 48.1,
+   "barreras_salud": 5.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05895",
+   "ipm": 58.0,
+   "barreras_salud": 4.7,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "15806",
+   "ipm": 14.3,
+   "barreras_salud": 1.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15757",
+   "ipm": 20.8,
+   "barreras_salud": 0.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15367",
+   "ipm": 38.8,
+   "barreras_salud": 0.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15632",
+   "ipm": 41.8,
+   "barreras_salud": 4.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15047",
+   "ipm": 33.5,
+   "barreras_salud": 3.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76250",
+   "ipm": 37.2,
+   "barreras_salud": 12.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73043",
+   "ipm": 55.8,
+   "barreras_salud": 4.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "19450",
+   "ipm": 46.6,
+   "barreras_salud": 6.1,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "76041",
+   "ipm": 31.3,
+   "barreras_salud": 3.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68673",
+   "ipm": 49.8,
+   "barreras_salud": 1.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76616",
+   "ipm": 23.2,
+   "barreras_salud": 2.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15681",
+   "ipm": 53.7,
+   "barreras_salud": 1.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41770",
+   "ipm": 41.6,
+   "barreras_salud": 1.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "19513",
+   "ipm": 22.0,
+   "barreras_salud": 2.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15109",
+   "ipm": 44.9,
+   "barreras_salud": 1.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15104",
+   "ipm": 39.7,
+   "barreras_salud": 3.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68320",
+   "ipm": 39.1,
+   "barreras_salud": 4.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68368",
+   "ipm": 40.8,
+   "barreras_salud": 2.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68209",
+   "ipm": 32.6,
+   "barreras_salud": 1.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68217",
+   "ipm": 53.6,
+   "barreras_salud": 2.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15686",
+   "ipm": 40.5,
+   "barreras_salud": 4.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "19780",
+   "ipm": 44.1,
+   "barreras_salud": 5.1,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "19256",
+   "ipm": 46.0,
+   "barreras_salud": 9.9,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "73520",
+   "ipm": 45.5,
+   "barreras_salud": 3.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68397",
+   "ipm": 36.1,
+   "barreras_salud": 0.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68780",
+   "ipm": 44.2,
+   "barreras_salud": 0.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76054",
+   "ipm": 36.2,
+   "barreras_salud": 1.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15600",
+   "ipm": 31.3,
+   "barreras_salud": 1.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25745",
+   "ipm": 22.4,
+   "barreras_salud": 6.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "94883",
+   "ipm": 88.3,
+   "barreras_salud": 3.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41791",
+   "ipm": 47.1,
+   "barreras_salud": 8.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "91540",
+   "ipm": 70.4,
+   "barreras_salud": 5.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15693",
+   "ipm": 19.0,
+   "barreras_salud": 2.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41378",
+   "ipm": 44.0,
+   "barreras_salud": 7.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25535",
+   "ipm": 30.6,
+   "barreras_salud": 2.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "19392",
+   "ipm": 53.6,
+   "barreras_salud": 5.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "85400",
+   "ipm": 55.0,
+   "barreras_salud": 3.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "54553",
+   "ipm": 42.9,
+   "barreras_salud": 7.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "54172",
+   "ipm": 30.3,
+   "barreras_salud": 10.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73124",
+   "ipm": 36.2,
+   "barreras_salud": 3.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "08675",
+   "ipm": 47.2,
+   "barreras_salud": 1.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15897",
+   "ipm": 50.7,
+   "barreras_salud": 1.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "18610",
+   "ipm": 48.7,
+   "barreras_salud": 11.6,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "15664",
+   "ipm": 50.8,
+   "barreras_salud": 2.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "54874",
+   "ipm": 24.6,
+   "barreras_salud": 2.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25407",
+   "ipm": 29.1,
+   "barreras_salud": 2.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68533",
+   "ipm": 31.5,
+   "barreras_salud": 5.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "19533",
+   "ipm": 44.0,
+   "barreras_salud": 5.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15087",
+   "ipm": 25.2,
+   "barreras_salud": 4.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52506",
+   "ipm": 28.9,
+   "barreras_salud": 1.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52473",
+   "ipm": 70.2,
+   "barreras_salud": 3.8,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "68296",
+   "ipm": 41.9,
+   "barreras_salud": 2.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15764",
+   "ipm": 38.5,
+   "barreras_salud": 4.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25793",
+   "ipm": 24.3,
+   "barreras_salud": 0.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25841",
+   "ipm": 34.1,
+   "barreras_salud": 2.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25394",
+   "ipm": 39.4,
+   "barreras_salud": 1.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05040",
+   "ipm": 53.3,
+   "barreras_salud": 5.8,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "25426",
+   "ipm": 38.2,
+   "barreras_salud": 3.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05790",
+   "ipm": 53.5,
+   "barreras_salud": 2.0,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "05234",
+   "ipm": 60.5,
+   "barreras_salud": 2.6,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "68169",
+   "ipm": 35.1,
+   "barreras_salud": 4.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25845",
+   "ipm": 29.6,
+   "barreras_salud": 10.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68264",
+   "ipm": 32.0,
+   "barreras_salud": 0.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15842",
+   "ipm": 49.4,
+   "barreras_salud": 1.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "20550",
+   "ipm": 51.0,
+   "barreras_salud": 8.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68344",
+   "ipm": 46.9,
+   "barreras_salud": 4.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73152",
+   "ipm": 43.8,
+   "barreras_salud": 0.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25178",
+   "ipm": 31.1,
+   "barreras_salud": 0.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68167",
+   "ipm": 26.9,
+   "barreras_salud": 3.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "54398",
+   "ipm": 67.9,
+   "barreras_salud": 1.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05250",
+   "ipm": 53.7,
+   "barreras_salud": 2.7,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "13222",
+   "ipm": 63.0,
+   "barreras_salud": 1.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "54003",
+   "ipm": 55.8,
+   "barreras_salud": 8.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13670",
+   "ipm": 54.0,
+   "barreras_salud": 7.1,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "27245",
+   "ipm": 54.0,
+   "barreras_salud": 2.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "99624",
+   "ipm": 56.8,
+   "barreras_salud": 14.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25154",
+   "ipm": 31.2,
+   "barreras_salud": 1.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "86757",
+   "ipm": 48.5,
+   "barreras_salud": 9.2,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "94887",
+   "ipm": 98.5,
+   "barreras_salud": 16.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76403",
+   "ipm": 22.9,
+   "barreras_salud": 2.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "88564",
+   "ipm": 13.7,
+   "barreras_salud": 2.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "18479",
+   "ipm": 42.4,
+   "barreras_salud": 7.5,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "73870",
+   "ipm": 51.3,
+   "barreras_salud": 2.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13667",
+   "ipm": 60.6,
+   "barreras_salud": 0.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52254",
+   "ipm": 43.0,
+   "barreras_salud": 5.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15135",
+   "ipm": 52.3,
+   "barreras_salud": 9.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41668",
+   "ipm": 36.3,
+   "barreras_salud": 7.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76606",
+   "ipm": 20.7,
+   "barreras_salud": 0.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68444",
+   "ipm": 38.2,
+   "barreras_salud": 0.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15776",
+   "ipm": 31.1,
+   "barreras_salud": 2.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52250",
+   "ipm": 75.9,
+   "barreras_salud": 6.0,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "15514",
+   "ipm": 36.5,
+   "barreras_salud": 3.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25224",
+   "ipm": 25.0,
+   "barreras_salud": 6.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25878",
+   "ipm": 36.3,
+   "barreras_salud": 11.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15755",
+   "ipm": 52.9,
+   "barreras_salud": 5.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68689",
+   "ipm": 34.9,
+   "barreras_salud": 3.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73861",
+   "ipm": 36.3,
+   "barreras_salud": 2.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "19100",
+   "ipm": 51.1,
+   "barreras_salud": 3.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15189",
+   "ipm": 40.5,
+   "barreras_salud": 1.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "94884",
+   "ipm": 96.3,
+   "barreras_salud": 7.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76497",
+   "ipm": 31.2,
+   "barreras_salud": 5.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25436",
+   "ipm": 35.5,
+   "barreras_salud": 2.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "97511",
+   "ipm": 98.4,
+   "barreras_salud": 13.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "23068",
+   "ipm": 62.4,
+   "barreras_salud": 6.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15276",
+   "ipm": 43.9,
+   "barreras_salud": 3.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73686",
+   "ipm": 50.9,
+   "barreras_salud": 8.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15507",
+   "ipm": 44.7,
+   "barreras_salud": 3.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "94888",
+   "ipm": 95.7,
+   "barreras_salud": 14.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25297",
+   "ipm": 43.2,
+   "barreras_salud": 1.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "94886",
+   "ipm": 90.1,
+   "barreras_salud": 4.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52079",
+   "ipm": 76.1,
+   "barreras_salud": 5.5,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "54405",
+   "ipm": 21.4,
+   "barreras_salud": 7.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "63470",
+   "ipm": 25.8,
+   "barreras_salud": 2.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15832",
+   "ipm": 42.1,
+   "barreras_salud": 6.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "97889",
+   "ipm": 94.8,
+   "barreras_salud": 16.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68705",
+   "ipm": 53.8,
+   "barreras_salud": 2.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "47205",
+   "ipm": 67.9,
+   "barreras_salud": 2.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "08849",
+   "ipm": 32.7,
+   "barreras_salud": 0.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "94885",
+   "ipm": 84.1,
+   "barreras_salud": 2.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "85230",
+   "ipm": 45.8,
+   "barreras_salud": 9.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68245",
+   "ipm": 33.0,
+   "barreras_salud": 1.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25649",
+   "ipm": 34.8,
+   "barreras_salud": 8.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "20032",
+   "ipm": 52.8,
+   "barreras_salud": 2.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "66088",
+   "ipm": 35.6,
+   "barreras_salud": 5.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "94343",
+   "ipm": 86.5,
+   "barreras_salud": 2.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68773",
+   "ipm": 47.1,
+   "barreras_salud": 4.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41807",
+   "ipm": 40.8,
+   "barreras_salud": 7.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52256",
+   "ipm": 52.1,
+   "barreras_salud": 8.3,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "97777",
+   "ipm": 97.9,
+   "barreras_salud": 2.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "20443",
+   "ipm": 41.2,
+   "barreras_salud": 5.2,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "19845",
+   "ipm": 22.7,
+   "barreras_salud": 4.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68370",
+   "ipm": 53.7,
+   "barreras_salud": 0.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25779",
+   "ipm": 27.1,
+   "barreras_salud": 1.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "19807",
+   "ipm": 35.7,
+   "barreras_salud": 17.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15790",
+   "ipm": 31.4,
+   "barreras_salud": 1.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25718",
+   "ipm": 22.9,
+   "barreras_salud": 3.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15494",
+   "ipm": 46.2,
+   "barreras_salud": 9.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76377",
+   "ipm": 25.3,
+   "barreras_salud": 14.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15599",
+   "ipm": 31.4,
+   "barreras_salud": 5.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "85325",
+   "ipm": 37.0,
+   "barreras_salud": 0.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "86755",
+   "ipm": 23.5,
+   "barreras_salud": 9.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15466",
+   "ipm": 28.8,
+   "barreras_salud": 3.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25438",
+   "ipm": 38.5,
+   "barreras_salud": 6.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "08436",
+   "ipm": 48.4,
+   "barreras_salud": 1.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05368",
+   "ipm": 25.8,
+   "barreras_salud": 2.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15296",
+   "ipm": 43.7,
+   "barreras_salud": 3.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73624",
+   "ipm": 47.0,
+   "barreras_salud": 1.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15162",
+   "ipm": 29.4,
+   "barreras_salud": 13.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "47960",
+   "ipm": 70.4,
+   "barreras_salud": 2.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "17272",
+   "ipm": 36.2,
+   "barreras_salud": 2.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "19300",
+   "ipm": 20.2,
+   "barreras_salud": 3.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "18592",
+   "ipm": 54.3,
+   "barreras_salud": 12.9,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "15798",
+   "ipm": 41.1,
+   "barreras_salud": 9.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15106",
+   "ipm": 48.5,
+   "barreras_salud": 7.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "18247",
+   "ipm": 44.3,
+   "barreras_salud": 11.3,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "15204",
+   "ipm": 36.1,
+   "barreras_salud": 2.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68013",
+   "ipm": 41.8,
+   "barreras_salud": 2.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73275",
+   "ipm": 17.4,
+   "barreras_salud": 0.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52490",
+   "ipm": 75.9,
+   "barreras_salud": 5.9,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "23678",
+   "ipm": 58.0,
+   "barreras_salud": 5.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73200",
+   "ipm": 35.8,
+   "barreras_salud": 2.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25885",
+   "ipm": 55.5,
+   "barreras_salud": 2.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73055",
+   "ipm": 27.3,
+   "barreras_salud": 1.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05543",
+   "ipm": 53.5,
+   "barreras_salud": 3.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13042",
+   "ipm": 62.0,
+   "barreras_salud": 18.0,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "15491",
+   "ipm": 10.5,
+   "barreras_salud": 3.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05031",
+   "ipm": 43.3,
+   "barreras_salud": 5.2,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "52696",
+   "ipm": 75.1,
+   "barreras_salud": 3.3,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "68615",
+   "ipm": 37.8,
+   "barreras_salud": 0.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15778",
+   "ipm": 47.4,
+   "barreras_salud": 3.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41016",
+   "ipm": 35.4,
+   "barreras_salud": 8.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15820",
+   "ipm": 28.7,
+   "barreras_salud": 3.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "50450",
+   "ipm": 53.0,
+   "barreras_salud": 9.0,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "73671",
+   "ipm": 36.3,
+   "barreras_salud": 3.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15401",
+   "ipm": 38.4,
+   "barreras_salud": 0.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "19517",
+   "ipm": 56.3,
+   "barreras_salud": 5.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15660",
+   "ipm": 35.9,
+   "barreras_salud": 5.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25781",
+   "ipm": 21.3,
+   "barreras_salud": 5.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76400",
+   "ipm": 22.5,
+   "barreras_salud": 11.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15131",
+   "ipm": 43.7,
+   "barreras_salud": 1.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15537",
+   "ipm": 21.6,
+   "barreras_salud": 1.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15480",
+   "ipm": 40.7,
+   "barreras_salud": 7.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "99773",
+   "ipm": 91.4,
+   "barreras_salud": 5.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05604",
+   "ipm": 42.1,
+   "barreras_salud": 1.5,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "66594",
+   "ipm": 41.4,
+   "barreras_salud": 3.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "94001",
+   "ipm": 67.2,
+   "barreras_salud": 8.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15621",
+   "ipm": 46.9,
+   "barreras_salud": 5.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15814",
+   "ipm": 30.2,
+   "barreras_salud": 1.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "47170",
+   "ipm": 53.3,
+   "barreras_salud": 0.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25658",
+   "ipm": 20.2,
+   "barreras_salud": 2.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76869",
+   "ipm": 19.0,
+   "barreras_salud": 0.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76736",
+   "ipm": 27.4,
+   "barreras_salud": 2.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15212",
+   "ipm": 38.8,
+   "barreras_salud": 0.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73678",
+   "ipm": 39.4,
+   "barreras_salud": 2.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25335",
+   "ipm": 29.6,
+   "barreras_salud": 2.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52385",
+   "ipm": 33.6,
+   "barreras_salud": 1.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "17616",
+   "ipm": 39.4,
+   "barreras_salud": 6.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41013",
+   "ipm": 50.0,
+   "barreras_salud": 13.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68655",
+   "ipm": 36.6,
+   "barreras_salud": 7.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "66318",
+   "ipm": 36.5,
+   "barreras_salud": 14.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25777",
+   "ipm": 28.2,
+   "barreras_salud": 9.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15293",
+   "ipm": 51.2,
+   "barreras_salud": 22.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52418",
+   "ipm": 44.9,
+   "barreras_salud": 13.4,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "68406",
+   "ipm": 27.0,
+   "barreras_salud": 6.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "19473",
+   "ipm": 48.7,
+   "barreras_salud": 5.8,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "86569",
+   "ipm": 38.9,
+   "barreras_salud": 3.9,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "19622",
+   "ipm": 43.2,
+   "barreras_salud": 3.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76306",
+   "ipm": 14.7,
+   "barreras_salud": 0.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15380",
+   "ipm": 31.6,
+   "barreras_salud": 1.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15325",
+   "ipm": 36.1,
+   "barreras_salud": 6.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "97161",
+   "ipm": 81.1,
+   "barreras_salud": 11.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68121",
+   "ipm": 34.0,
+   "barreras_salud": 12.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73563",
+   "ipm": 36.6,
+   "barreras_salud": 5.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76845",
+   "ipm": 24.2,
+   "barreras_salud": 0.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15185",
+   "ipm": 46.4,
+   "barreras_salud": 1.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52203",
+   "ipm": 42.4,
+   "barreras_salud": 4.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05789",
+   "ipm": 36.6,
+   "barreras_salud": 5.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15763",
+   "ipm": 35.4,
+   "barreras_salud": 2.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41359",
+   "ipm": 43.1,
+   "barreras_salud": 17.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68572",
+   "ipm": 26.4,
+   "barreras_salud": 1.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76670",
+   "ipm": 18.0,
+   "barreras_salud": 4.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "47545",
+   "ipm": 60.8,
+   "barreras_salud": 6.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "95001",
+   "ipm": 42.1,
+   "barreras_salud": 10.4,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "73148",
+   "ipm": 20.7,
+   "barreras_salud": 0.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25279",
+   "ipm": 27.4,
+   "barreras_salud": 16.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73873",
+   "ipm": 38.4,
+   "barreras_salud": 5.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41676",
+   "ipm": 51.5,
+   "barreras_salud": 10.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15092",
+   "ipm": 43.3,
+   "barreras_salud": 4.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76126",
+   "ipm": 25.7,
+   "barreras_salud": 8.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15740",
+   "ipm": 45.1,
+   "barreras_salud": 4.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "86573",
+   "ipm": 53.6,
+   "barreras_salud": 3.4,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "19355",
+   "ipm": 59.0,
+   "barreras_salud": 16.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13688",
+   "ipm": 43.6,
+   "barreras_salud": 13.4,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "15051",
+   "ipm": 24.8,
+   "barreras_salud": 4.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41319",
+   "ipm": 43.2,
+   "barreras_salud": 3.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52352",
+   "ipm": 43.6,
+   "barreras_salud": 1.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15090",
+   "ipm": 40.5,
+   "barreras_salud": 1.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41524",
+   "ipm": 32.6,
+   "barreras_salud": 6.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "23419",
+   "ipm": 60.5,
+   "barreras_salud": 2.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "19022",
+   "ipm": 62.9,
+   "barreras_salud": 5.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52287",
+   "ipm": 41.1,
+   "barreras_salud": 12.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68575",
+   "ipm": 40.3,
+   "barreras_salud": 7.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68522",
+   "ipm": 32.5,
+   "barreras_salud": 0.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "27099",
+   "ipm": 77.1,
+   "barreras_salud": 3.7,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "97666",
+   "ipm": 85.6,
+   "barreras_salud": 1.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05576",
+   "ipm": 45.7,
+   "barreras_salud": 2.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "70124",
+   "ipm": 58.7,
+   "barreras_salud": 5.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15218",
+   "ipm": 55.6,
+   "barreras_salud": 5.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "27073",
+   "ipm": 81.0,
+   "barreras_salud": 14.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25486",
+   "ipm": 14.2,
+   "barreras_salud": 1.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68190",
+   "ipm": 36.0,
+   "barreras_salud": 5.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52685",
+   "ipm": 59.4,
+   "barreras_salud": 7.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15572",
+   "ipm": 33.6,
+   "barreras_salud": 5.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25281",
+   "ipm": 45.2,
+   "barreras_salud": 2.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15676",
+   "ipm": 35.6,
+   "barreras_salud": 3.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "54128",
+   "ipm": 56.4,
+   "barreras_salud": 1.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52378",
+   "ipm": 27.8,
+   "barreras_salud": 2.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "63594",
+   "ipm": 22.0,
+   "barreras_salud": 4.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68770",
+   "ipm": 37.8,
+   "barreras_salud": 5.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15761",
+   "ipm": 41.0,
+   "barreras_salud": 7.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68745",
+   "ipm": 44.5,
+   "barreras_salud": 3.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15407",
+   "ipm": 15.2,
+   "barreras_salud": 4.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "19701",
+   "ipm": 66.1,
+   "barreras_salud": 28.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41885",
+   "ipm": 23.8,
+   "barreras_salud": 1.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "19364",
+   "ipm": 46.5,
+   "barreras_salud": 10.8,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "19821",
+   "ipm": 45.1,
+   "barreras_salud": 4.6,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "85263",
+   "ipm": 45.2,
+   "barreras_salud": 13.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13440",
+   "ipm": 65.6,
+   "barreras_salud": 15.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "08560",
+   "ipm": 46.7,
+   "barreras_salud": 5.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73461",
+   "ipm": 50.4,
+   "barreras_salud": 1.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25260",
+   "ipm": 12.8,
+   "barreras_salud": 3.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "85015",
+   "ipm": 36.0,
+   "barreras_salud": 8.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25258",
+   "ipm": 49.5,
+   "barreras_salud": 0.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "27413",
+   "ipm": 74.4,
+   "barreras_salud": 2.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25317",
+   "ipm": 25.7,
+   "barreras_salud": 0.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68500",
+   "ipm": 31.8,
+   "barreras_salud": 6.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "27077",
+   "ipm": 80.4,
+   "barreras_salud": 5.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "19137",
+   "ipm": 56.0,
+   "barreras_salud": 11.5,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "15232",
+   "ipm": 51.3,
+   "barreras_salud": 0.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "47161",
+   "ipm": 62.4,
+   "barreras_salud": 2.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "27600",
+   "ipm": 66.8,
+   "barreras_salud": 5.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52233",
+   "ipm": 39.4,
+   "barreras_salud": 1.8,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "13030",
+   "ipm": 70.7,
+   "barreras_salud": 8.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "23500",
+   "ipm": 65.4,
+   "barreras_salud": 3.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15533",
+   "ipm": 68.2,
+   "barreras_salud": 2.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "85279",
+   "ipm": 39.3,
+   "barreras_salud": 0.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13744",
+   "ipm": 54.8,
+   "barreras_salud": 8.2,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "20570",
+   "ipm": 74.9,
+   "barreras_salud": 12.2,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "05659",
+   "ipm": 61.1,
+   "barreras_salud": 0.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68322",
+   "ipm": 31.4,
+   "barreras_salud": 1.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73443",
+   "ipm": 27.1,
+   "barreras_salud": 3.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "19110",
+   "ipm": 42.5,
+   "barreras_salud": 5.5,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "25491",
+   "ipm": 26.2,
+   "barreras_salud": 7.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41660",
+   "ipm": 57.8,
+   "barreras_salud": 11.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41503",
+   "ipm": 58.5,
+   "barreras_salud": 15.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "17486",
+   "ipm": 31.3,
+   "barreras_salud": 1.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "19760",
+   "ipm": 32.3,
+   "barreras_salud": 3.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15455",
+   "ipm": 21.1,
+   "barreras_salud": 2.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73283",
+   "ipm": 33.6,
+   "barreras_salud": 1.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73030",
+   "ipm": 32.9,
+   "barreras_salud": 2.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05125",
+   "ipm": 54.6,
+   "barreras_salud": 14.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68160",
+   "ipm": 32.0,
+   "barreras_salud": 3.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52390",
+   "ipm": 73.9,
+   "barreras_salud": 6.6,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "85125",
+   "ipm": 56.1,
+   "barreras_salud": 7.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25151",
+   "ipm": 21.7,
+   "barreras_salud": 1.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "85139",
+   "ipm": 30.3,
+   "barreras_salud": 6.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15183",
+   "ipm": 69.1,
+   "barreras_salud": 5.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15172",
+   "ipm": 41.1,
+   "barreras_salud": 0.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52260",
+   "ipm": 31.9,
+   "barreras_salud": 1.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15322",
+   "ipm": 19.4,
+   "barreras_salud": 6.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68132",
+   "ipm": 21.2,
+   "barreras_salud": 2.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "23168",
+   "ipm": 57.8,
+   "barreras_salud": 2.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41518",
+   "ipm": 39.1,
+   "barreras_salud": 5.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25518",
+   "ipm": 55.0,
+   "barreras_salud": 1.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25123",
+   "ipm": 20.6,
+   "barreras_salud": 4.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "23079",
+   "ipm": 58.0,
+   "barreras_salud": 3.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52520",
+   "ipm": 69.5,
+   "barreras_salud": 5.3,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "68079",
+   "ipm": 28.5,
+   "barreras_salud": 12.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25293",
+   "ipm": 51.5,
+   "barreras_salud": 10.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73026",
+   "ipm": 38.8,
+   "barreras_salud": 3.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05665",
+   "ipm": 62.3,
+   "barreras_salud": 2.4,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "05674",
+   "ipm": 27.8,
+   "barreras_salud": 3.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15861",
+   "ipm": 25.7,
+   "barreras_salud": 5.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "63401",
+   "ipm": 27.4,
+   "barreras_salud": 5.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15542",
+   "ipm": 39.3,
+   "barreras_salud": 4.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73411",
+   "ipm": 33.4,
+   "barreras_salud": 8.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "54820",
+   "ipm": 50.1,
+   "barreras_salud": 1.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52207",
+   "ipm": 34.9,
+   "barreras_salud": 0.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52083",
+   "ipm": 34.1,
+   "barreras_salud": 10.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "54250",
+   "ipm": 71.2,
+   "barreras_salud": 15.1,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "54599",
+   "ipm": 41.4,
+   "barreras_salud": 3.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41306",
+   "ipm": 36.9,
+   "barreras_salud": 7.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "50287",
+   "ipm": 32.0,
+   "barreras_salud": 3.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68872",
+   "ipm": 27.5,
+   "barreras_salud": 8.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "19585",
+   "ipm": 39.5,
+   "barreras_salud": 8.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52565",
+   "ipm": 55.3,
+   "barreras_salud": 0.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "23350",
+   "ipm": 52.6,
+   "barreras_salud": 2.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05847",
+   "ipm": 46.1,
+   "barreras_salud": 7.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "23580",
+   "ipm": 58.9,
+   "barreras_salud": 5.9,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "25815",
+   "ipm": 24.4,
+   "barreras_salud": 4.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "50400",
+   "ipm": 39.9,
+   "barreras_salud": 7.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05093",
+   "ipm": 53.1,
+   "barreras_salud": 7.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52540",
+   "ipm": 38.7,
+   "barreras_salud": 3.4,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "19418",
+   "ipm": 81.2,
+   "barreras_salud": 6.2,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "05138",
+   "ipm": 45.3,
+   "barreras_salud": 4.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13490",
+   "ipm": 66.2,
+   "barreras_salud": 11.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05306",
+   "ipm": 33.4,
+   "barreras_salud": 0.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "08421",
+   "ipm": 55.4,
+   "barreras_salud": 5.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15022",
+   "ipm": 37.5,
+   "barreras_salud": 0.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52210",
+   "ipm": 44.0,
+   "barreras_salud": 2.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25326",
+   "ipm": 33.1,
+   "barreras_salud": 21.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52621",
+   "ipm": 81.0,
+   "barreras_salud": 6.6,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "05284",
+   "ipm": 51.3,
+   "barreras_salud": 1.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73622",
+   "ipm": 42.0,
+   "barreras_salud": 1.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25772",
+   "ipm": 14.0,
+   "barreras_salud": 3.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25743",
+   "ipm": 23.5,
+   "barreras_salud": 2.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25322",
+   "ipm": 15.5,
+   "barreras_salud": 3.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "19318",
+   "ipm": 68.9,
+   "barreras_salud": 1.4,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "41132",
+   "ipm": 31.1,
+   "barreras_salud": 8.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "66572",
+   "ipm": 70.5,
+   "barreras_salud": 4.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41244",
+   "ipm": 32.3,
+   "barreras_salud": 0.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05628",
+   "ipm": 52.8,
+   "barreras_salud": 3.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "27615",
+   "ipm": 70.9,
+   "barreras_salud": 3.4,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "52480",
+   "ipm": 40.8,
+   "barreras_salud": 1.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73270",
+   "ipm": 39.3,
+   "barreras_salud": 7.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05134",
+   "ipm": 59.3,
+   "barreras_salud": 3.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "81065",
+   "ipm": 49.2,
+   "barreras_salud": 9.1,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "05361",
+   "ipm": 57.6,
+   "barreras_salud": 6.4,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "73217",
+   "ipm": 62.1,
+   "barreras_salud": 0.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68867",
+   "ipm": 31.9,
+   "barreras_salud": 3.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68235",
+   "ipm": 58.9,
+   "barreras_salud": 6.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "54743",
+   "ipm": 46.6,
+   "barreras_salud": 1.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41206",
+   "ipm": 61.7,
+   "barreras_salud": 3.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73585",
+   "ipm": 32.6,
+   "barreras_salud": 2.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "70429",
+   "ipm": 64.4,
+   "barreras_salud": 6.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "27025",
+   "ipm": 90.6,
+   "barreras_salud": 1.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "85315",
+   "ipm": 32.5,
+   "barreras_salud": 2.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15816",
+   "ipm": 50.0,
+   "barreras_salud": 10.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "54720",
+   "ipm": 53.8,
+   "barreras_salud": 2.1,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "76100",
+   "ipm": 29.7,
+   "barreras_salud": 1.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "17524",
+   "ipm": 30.1,
+   "barreras_salud": 3.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15580",
+   "ipm": 64.6,
+   "barreras_salud": 0.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15226",
+   "ipm": 40.7,
+   "barreras_salud": 5.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "23682",
+   "ipm": 61.3,
+   "barreras_salud": 6.9,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "05411",
+   "ipm": 43.3,
+   "barreras_salud": 9.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "17088",
+   "ipm": 41.2,
+   "barreras_salud": 5.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15425",
+   "ipm": 28.9,
+   "barreras_salud": 0.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "17433",
+   "ipm": 37.5,
+   "barreras_salud": 5.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "81736",
+   "ipm": 39.4,
+   "barreras_salud": 10.2,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "66075",
+   "ipm": 31.6,
+   "barreras_salud": 2.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25736",
+   "ipm": 17.7,
+   "barreras_salud": 3.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "17777",
+   "ipm": 31.3,
+   "barreras_salud": 6.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73067",
+   "ipm": 64.0,
+   "barreras_salud": 6.3,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "05044",
+   "ipm": 47.1,
+   "barreras_salud": 6.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13300",
+   "ipm": 73.8,
+   "barreras_salud": 21.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05197",
+   "ipm": 42.9,
+   "barreras_salud": 5.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "23815",
+   "ipm": 78.0,
+   "barreras_salud": 3.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68298",
+   "ipm": 51.1,
+   "barreras_salud": 11.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13650",
+   "ipm": 64.3,
+   "barreras_salud": 2.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "54261",
+   "ipm": 41.9,
+   "barreras_salud": 4.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15835",
+   "ipm": 45.1,
+   "barreras_salud": 7.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25599",
+   "ipm": 28.4,
+   "barreras_salud": 1.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25797",
+   "ipm": 18.5,
+   "barreras_salud": 5.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "50251",
+   "ipm": 42.2,
+   "barreras_salud": 2.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "54810",
+   "ipm": 57.6,
+   "barreras_salud": 3.7,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "17442",
+   "ipm": 37.6,
+   "barreras_salud": 4.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68895",
+   "ipm": 26.9,
+   "barreras_salud": 7.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "17662",
+   "ipm": 39.9,
+   "barreras_salud": 3.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "86885",
+   "ipm": 37.1,
+   "barreras_salud": 13.7,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "54174",
+   "ipm": 54.8,
+   "barreras_salud": 13.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "17444",
+   "ipm": 40.7,
+   "barreras_salud": 7.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05893",
+   "ipm": 46.3,
+   "barreras_salud": 5.0,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "05679",
+   "ipm": 28.1,
+   "barreras_salud": 5.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "19142",
+   "ipm": 37.4,
+   "barreras_salud": 5.4,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "73226",
+   "ipm": 40.8,
+   "barreras_salud": 4.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13160",
+   "ipm": 50.6,
+   "barreras_salud": 7.5,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "25053",
+   "ipm": 20.0,
+   "barreras_salud": 1.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "19212",
+   "ipm": 33.7,
+   "barreras_salud": 5.6,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "73675",
+   "ipm": 53.7,
+   "barreras_salud": 9.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "20787",
+   "ipm": 47.5,
+   "barreras_salud": 7.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52224",
+   "ipm": 51.4,
+   "barreras_salud": 0.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05761",
+   "ipm": 28.7,
+   "barreras_salud": 2.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05858",
+   "ipm": 41.0,
+   "barreras_salud": 3.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "47720",
+   "ipm": 57.8,
+   "barreras_salud": 4.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52427",
+   "ipm": 85.3,
+   "barreras_salud": 7.6,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "05480",
+   "ipm": 57.8,
+   "barreras_salud": 6.3,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "05660",
+   "ipm": 32.4,
+   "barreras_salud": 2.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73319",
+   "ipm": 32.2,
+   "barreras_salud": 2.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25594",
+   "ipm": 37.7,
+   "barreras_salud": 1.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41797",
+   "ipm": 36.1,
+   "barreras_salud": 13.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76233",
+   "ipm": 28.4,
+   "barreras_salud": 4.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "85136",
+   "ipm": 48.1,
+   "barreras_salud": 4.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "66383",
+   "ipm": 37.5,
+   "barreras_salud": 1.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41615",
+   "ipm": 27.4,
+   "barreras_salud": 4.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05475",
+   "ipm": 81.5,
+   "barreras_salud": 4.3,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "05055",
+   "ipm": 48.7,
+   "barreras_salud": 4.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25040",
+   "ipm": 22.7,
+   "barreras_salud": 3.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13268",
+   "ipm": 67.7,
+   "barreras_salud": 16.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15469",
+   "ipm": 27.1,
+   "barreras_salud": 2.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15500",
+   "ipm": 22.8,
+   "barreras_salud": 9.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41483",
+   "ipm": 46.9,
+   "barreras_salud": 19.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68669",
+   "ipm": 42.4,
+   "barreras_salud": 5.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "47703",
+   "ipm": 56.4,
+   "barreras_salud": 6.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15879",
+   "ipm": 45.1,
+   "barreras_salud": 1.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15215",
+   "ipm": 26.6,
+   "barreras_salud": 2.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73024",
+   "ipm": 30.9,
+   "barreras_salud": 1.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68573",
+   "ipm": 36.1,
+   "barreras_salud": 6.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "08520",
+   "ipm": 36.0,
+   "barreras_salud": 2.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52320",
+   "ipm": 33.6,
+   "barreras_salud": 6.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25839",
+   "ipm": 47.0,
+   "barreras_salud": 3.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41020",
+   "ipm": 45.2,
+   "barreras_salud": 4.7,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "15646",
+   "ipm": 21.5,
+   "barreras_salud": 4.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "19824",
+   "ipm": 55.1,
+   "barreras_salud": 7.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13549",
+   "ipm": 67.5,
+   "barreras_salud": 0.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "50590",
+   "ipm": 47.1,
+   "barreras_salud": 9.9,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "76275",
+   "ipm": 18.9,
+   "barreras_salud": 3.6,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "23672",
+   "ipm": 46.0,
+   "barreras_salud": 5.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15368",
+   "ipm": 64.7,
+   "barreras_salud": 2.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "86865",
+   "ipm": 41.0,
+   "barreras_salud": 9.8,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "19397",
+   "ipm": 56.7,
+   "barreras_salud": 8.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "54480",
+   "ipm": 42.2,
+   "barreras_salud": 6.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73168",
+   "ipm": 39.7,
+   "barreras_salud": 2.6,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "68211",
+   "ipm": 29.2,
+   "barreras_salud": 5.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "19743",
+   "ipm": 43.8,
+   "barreras_salud": 6.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "47058",
+   "ipm": 56.4,
+   "barreras_salud": 3.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15696",
+   "ipm": 31.4,
+   "barreras_salud": 3.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25200",
+   "ipm": 12.6,
+   "barreras_salud": 5.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05425",
+   "ipm": 36.0,
+   "barreras_salud": 3.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05885",
+   "ipm": 44.0,
+   "barreras_salud": 2.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "63190",
+   "ipm": 17.3,
+   "barreras_salud": 2.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52411",
+   "ipm": 32.9,
+   "barreras_salud": 6.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15272",
+   "ipm": 21.7,
+   "barreras_salud": 6.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41801",
+   "ipm": 39.9,
+   "barreras_salud": 3.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "54347",
+   "ipm": 52.4,
+   "barreras_salud": 6.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25295",
+   "ipm": 11.1,
+   "barreras_salud": 1.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52683",
+   "ipm": 28.9,
+   "barreras_salud": 3.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05642",
+   "ipm": 49.7,
+   "barreras_salud": 5.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "70771",
+   "ipm": 63.4,
+   "barreras_salud": 3.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "50711",
+   "ipm": 48.5,
+   "barreras_salud": 6.3,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "85430",
+   "ipm": 38.7,
+   "barreras_salud": 1.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "19573",
+   "ipm": 16.6,
+   "barreras_salud": 2.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "54520",
+   "ipm": 41.7,
+   "barreras_salud": 9.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25148",
+   "ipm": 41.2,
+   "barreras_salud": 0.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76113",
+   "ipm": 25.8,
+   "barreras_salud": 5.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25513",
+   "ipm": 27.7,
+   "barreras_salud": 4.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13248",
+   "ipm": 59.5,
+   "barreras_salud": 5.7,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "54245",
+   "ipm": 68.9,
+   "barreras_salud": 6.9,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "05736",
+   "ipm": 42.8,
+   "barreras_salud": 4.5,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "54871",
+   "ipm": 64.8,
+   "barreras_salud": 5.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "47798",
+   "ipm": 56.3,
+   "barreras_salud": 3.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41078",
+   "ipm": 49.4,
+   "barreras_salud": 0.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "63302",
+   "ipm": 33.1,
+   "barreras_salud": 1.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76563",
+   "ipm": 24.8,
+   "barreras_salud": 8.0,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "25183",
+   "ipm": 27.5,
+   "barreras_salud": 6.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05467",
+   "ipm": 39.5,
+   "barreras_salud": 5.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13006",
+   "ipm": 62.4,
+   "barreras_salud": 9.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68318",
+   "ipm": 60.3,
+   "barreras_salud": 6.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76130",
+   "ipm": 15.5,
+   "barreras_salud": 2.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "08558",
+   "ipm": 30.5,
+   "barreras_salud": 4.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15442",
+   "ipm": 67.0,
+   "barreras_salud": 11.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "20710",
+   "ipm": 31.9,
+   "barreras_salud": 4.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25099",
+   "ipm": 16.8,
+   "barreras_salud": 9.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "66682",
+   "ipm": 21.2,
+   "barreras_salud": 4.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41872",
+   "ipm": 37.9,
+   "barreras_salud": 6.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "85300",
+   "ipm": 34.2,
+   "barreras_salud": 4.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "81300",
+   "ipm": 48.3,
+   "barreras_salud": 5.7,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "05541",
+   "ipm": 20.0,
+   "barreras_salud": 1.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15810",
+   "ipm": 41.6,
+   "barreras_salud": 1.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "08549",
+   "ipm": 45.2,
+   "barreras_salud": 0.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "27250",
+   "ipm": 83.1,
+   "barreras_salud": 9.1,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "05809",
+   "ipm": 30.3,
+   "barreras_salud": 1.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "19455",
+   "ipm": 21.6,
+   "barreras_salud": 5.7,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "54377",
+   "ipm": 41.3,
+   "barreras_salud": 2.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "47570",
+   "ipm": 58.0,
+   "barreras_salud": 3.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "20614",
+   "ipm": 48.3,
+   "barreras_salud": 14.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13673",
+   "ipm": 54.8,
+   "barreras_salud": 0.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "23300",
+   "ipm": 39.7,
+   "barreras_salud": 7.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "27430",
+   "ipm": 80.2,
+   "barreras_salud": 2.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68077",
+   "ipm": 21.6,
+   "barreras_salud": 4.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13074",
+   "ipm": 68.9,
+   "barreras_salud": 4.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "23090",
+   "ipm": 68.2,
+   "barreras_salud": 3.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41357",
+   "ipm": 49.6,
+   "barreras_salud": 2.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68207",
+   "ipm": 36.2,
+   "barreras_salud": 5.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13810",
+   "ipm": 73.0,
+   "barreras_salud": 13.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05364",
+   "ipm": 28.5,
+   "barreras_salud": 1.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15518",
+   "ipm": 27.8,
+   "barreras_salud": 1.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15753",
+   "ipm": 17.3,
+   "barreras_salud": 1.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41548",
+   "ipm": 43.9,
+   "barreras_salud": 4.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "27150",
+   "ipm": 77.8,
+   "barreras_salud": 2.8,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "15638",
+   "ipm": 23.8,
+   "barreras_salud": 0.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68861",
+   "ipm": 32.3,
+   "barreras_salud": 3.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05670",
+   "ipm": 40.8,
+   "barreras_salud": 6.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "17877",
+   "ipm": 26.0,
+   "barreras_salud": 3.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25320",
+   "ipm": 27.2,
+   "barreras_salud": 4.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "91407",
+   "ipm": 90.9,
+   "barreras_salud": 6.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "08770",
+   "ipm": 43.8,
+   "barreras_salud": 5.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05647",
+   "ipm": 48.5,
+   "barreras_salud": 1.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "20383",
+   "ipm": 44.4,
+   "barreras_salud": 1.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "23807",
+   "ipm": 63.8,
+   "barreras_salud": 7.0,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "52022",
+   "ipm": 29.1,
+   "barreras_salud": 6.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "70265",
+   "ipm": 66.1,
+   "barreras_salud": 10.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05483",
+   "ipm": 51.8,
+   "barreras_salud": 3.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "66687",
+   "ipm": 39.9,
+   "barreras_salud": 8.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "50577",
+   "ipm": 43.5,
+   "barreras_salud": 4.8,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "54239",
+   "ipm": 44.5,
+   "barreras_salud": 0.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "91798",
+   "ipm": 80.0,
+   "barreras_salud": 2.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "50370",
+   "ipm": 60.4,
+   "barreras_salud": 5.6,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "73770",
+   "ipm": 34.3,
+   "barreras_salud": 2.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "27006",
+   "ipm": 51.4,
+   "barreras_salud": 3.6,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "17050",
+   "ipm": 32.1,
+   "barreras_salud": 0.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "17013",
+   "ipm": 30.0,
+   "barreras_salud": 3.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "23574",
+   "ipm": 67.9,
+   "barreras_salud": 5.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05101",
+   "ipm": 40.4,
+   "barreras_salud": 3.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41349",
+   "ipm": 38.8,
+   "barreras_salud": 7.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15464",
+   "ipm": 50.7,
+   "barreras_salud": 17.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "47258",
+   "ipm": 50.4,
+   "barreras_salud": 5.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25402",
+   "ipm": 22.1,
+   "barreras_salud": 3.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05652",
+   "ipm": 46.4,
+   "barreras_salud": 14.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "70702",
+   "ipm": 44.8,
+   "barreras_salud": 4.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52678",
+   "ipm": 47.7,
+   "barreras_salud": 5.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52885",
+   "ipm": 44.2,
+   "barreras_salud": 13.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05390",
+   "ipm": 31.2,
+   "barreras_salud": 4.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41396",
+   "ipm": 42.5,
+   "barreras_salud": 7.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73347",
+   "ipm": 54.0,
+   "barreras_salud": 0.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25862",
+   "ipm": 50.0,
+   "barreras_salud": 0.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "23855",
+   "ipm": 53.1,
+   "barreras_salud": 0.7,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "15362",
+   "ipm": 24.8,
+   "barreras_salud": 5.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68755",
+   "ipm": 15.1,
+   "barreras_salud": 5.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "54206",
+   "ipm": 64.0,
+   "barreras_salud": 16.1,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "05890",
+   "ipm": 45.0,
+   "barreras_salud": 3.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68179",
+   "ipm": 42.8,
+   "barreras_salud": 6.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13838",
+   "ipm": 42.8,
+   "barreras_salud": 4.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05490",
+   "ipm": 62.7,
+   "barreras_salud": 7.5,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "54418",
+   "ipm": 45.3,
+   "barreras_salud": 2.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "50330",
+   "ipm": 45.1,
+   "barreras_salud": 14.1,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "25372",
+   "ipm": 57.8,
+   "barreras_salud": 0.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73504",
+   "ipm": 51.3,
+   "barreras_salud": 5.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52019",
+   "ipm": 44.2,
+   "barreras_salud": 7.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "86568",
+   "ipm": 44.1,
+   "barreras_salud": 8.5,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "20228",
+   "ipm": 45.8,
+   "barreras_salud": 6.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "85410",
+   "ipm": 27.2,
+   "barreras_salud": 3.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "20295",
+   "ipm": 48.6,
+   "barreras_salud": 14.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52585",
+   "ipm": 32.2,
+   "barreras_salud": 3.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "54223",
+   "ipm": 71.1,
+   "barreras_salud": 1.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "97001",
+   "ipm": 74.8,
+   "barreras_salud": 8.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15332",
+   "ipm": 48.1,
+   "barreras_salud": 8.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "63212",
+   "ipm": 30.7,
+   "barreras_salud": 8.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52110",
+   "ipm": 39.2,
+   "barreras_salud": 5.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05042",
+   "ipm": 29.7,
+   "barreras_salud": 1.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05321",
+   "ipm": 11.4,
+   "barreras_salud": 3.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73408",
+   "ipm": 28.1,
+   "barreras_salud": 2.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15299",
+   "ipm": 20.3,
+   "barreras_salud": 3.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52381",
+   "ipm": 59.0,
+   "barreras_salud": 4.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "20770",
+   "ipm": 41.7,
+   "barreras_salud": 5.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "85250",
+   "ipm": 37.8,
+   "barreras_salud": 4.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41530",
+   "ipm": 51.0,
+   "barreras_salud": 10.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "44855",
+   "ipm": 32.0,
+   "barreras_salud": 1.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41298",
+   "ipm": 32.0,
+   "barreras_salud": 5.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68418",
+   "ipm": 44.6,
+   "barreras_salud": 4.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73854",
+   "ipm": 40.4,
+   "barreras_salud": 1.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73483",
+   "ipm": 42.1,
+   "barreras_salud": 3.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05240",
+   "ipm": 39.1,
+   "barreras_salud": 6.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13062",
+   "ipm": 68.4,
+   "barreras_salud": 5.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "66400",
+   "ipm": 19.0,
+   "barreras_salud": 0.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "66045",
+   "ipm": 33.6,
+   "barreras_salud": 5.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "44847",
+   "ipm": 92.2,
+   "barreras_salud": 2.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "27800",
+   "ipm": 63.4,
+   "barreras_salud": 8.2,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "68152",
+   "ipm": 60.8,
+   "barreras_salud": 16.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52788",
+   "ipm": 46.0,
+   "barreras_salud": 1.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15762",
+   "ipm": 55.3,
+   "barreras_salud": 2.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25312",
+   "ipm": 19.9,
+   "barreras_salud": 4.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15097",
+   "ipm": 48.1,
+   "barreras_salud": 9.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76890",
+   "ipm": 20.8,
+   "barreras_salud": 6.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52573",
+   "ipm": 32.7,
+   "barreras_salud": 3.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "86320",
+   "ipm": 39.8,
+   "barreras_salud": 4.7,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "70678",
+   "ipm": 63.0,
+   "barreras_salud": 5.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "54800",
+   "ipm": 67.1,
+   "barreras_salud": 9.8,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "63130",
+   "ipm": 19.9,
+   "barreras_salud": 5.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "47460",
+   "ipm": 66.4,
+   "barreras_salud": 2.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52835",
+   "ipm": 53.7,
+   "barreras_salud": 4.1,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "27425",
+   "ipm": 76.6,
+   "barreras_salud": 2.9,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "17653",
+   "ipm": 28.7,
+   "barreras_salud": 3.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "66440",
+   "ipm": 33.3,
+   "barreras_salud": 0.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05209",
+   "ipm": 48.5,
+   "barreras_salud": 2.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25851",
+   "ipm": 35.5,
+   "barreras_salud": 2.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05059",
+   "ipm": 37.7,
+   "barreras_salud": 1.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76622",
+   "ipm": 16.5,
+   "barreras_salud": 3.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05113",
+   "ipm": 51.3,
+   "barreras_salud": 8.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25288",
+   "ipm": 23.6,
+   "barreras_salud": 2.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "20045",
+   "ipm": 48.6,
+   "barreras_salud": 10.2,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "44560",
+   "ipm": 86.7,
+   "barreras_salud": 2.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13780",
+   "ipm": 50.7,
+   "barreras_salud": 4.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25506",
+   "ipm": 38.1,
+   "barreras_salud": 13.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15667",
+   "ipm": 31.4,
+   "barreras_salud": 0.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "47541",
+   "ipm": 56.2,
+   "barreras_salud": 0.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13620",
+   "ipm": 49.9,
+   "barreras_salud": 6.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68327",
+   "ipm": 29.6,
+   "barreras_salud": 6.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73236",
+   "ipm": 32.8,
+   "barreras_salud": 0.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05091",
+   "ipm": 53.6,
+   "barreras_salud": 7.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "20310",
+   "ipm": 56.6,
+   "barreras_salud": 7.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68820",
+   "ipm": 45.8,
+   "barreras_salud": 0.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68468",
+   "ipm": 51.9,
+   "barreras_salud": 0.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52323",
+   "ipm": 30.9,
+   "barreras_salud": 3.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "20517",
+   "ipm": 46.1,
+   "barreras_salud": 2.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73547",
+   "ipm": 27.2,
+   "barreras_salud": 5.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05107",
+   "ipm": 55.4,
+   "barreras_salud": 9.2,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "68147",
+   "ipm": 35.7,
+   "barreras_salud": 5.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "19809",
+   "ipm": 72.4,
+   "barreras_salud": 5.6,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "17388",
+   "ipm": 34.5,
+   "barreras_salud": 0.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25898",
+   "ipm": 20.5,
+   "barreras_salud": 0.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15114",
+   "ipm": 31.3,
+   "barreras_salud": 1.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05792",
+   "ipm": 42.6,
+   "barreras_salud": 2.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "81794",
+   "ipm": 41.9,
+   "barreras_salud": 8.8,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "63548",
+   "ipm": 28.8,
+   "barreras_salud": 1.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68549",
+   "ipm": 23.8,
+   "barreras_salud": 7.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13647",
+   "ipm": 50.7,
+   "barreras_salud": 4.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "50350",
+   "ipm": 67.9,
+   "barreras_salud": 8.3,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "52240",
+   "ipm": 32.2,
+   "barreras_salud": 4.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25785",
+   "ipm": 9.6,
+   "barreras_salud": 3.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05051",
+   "ipm": 59.1,
+   "barreras_salud": 5.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25019",
+   "ipm": 25.8,
+   "barreras_salud": 9.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "54125",
+   "ipm": 48.9,
+   "barreras_salud": 5.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "27075",
+   "ipm": 46.6,
+   "barreras_salud": 3.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "81001",
+   "ipm": 38.6,
+   "barreras_salud": 6.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "91405",
+   "ipm": 88.1,
+   "barreras_salud": 11.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "20621",
+   "ipm": 41.7,
+   "barreras_salud": 7.5,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "47551",
+   "ipm": 52.4,
+   "barreras_salud": 5.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "27491",
+   "ipm": 60.1,
+   "barreras_salud": 6.2,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "50680",
+   "ipm": 31.9,
+   "barreras_salud": 11.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05148",
+   "ipm": 18.5,
+   "barreras_salud": 6.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05756",
+   "ipm": 37.9,
+   "barreras_salud": 3.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41799",
+   "ipm": 44.5,
+   "barreras_salud": 0.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05656",
+   "ipm": 30.5,
+   "barreras_salud": 1.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "17174",
+   "ipm": 21.8,
+   "barreras_salud": 3.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "54660",
+   "ipm": 48.8,
+   "barreras_salud": 8.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25120",
+   "ipm": 39.5,
+   "barreras_salud": 4.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25524",
+   "ipm": 36.7,
+   "barreras_salud": 5.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52693",
+   "ipm": 41.1,
+   "barreras_salud": 5.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13654",
+   "ipm": 60.3,
+   "barreras_salud": 6.8,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "19693",
+   "ipm": 46.4,
+   "barreras_salud": 5.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05579",
+   "ipm": 32.1,
+   "barreras_salud": 3.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "17665",
+   "ipm": 39.9,
+   "barreras_salud": 6.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68162",
+   "ipm": 41.9,
+   "barreras_salud": 3.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05002",
+   "ipm": 40.6,
+   "barreras_salud": 3.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52051",
+   "ipm": 54.3,
+   "barreras_salud": 2.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05690",
+   "ipm": 41.5,
+   "barreras_salud": 3.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15377",
+   "ipm": 57.4,
+   "barreras_salud": 7.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76318",
+   "ipm": 16.0,
+   "barreras_salud": 3.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "54099",
+   "ipm": 36.3,
+   "barreras_salud": 5.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52687",
+   "ipm": 55.3,
+   "barreras_salud": 9.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15244",
+   "ipm": 49.4,
+   "barreras_salud": 3.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05861",
+   "ipm": 25.8,
+   "barreras_salud": 3.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25339",
+   "ipm": 37.6,
+   "barreras_salud": 13.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05154",
+   "ipm": 36.0,
+   "barreras_salud": 2.9,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "13458",
+   "ipm": 70.1,
+   "barreras_salud": 22.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15808",
+   "ipm": 35.2,
+   "barreras_salud": 7.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "08137",
+   "ipm": 64.6,
+   "barreras_salud": 0.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15236",
+   "ipm": 45.8,
+   "barreras_salud": 2.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25001",
+   "ipm": 17.9,
+   "barreras_salud": 1.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "50270",
+   "ipm": 28.9,
+   "barreras_salud": 3.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "27450",
+   "ipm": 69.7,
+   "barreras_salud": 6.0,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "91001",
+   "ipm": 48.4,
+   "barreras_salud": 5.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "70400",
+   "ipm": 55.8,
+   "barreras_salud": 3.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "47268",
+   "ipm": 63.6,
+   "barreras_salud": 2.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "70418",
+   "ipm": 41.6,
+   "barreras_salud": 7.6,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "86760",
+   "ipm": 37.2,
+   "barreras_salud": 9.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13188",
+   "ipm": 61.3,
+   "barreras_salud": 12.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15180",
+   "ipm": 60.1,
+   "barreras_salud": 8.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52612",
+   "ipm": 71.9,
+   "barreras_salud": 3.3,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "23670",
+   "ipm": 76.3,
+   "barreras_salud": 2.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05145",
+   "ipm": 30.5,
+   "barreras_salud": 2.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13655",
+   "ipm": 66.7,
+   "barreras_salud": 1.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76895",
+   "ipm": 17.2,
+   "barreras_salud": 4.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "54313",
+   "ipm": 42.3,
+   "barreras_salud": 5.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05856",
+   "ipm": 25.9,
+   "barreras_salud": 2.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13873",
+   "ipm": 54.1,
+   "barreras_salud": 2.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76122",
+   "ipm": 24.6,
+   "barreras_salud": 7.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "70204",
+   "ipm": 59.6,
+   "barreras_salud": 5.6,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "68684",
+   "ipm": 47.6,
+   "barreras_salud": 8.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73352",
+   "ipm": 33.7,
+   "barreras_salud": 3.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "85440",
+   "ipm": 24.6,
+   "barreras_salud": 5.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25530",
+   "ipm": 37.4,
+   "barreras_salud": 10.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05585",
+   "ipm": 33.1,
+   "barreras_salud": 5.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "20013",
+   "ipm": 44.5,
+   "barreras_salud": 8.5,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "76036",
+   "ipm": 15.3,
+   "barreras_salud": 0.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "50110",
+   "ipm": 36.5,
+   "barreras_salud": 14.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "19548",
+   "ipm": 30.7,
+   "barreras_salud": 4.1,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "47605",
+   "ipm": 50.6,
+   "barreras_salud": 0.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "20238",
+   "ipm": 48.2,
+   "barreras_salud": 9.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52215",
+   "ipm": 41.8,
+   "barreras_salud": 4.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15516",
+   "ipm": 16.2,
+   "barreras_salud": 3.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25740",
+   "ipm": 13.5,
+   "barreras_salud": 6.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15224",
+   "ipm": 25.9,
+   "barreras_salud": 2.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05347",
+   "ipm": 37.5,
+   "barreras_salud": 6.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52036",
+   "ipm": 22.2,
+   "barreras_salud": 8.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13140",
+   "ipm": 62.5,
+   "barreras_salud": 2.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25386",
+   "ipm": 18.3,
+   "barreras_salud": 4.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "17042",
+   "ipm": 32.5,
+   "barreras_salud": 5.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76364",
+   "ipm": 14.9,
+   "barreras_salud": 2.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25817",
+   "ipm": 10.1,
+   "barreras_salud": 4.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "17873",
+   "ipm": 17.0,
+   "barreras_salud": 5.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05142",
+   "ipm": 35.9,
+   "barreras_salud": 1.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "27135",
+   "ipm": 60.2,
+   "barreras_salud": 5.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "20175",
+   "ipm": 52.5,
+   "barreras_salud": 4.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25488",
+   "ipm": 22.1,
+   "barreras_salud": 2.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "17513",
+   "ipm": 33.3,
+   "barreras_salud": 1.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05021",
+   "ipm": 31.9,
+   "barreras_salud": 0.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76109",
+   "ipm": 41.0,
+   "barreras_salud": 4.5,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "15673",
+   "ipm": 45.8,
+   "barreras_salud": 1.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25823",
+   "ipm": 47.1,
+   "barreras_salud": 5.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52786",
+   "ipm": 36.1,
+   "barreras_salud": 1.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25653",
+   "ipm": 36.9,
+   "barreras_salud": 1.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05282",
+   "ipm": 31.6,
+   "barreras_salud": 0.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52699",
+   "ipm": 65.1,
+   "barreras_salud": 6.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25299",
+   "ipm": 42.9,
+   "barreras_salud": 1.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "23189",
+   "ipm": 52.3,
+   "barreras_salud": 1.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "70523",
+   "ipm": 65.1,
+   "barreras_salud": 5.1,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "25867",
+   "ipm": 31.6,
+   "barreras_salud": 3.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "17380",
+   "ipm": 26.8,
+   "barreras_salud": 2.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05086",
+   "ipm": 40.8,
+   "barreras_salud": 5.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41551",
+   "ipm": 33.7,
+   "barreras_salud": 6.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "20750",
+   "ipm": 40.7,
+   "barreras_salud": 6.6,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "15187",
+   "ipm": 42.3,
+   "barreras_salud": 4.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68176",
+   "ipm": 45.2,
+   "barreras_salud": 3.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73616",
+   "ipm": 60.5,
+   "barreras_salud": 11.3,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "27205",
+   "ipm": 53.2,
+   "barreras_salud": 7.0,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "27660",
+   "ipm": 59.1,
+   "barreras_salud": 4.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "47745",
+   "ipm": 70.7,
+   "barreras_salud": 1.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "27745",
+   "ipm": 69.7,
+   "barreras_salud": 12.5,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "85162",
+   "ipm": 27.5,
+   "barreras_salud": 5.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68266",
+   "ipm": 35.3,
+   "barreras_salud": 2.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25807",
+   "ipm": 52.3,
+   "barreras_salud": 1.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "54680",
+   "ipm": 48.1,
+   "barreras_salud": 6.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "70713",
+   "ipm": 69.0,
+   "barreras_salud": 5.4,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "25430",
+   "ipm": 10.4,
+   "barreras_salud": 5.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25645",
+   "ipm": 21.8,
+   "barreras_salud": 0.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "91263",
+   "ipm": 77.5,
+   "barreras_salud": 2.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "27372",
+   "ipm": 71.8,
+   "barreras_salud": 8.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05353",
+   "ipm": 36.9,
+   "barreras_salud": 4.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "50318",
+   "ipm": 22.6,
+   "barreras_salud": 9.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76248",
+   "ipm": 15.2,
+   "barreras_salud": 2.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68255",
+   "ipm": 45.7,
+   "barreras_salud": 5.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52258",
+   "ipm": 50.4,
+   "barreras_salud": 8.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "47660",
+   "ipm": 69.4,
+   "barreras_salud": 0.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05172",
+   "ipm": 37.7,
+   "barreras_salud": 4.9,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "08606",
+   "ipm": 54.6,
+   "barreras_salud": 8.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52227",
+   "ipm": 28.6,
+   "barreras_salud": 0.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "27580",
+   "ipm": 75.1,
+   "barreras_salud": 9.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13052",
+   "ipm": 47.4,
+   "barreras_salud": 6.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "54518",
+   "ipm": 20.5,
+   "barreras_salud": 4.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05129",
+   "ipm": 16.0,
+   "barreras_salud": 4.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05310",
+   "ipm": 34.1,
+   "barreras_salud": 6.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "70233",
+   "ipm": 64.3,
+   "barreras_salud": 9.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15550",
+   "ipm": 57.9,
+   "barreras_salud": 4.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25181",
+   "ipm": 22.5,
+   "barreras_salud": 5.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25398",
+   "ipm": 50.3,
+   "barreras_salud": 0.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05440",
+   "ipm": 15.4,
+   "barreras_salud": 3.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13683",
+   "ipm": 54.3,
+   "barreras_salud": 8.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "17495",
+   "ipm": 41.4,
+   "barreras_salud": 4.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "66456",
+   "ipm": 65.3,
+   "barreras_salud": 1.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13433",
+   "ipm": 54.3,
+   "barreras_salud": 14.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25754",
+   "ipm": 14.1,
+   "barreras_salud": 4.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "08141",
+   "ipm": 52.0,
+   "barreras_salud": 2.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52354",
+   "ipm": 40.2,
+   "barreras_salud": 4.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "81220",
+   "ipm": 48.8,
+   "barreras_salud": 7.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15774",
+   "ipm": 37.1,
+   "barreras_salud": 0.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "91669",
+   "ipm": 88.7,
+   "barreras_salud": 18.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "70708",
+   "ipm": 59.1,
+   "barreras_salud": 7.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15690",
+   "ipm": 29.0,
+   "barreras_salud": 2.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "08078",
+   "ipm": 33.5,
+   "barreras_salud": 5.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25799",
+   "ipm": 10.4,
+   "barreras_salud": 6.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "44110",
+   "ipm": 37.0,
+   "barreras_salud": 0.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05315",
+   "ipm": 41.1,
+   "barreras_salud": 0.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68307",
+   "ipm": 16.5,
+   "barreras_salud": 3.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05819",
+   "ipm": 53.5,
+   "barreras_salud": 20.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13442",
+   "ipm": 63.2,
+   "barreras_salud": 1.2,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "13600",
+   "ipm": 57.3,
+   "barreras_salud": 1.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52838",
+   "ipm": 32.5,
+   "barreras_salud": 4.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73449",
+   "ipm": 19.7,
+   "barreras_salud": 1.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52317",
+   "ipm": 30.4,
+   "barreras_salud": 1.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "27787",
+   "ipm": 59.9,
+   "barreras_salud": 5.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "63272",
+   "ipm": 18.1,
+   "barreras_salud": 1.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05212",
+   "ipm": 11.6,
+   "barreras_salud": 4.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "47675",
+   "ipm": 44.3,
+   "barreras_salud": 6.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "18001",
+   "ipm": 29.6,
+   "barreras_salud": 4.8,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "05237",
+   "ipm": 19.7,
+   "barreras_salud": 0.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "54673",
+   "ipm": 37.6,
+   "barreras_salud": 3.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25368",
+   "ipm": 34.9,
+   "barreras_salud": 1.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25168",
+   "ipm": 58.7,
+   "barreras_salud": 40.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13657",
+   "ipm": 56.2,
+   "barreras_salud": 6.6,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "23675",
+   "ipm": 57.0,
+   "barreras_salud": 3.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "50606",
+   "ipm": 15.3,
+   "barreras_salud": 3.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "27495",
+   "ipm": 72.9,
+   "barreras_salud": 4.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15511",
+   "ipm": 37.5,
+   "barreras_salud": 13.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25843",
+   "ipm": 14.2,
+   "barreras_salud": 2.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "50223",
+   "ipm": 21.8,
+   "barreras_salud": 2.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05308",
+   "ipm": 13.9,
+   "barreras_salud": 3.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "66170",
+   "ipm": 13.7,
+   "barreras_salud": 3.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13468",
+   "ipm": 49.1,
+   "barreras_salud": 1.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15720",
+   "ipm": 51.6,
+   "barreras_salud": 5.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25286",
+   "ipm": 7.8,
+   "barreras_salud": 2.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "91536",
+   "ipm": 84.6,
+   "barreras_salud": 17.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25769",
+   "ipm": 12.6,
+   "barreras_salud": 4.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "91460",
+   "ipm": 91.2,
+   "barreras_salud": 4.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "70670",
+   "ipm": 56.9,
+   "barreras_salud": 11.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52399",
+   "ipm": 48.6,
+   "barreras_salud": 3.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05079",
+   "ipm": 22.2,
+   "barreras_salud": 2.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25328",
+   "ipm": 29.4,
+   "barreras_salud": 2.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "54109",
+   "ipm": 67.9,
+   "barreras_salud": 9.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "91530",
+   "ipm": 82.4,
+   "barreras_salud": 31.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15839",
+   "ipm": 36.4,
+   "barreras_salud": 0.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05376",
+   "ipm": 11.5,
+   "barreras_salud": 2.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05190",
+   "ipm": 28.8,
+   "barreras_salud": 1.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25473",
+   "ipm": 9.6,
+   "barreras_salud": 7.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "44430",
+   "ipm": 60.0,
+   "barreras_salud": 2.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "50683",
+   "ipm": 37.9,
+   "barreras_salud": 8.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05030",
+   "ipm": 22.9,
+   "barreras_salud": 4.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "47053",
+   "ipm": 50.0,
+   "barreras_salud": 1.6,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "05591",
+   "ipm": 29.3,
+   "barreras_salud": 1.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "70110",
+   "ipm": 49.1,
+   "barreras_salud": 2.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25662",
+   "ipm": 35.6,
+   "barreras_salud": 2.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "44378",
+   "ipm": 43.3,
+   "barreras_salud": 3.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "47318",
+   "ipm": 60.3,
+   "barreras_salud": 3.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "54051",
+   "ipm": 53.5,
+   "barreras_salud": 4.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25489",
+   "ipm": 30.2,
+   "barreras_salud": 0.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "17541",
+   "ipm": 37.3,
+   "barreras_salud": 2.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "70235",
+   "ipm": 46.1,
+   "barreras_salud": 1.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05313",
+   "ipm": 33.4,
+   "barreras_salud": 3.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15248",
+   "ipm": 31.3,
+   "barreras_salud": 4.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52435",
+   "ipm": 39.0,
+   "barreras_salud": 1.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05380",
+   "ipm": 9.2,
+   "barreras_salud": 2.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "91430",
+   "ipm": 96.4,
+   "barreras_salud": 12.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "86219",
+   "ipm": 22.6,
+   "barreras_salud": 15.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05873",
+   "ipm": 76.1,
+   "barreras_salud": 7.4,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "15403",
+   "ipm": 41.9,
+   "barreras_salud": 5.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68425",
+   "ipm": 50.3,
+   "barreras_salud": 1.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "27493",
+   "ipm": NaN,
+   "barreras_salud": NaN,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05206",
+   "ipm": 33.0,
+   "barreras_salud": 1.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13212",
+   "ipm": 61.9,
+   "barreras_salud": 13.1,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "68682",
+   "ipm": 41.4,
+   "barreras_salud": 0.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68524",
+   "ipm": 27.3,
+   "barreras_salud": 0.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05658",
+   "ipm": 34.0,
+   "barreras_salud": 6.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "23182",
+   "ipm": 45.3,
+   "barreras_salud": 0.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "85010",
+   "ipm": 27.0,
+   "barreras_salud": 9.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13244",
+   "ipm": 58.4,
+   "barreras_salud": 6.8,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "41026",
+   "ipm": 30.4,
+   "barreras_salud": 6.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68686",
+   "ipm": 33.6,
+   "barreras_salud": 0.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "63690",
+   "ipm": 19.7,
+   "barreras_salud": 5.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13760",
+   "ipm": 39.4,
+   "barreras_salud": 3.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76892",
+   "ipm": 15.6,
+   "barreras_salud": 2.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "50226",
+   "ipm": 22.7,
+   "barreras_salud": 5.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "23586",
+   "ipm": 53.1,
+   "barreras_salud": 2.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25035",
+   "ipm": 22.6,
+   "barreras_salud": 4.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "50124",
+   "ipm": 32.2,
+   "barreras_salud": 12.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05697",
+   "ipm": 22.0,
+   "barreras_salud": 0.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "86001",
+   "ipm": 24.8,
+   "barreras_salud": 9.8,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "23686",
+   "ipm": 45.8,
+   "barreras_salud": 2.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "08433",
+   "ipm": 30.0,
+   "barreras_salud": 5.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "27160",
+   "ipm": 55.9,
+   "barreras_salud": 1.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "47692",
+   "ipm": 63.8,
+   "barreras_salud": 3.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25245",
+   "ipm": 18.3,
+   "barreras_salud": 3.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76111",
+   "ipm": 12.3,
+   "barreras_salud": 4.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25596",
+   "ipm": 44.1,
+   "barreras_salud": 5.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76147",
+   "ipm": 16.6,
+   "barreras_salud": 6.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "70717",
+   "ipm": 47.1,
+   "barreras_salud": 4.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05686",
+   "ipm": 30.9,
+   "barreras_salud": 1.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25805",
+   "ipm": 27.4,
+   "barreras_salud": 5.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25269",
+   "ipm": 10.5,
+   "barreras_salud": 3.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "54001",
+   "ipm": 25.7,
+   "barreras_salud": 5.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73349",
+   "ipm": 25.8,
+   "barreras_salud": 3.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05150",
+   "ipm": 20.4,
+   "barreras_salud": 0.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52560",
+   "ipm": 27.5,
+   "barreras_salud": 1.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "20060",
+   "ipm": 43.8,
+   "barreras_salud": 4.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13580",
+   "ipm": 48.9,
+   "barreras_salud": 4.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05004",
+   "ipm": 34.8,
+   "barreras_salud": 1.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "27361",
+   "ipm": 55.1,
+   "barreras_salud": 3.9,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "08372",
+   "ipm": 36.7,
+   "barreras_salud": 2.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13894",
+   "ipm": 62.4,
+   "barreras_salud": 6.2,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "25572",
+   "ipm": 31.0,
+   "barreras_salud": 3.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25095",
+   "ipm": 29.3,
+   "barreras_salud": 0.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05667",
+   "ipm": 36.8,
+   "barreras_salud": 7.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "23555",
+   "ipm": 43.0,
+   "barreras_salud": 3.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "20400",
+   "ipm": 32.6,
+   "barreras_salud": 0.9,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "27810",
+   "ipm": 57.4,
+   "barreras_salud": 18.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "63111",
+   "ipm": 29.0,
+   "barreras_salud": 3.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "86749",
+   "ipm": 23.0,
+   "barreras_salud": 14.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "47030",
+   "ipm": 57.3,
+   "barreras_salud": 14.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "23570",
+   "ipm": 52.9,
+   "barreras_salud": 0.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25758",
+   "ipm": 8.0,
+   "barreras_salud": 7.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05837",
+   "ipm": 49.9,
+   "barreras_salud": 5.4,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "15317",
+   "ipm": 30.4,
+   "barreras_salud": 1.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05360",
+   "ipm": 10.9,
+   "barreras_salud": 3.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05318",
+   "ipm": 17.0,
+   "barreras_salud": 1.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "20011",
+   "ipm": 37.0,
+   "barreras_salud": 12.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "19698",
+   "ipm": 23.8,
+   "barreras_salud": 4.7,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "73268",
+   "ipm": 19.2,
+   "barreras_salud": 0.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "23660",
+   "ipm": 40.4,
+   "barreras_salud": 3.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "23464",
+   "ipm": 42.1,
+   "barreras_salud": 5.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "50573",
+   "ipm": 32.7,
+   "barreras_salud": 7.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52720",
+   "ipm": 43.0,
+   "barreras_salud": 2.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15522",
+   "ipm": 42.7,
+   "barreras_salud": 0.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "47707",
+   "ipm": 47.3,
+   "barreras_salud": 1.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25377",
+   "ipm": 9.8,
+   "barreras_salud": 4.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25871",
+   "ipm": 38.2,
+   "barreras_salud": 10.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25612",
+   "ipm": 17.5,
+   "barreras_salud": 0.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25580",
+   "ipm": 46.0,
+   "barreras_salud": 1.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05664",
+   "ipm": 19.5,
+   "barreras_salud": 0.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "50568",
+   "ipm": 51.8,
+   "barreras_salud": 4.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "23417",
+   "ipm": 41.1,
+   "barreras_salud": 3.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "50325",
+   "ipm": 64.2,
+   "barreras_salud": 3.4,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "47245",
+   "ipm": 54.7,
+   "barreras_salud": 11.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05649",
+   "ipm": 30.5,
+   "barreras_salud": 5.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "70823",
+   "ipm": 45.8,
+   "barreras_salud": 1.1,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "15723",
+   "ipm": 29.7,
+   "barreras_salud": 2.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "88001",
+   "ipm": 16.8,
+   "barreras_salud": 2.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "70221",
+   "ipm": 45.0,
+   "barreras_salud": 8.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "70230",
+   "ipm": 73.9,
+   "barreras_salud": 15.6,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "05501",
+   "ipm": 33.4,
+   "barreras_salud": 0.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "50686",
+   "ipm": 43.2,
+   "barreras_salud": 8.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05036",
+   "ipm": 30.7,
+   "barreras_salud": 1.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68081",
+   "ipm": 26.4,
+   "barreras_salud": 4.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05088",
+   "ipm": 14.2,
+   "barreras_salud": 2.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25899",
+   "ipm": 10.3,
+   "barreras_salud": 6.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05264",
+   "ipm": 23.1,
+   "barreras_salud": 5.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "44874",
+   "ipm": 31.0,
+   "barreras_salud": 3.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15759",
+   "ipm": 10.4,
+   "barreras_salud": 3.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25592",
+   "ipm": 32.1,
+   "barreras_salud": 3.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76834",
+   "ipm": 13.7,
+   "barreras_salud": 2.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05147",
+   "ipm": 34.4,
+   "barreras_salud": 0.9,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "20178",
+   "ipm": 41.3,
+   "barreras_salud": 5.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15176",
+   "ipm": 17.3,
+   "barreras_salud": 4.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25086",
+   "ipm": 38.3,
+   "barreras_salud": 1.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05887",
+   "ipm": 33.8,
+   "barreras_salud": 3.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "47980",
+   "ipm": 48.6,
+   "barreras_salud": 3.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "08758",
+   "ipm": 18.6,
+   "barreras_salud": 2.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "08685",
+   "ipm": 25.8,
+   "barreras_salud": 1.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "08296",
+   "ipm": 23.8,
+   "barreras_salud": 1.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68679",
+   "ipm": 13.7,
+   "barreras_salud": 5.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "70473",
+   "ipm": 42.8,
+   "barreras_salud": 3.4,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "81591",
+   "ipm": 45.0,
+   "barreras_salud": 13.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "50689",
+   "ipm": 25.5,
+   "barreras_salud": 4.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "41001",
+   "ipm": 17.6,
+   "barreras_salud": 3.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "70742",
+   "ipm": 51.1,
+   "barreras_salud": 3.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68092",
+   "ipm": 43.9,
+   "barreras_salud": 15.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "54498",
+   "ipm": 31.4,
+   "barreras_salud": 8.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "23466",
+   "ipm": 41.1,
+   "barreras_salud": 5.1,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "20250",
+   "ipm": 40.7,
+   "barreras_salud": 8.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25875",
+   "ipm": 18.7,
+   "barreras_salud": 2.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "08638",
+   "ipm": 36.5,
+   "barreras_salud": 4.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05034",
+   "ipm": 40.1,
+   "barreras_salud": 4.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "44420",
+   "ipm": 43.0,
+   "barreras_salud": 8.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "70508",
+   "ipm": 51.5,
+   "barreras_salud": 9.3,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "25290",
+   "ipm": 12.2,
+   "barreras_salud": 2.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "47555",
+   "ipm": 52.7,
+   "barreras_salud": 3.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "17446",
+   "ipm": 34.6,
+   "barreras_salud": 2.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "70820",
+   "ipm": 42.7,
+   "barreras_salud": 1.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "44090",
+   "ipm": 65.5,
+   "barreras_salud": 4.6,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "15238",
+   "ipm": 10.5,
+   "barreras_salud": 3.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "52001",
+   "ipm": 16.3,
+   "barreras_salud": 5.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68432",
+   "ipm": 19.3,
+   "barreras_salud": 5.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "23162",
+   "ipm": 34.4,
+   "barreras_salud": 5.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25324",
+   "ipm": 32.9,
+   "barreras_salud": 4.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13430",
+   "ipm": 49.1,
+   "barreras_salud": 4.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "50150",
+   "ipm": 23.1,
+   "barreras_salud": 4.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "50313",
+   "ipm": 29.6,
+   "barreras_salud": 3.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76520",
+   "ipm": 11.5,
+   "barreras_salud": 1.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05607",
+   "ipm": 11.7,
+   "barreras_salud": 1.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "08634",
+   "ipm": 31.9,
+   "barreras_salud": 2.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "27050",
+   "ipm": 61.5,
+   "barreras_salud": 8.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25214",
+   "ipm": 9.0,
+   "barreras_salud": 6.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68547",
+   "ipm": 16.2,
+   "barreras_salud": 5.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "85001",
+   "ipm": 22.9,
+   "barreras_salud": 7.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "19001",
+   "ipm": 18.4,
+   "barreras_salud": 8.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "08832",
+   "ipm": 32.8,
+   "barreras_salud": 1.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13836",
+   "ipm": 30.4,
+   "barreras_salud": 4.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "76001",
+   "ipm": 11.9,
+   "barreras_salud": 4.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25483",
+   "ipm": 27.8,
+   "barreras_salud": 0.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "47288",
+   "ipm": 43.9,
+   "barreras_salud": 4.4,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "52356",
+   "ipm": 23.4,
+   "barreras_salud": 3.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "47189",
+   "ipm": 44.6,
+   "barreras_salud": 6.3,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "05400",
+   "ipm": 23.0,
+   "barreras_salud": 5.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68276",
+   "ipm": 11.0,
+   "barreras_salud": 3.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05631",
+   "ipm": 4.5,
+   "barreras_salud": 2.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05045",
+   "ipm": 28.0,
+   "barreras_salud": 6.8,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "25307",
+   "ipm": 13.4,
+   "barreras_salud": 3.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "50006",
+   "ipm": 19.2,
+   "barreras_salud": 6.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05266",
+   "ipm": 4.9,
+   "barreras_salud": 1.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "11001",
+   "ipm": 9.0,
+   "barreras_salud": 4.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "27001",
+   "ipm": 44.4,
+   "barreras_salud": 5.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "44078",
+   "ipm": 46.7,
+   "barreras_salud": 1.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25126",
+   "ipm": 6.8,
+   "barreras_salud": 3.9,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "13001",
+   "ipm": 19.9,
+   "barreras_salud": 2.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "44001",
+   "ipm": 45.1,
+   "barreras_salud": 4.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "50245",
+   "ipm": 29.7,
+   "barreras_salud": 1.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "63001",
+   "ipm": 14.4,
+   "barreras_salud": 3.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "68001",
+   "ipm": 14.2,
+   "barreras_salud": 4.1,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "15001",
+   "ipm": 11.4,
+   "barreras_salud": 5.5,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "44279",
+   "ipm": 36.0,
+   "barreras_salud": 4.9,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "66001",
+   "ipm": 15.1,
+   "barreras_salud": 3.2,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "73001",
+   "ipm": 14.8,
+   "barreras_salud": 3.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "70215",
+   "ipm": 34.5,
+   "barreras_salud": 8.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "20001",
+   "ipm": 30.5,
+   "barreras_salud": 9.0,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "05001",
+   "ipm": 12.8,
+   "barreras_salud": 2.6,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "47001",
+   "ipm": 24.4,
+   "barreras_salud": 3.7,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "44098",
+   "ipm": 40.2,
+   "barreras_salud": 3.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "44035",
+   "ipm": 49.8,
+   "barreras_salud": 2.3,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "17001",
+   "ipm": 13.9,
+   "barreras_salud": 4.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "08001",
+   "ipm": 17.4,
+   "barreras_salud": 3.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "23001",
+   "ipm": 27.1,
+   "barreras_salud": 2.8,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "05615",
+   "ipm": 9.5,
+   "barreras_salud": 1.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "50001",
+   "ipm": 15.9,
+   "barreras_salud": 3.7,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "70001",
+   "ipm": 30.4,
+   "barreras_salud": 7.4,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "25175",
+   "ipm": 6.7,
+   "barreras_salud": 4.0,
+   "pdet": false
+  },
+  {
+   "cod_mpio": "44650",
+   "ipm": 36.6,
+   "barreras_salud": 4.4,
+   "pdet": true
+  },
+  {
+   "cod_mpio": "08573",
+   "ipm": 14.4,
+   "barreras_salud": 2.0,
+   "pdet": false
+  }
+ ],
+ "estado": "ok",
+ "fecha_corte": "2026-11-12",
+ "generado": "2026-11-12T04:38:40+00:00",
+ "fuentes": {
+  "ipm": "DANE, medida de pobreza multidimensional municipal de fuente censal 2018",
+  "pdet": "Agencia de Renovación del Territorio, municipios PDET (datos.gov.co)"
+ },
+ "modelo_ia": "gemini-3.5-flash-lite",
+ "informe": "Para analizar si el riesgo de perder el acceso a la salud coincide con la vulnerabilidad social de los municipios, es importante señalar que las reglas de evaluación se fijaron antes de ver los datos. Al revisar la relación con la pobreza multidimensional, la hipótesis resulta débil aunque es estadísticamente significativa. Por otro lado, la idea de que este riesgo aumenta con los hogares que tienen barreras previas de salud no se cumple. En cuanto a los municipios PDET, la hipótesis se cumple porque tienen al menos 1,5 veces más probabilidad de estar en riesgo muy alto frente a los demás. Asimismo, la hipótesis sobre una cantidad de municipios con doble vulnerabilidad superior a la esperada por azar no se cumple. Entre los 52 municipios que presentan esta doble condición se encuentran La Montañita en Caquetá, Solita en Caquetá y San Calixto en Norte de Santander. Cabe mencionar como limitación que el índice de pobreza multidimensional proviene del censo 2018."
+}
