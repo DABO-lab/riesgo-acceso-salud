@@ -20,6 +20,7 @@ def test_construir_sitio(tmp_path):
 
     assert (salida / "index.html").exists()
     assert (salida / "app.js").exists()
+    assert '"app.js?v=' in (salida / "index.html").read_text(encoding="utf-8")
     manifiesto = json.loads((salida / "datos" / "cortes.json").read_text(encoding="utf-8"))
     fechas = [c["fecha"] for c in manifiesto["cortes"]]
     assert fechas == sorted(fechas, reverse=True)

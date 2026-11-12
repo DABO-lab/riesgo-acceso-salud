@@ -12,6 +12,7 @@ cada vez que el pipeline guarda un corte nuevo y publica _site/ en GitHub Pages.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import shutil
@@ -43,8 +44,15 @@ def construir(salida: Path) -> list[dict]:
         shutil.rmtree(salida)
     (salida / "datos").mkdir(parents=True)
 
-    for nombre in ("index.html", "app.js", "estilos.css"):
-        shutil.copy2(CARPETA_DASHBOARD / nombre, salida / nombre)
+    # app.js y estilos.css se enlazan con ?v=<huella> para que el navegador no use una versión
+    # vieja guardada en caché después de cada publicación
+    html = (CARPETA_DASHBOARD / "index.html").read_text(encoding="utf-8")
+    for nombre in ("app.js", "estilos.css"):
+        contenido = (CARPETA_DASHBOARD / nombre).read_bytes()
+        (salida / nombre).write_bytes(contenido)
+        huella = hashlib.sha256(contenido).hexdigest()[:10]
+        html = html.replace(f'"{nombre}"', f'"{nombre}?v={huella}"')
+    (salida / "index.html").write_text(html, encoding="utf-8")
     (salida / ".nojekyll").write_text("")
 
     cortes = []
