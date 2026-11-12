@@ -17,10 +17,13 @@ flowchart TB
     R --> CI
     R --> M --> P --> V
     V -- ok --> ML --> MON
-    MON --> OUT[resultados/fecha<br/>CSV Power BI, figuras, resumen]
-    OUT --> R
-    OUT --> PBI[Tablero Power BI]
+    MON --> OUT[resultados/fecha<br/>CSV, figuras, resumen]
+    OUT --> AG[Agente de IA<br/>noticias, vulnerabilidad, fichas]
+    AG --> R
+    R --> DASH[Dashboard web<br/>GitHub Pages, dashboard.yml]
     OUT --> SVC[API FastAPI<br/>/predict, /municipios]
+    GEM[Gemini<br/>clasifica y redacta] --- AG
+    EXT[Google Noticias, DANE IPM,<br/>ART PDET] --> AG
 ```
 
 ## Ciclo de vida de cada corte
@@ -35,7 +38,9 @@ flowchart TB
     - Concordancia (ARI) entre el modelo del mes anterior y el nuevo, como comparación campeón contra retador.
 7. **Auditoría de equidad:** `equidad.py` mide en cada corte los sesgos conocidos del índice: municipios muy pequeños con oferta inflada, municipios vulnerables en nivel Bajo, incertidumbre del top 10 % y correlación con el tamaño. Queda en `equidad.md`, como métricas `eq_*` en MLflow y como artifact en Prefect. Solo alerta, no detiene el flujo.
 8. **Publicación:** los resultados se guardan en `resultados/<fecha>/` dentro del repositorio. GitHub Actions muestra el resumen en la página de la ejecución.
-9. **Servicio:** la API (`make api` o `Dockerfile.api`) carga el último corte de `resultados/` y responde consultas por municipio y escenarios con `POST /predict`. Patrón de despliegue: **batch mensual** para el ranking completo + **API online** para consultas y escenarios.
+9. **Agente de IA (complementario, no bloquea):** busca noticias del último mes, descarga el IPM del DANE y la lista PDET, evalúa las hipótesis registradas en `config.yaml` y redacta fichas de los 5 municipios de mayor riesgo. El código calcula; Gemini solo clasifica titulares y redacta.
+10. **Dashboard:** cuando el pipeline termina bien, `dashboard.yml` arma el sitio con todos los cortes y lo publica en GitHub Pages.
+11. **Servicio:** la API (`make api` o `Dockerfile.api`) carga el último corte de `resultados/` y responde consultas por municipio y escenarios con `POST /predict`. Patrón de despliegue: **batch mensual** para el ranking completo + **API online** para consultas y escenarios.
 
 ## Cómo leer el PSI
 | PSI | Lectura | Acción |

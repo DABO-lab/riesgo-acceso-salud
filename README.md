@@ -9,7 +9,10 @@ la salud.
 **Objetivo.** Identificar y priorizar los municipios con mayor riesgo de acceso. Para eso se
 integran tres fuentes oficiales, se construye un índice de riesgo de 0 a 100 y se agrupan los
 municipios con modelos de clustering, todo dentro de un flujo de MLOps reproducible y
-automatizado.
+automatizado. Un agente de IA contrasta cada corte con fuentes externas (noticias y
+vulnerabilidad social) y los resultados se publican solos en un dashboard web.
+
+**Dashboard en línea:** https://dabo-lab.github.io/riesgo-acceso-salud/
 
 ## Fuentes (datos abiertos, datos.gov.co, licencia CC BY-SA 4.0)
 
@@ -18,6 +21,15 @@ automatizado.
 | BDUA contributivo y subsidiado | ADRES | `tq4m-hmg2`, `d7a5-cnra` | Demanda: afiliados por EPS y municipio |
 | Registro Especial de Prestadores (REPS) | MinSalud | `c36g-9fc2` | Oferta: sedes de IPS por municipio |
 | DIVIPOLA | DANE | `gdxc-w37w` | Llave de integración y coordenadas |
+
+Fuentes del contraste externo (paso del agente de IA):
+
+| Fuente | Entidad | Uso |
+|---|---|---|
+| Pobreza multidimensional municipal, censo 2018 (anexo xlsx) | DANE | IPM y barreras de acceso a salud por municipio |
+| Municipios PDET (`idrk-ba8y`, datos.gov.co) | Agencia de Renovación del Territorio | 170 municipios del posconflicto |
+| Google Noticias (RSS) | Medios de comunicación | Noticias del último mes sobre las EPS intervenidas |
+| Gemini, nivel gratuito | Google | Clasifica titulares y redacta lecturas y fichas (no calcula) |
 
 ## Cómo funciona
 
@@ -35,8 +47,12 @@ flowchart LR
     H -- no --> H2[se registra sin alias]
     H1 --> I[7. Monitoreo vs.<br/>corte anterior PSI]
     H2 --> I
-    I --> J[8. Reportes + CSV Power BI<br/>resultados/fecha]
+    I --> J[8. Reportes<br/>resultados/fecha]
+    J --> K[Agente de IA: noticias,<br/>vulnerabilidad y fichas]
+    K --> L[Dashboard en<br/>GitHub Pages]
 ```
+
+Si el agente de IA falla o no hay clave, el corte se publica igual: es complementario.
 
 ## Puesta en marcha (VS Code o cualquier terminal)
 
@@ -59,6 +75,8 @@ En VS Code, elija `.venv` como intérprete y como kernel de los notebooks.
 | `make demo` | `... pipeline --demo --rapido` | El mismo pipeline con datos sintéticos, sin internet |
 | `make mlflow` | `uv run mlflow ui --backend-store-uri sqlite:///mlflow/mlflow.db --port 5001` | Interfaz de MLflow en http://127.0.0.1:5001 |
 | `make api` | `uv run uvicorn riesgo_salud.api.main:app --port 8000` | API de predicción en http://127.0.0.1:8000 (contrato en `/docs`) |
+| `uv run python -m riesgo_salud.noticias --fecha AAAA-MM-DD` | | Agente de noticias sobre un corte ya calculado (requiere `GEMINI_API_KEY`) |
+| `uv run python -m riesgo_salud.validar_ia preparar\|evaluar --fecha AAAA-MM-DD` | | Muestra para revisar a mano la clasificación de la IA y medición del acuerdo |
 | `make dashboard` | `uv run python dashboard/construir.py` y `uv run python -m http.server 8080 --directory _site` | Dashboard web en http://localhost:8080 (el mismo que se publica en GitHub Pages) |
 | `make test` | `uv run pytest -q` | Pruebas (sin internet) |
 | `make lint` | `uv run ruff check . --fix` y `uv run ruff format .` | Estilo del código |
@@ -75,7 +93,9 @@ resultados y MLflow queden en Drive.
 **https://dabo-lab.github.io/riesgo-acceso-salud/**
 
 Mapa, ranking, departamentos, grupos del clustering, validaciones de calidad, monitoreo y auditoría
-de equidad del último corte, con filtros y selector para consultar cortes anteriores.
+de equidad del último corte, con filtros y selector para consultar cortes anteriores. También
+muestra lo que produce el agente de IA: contraste con noticias, hipótesis de vulnerabilidad
+social y fichas de los 5 municipios de mayor riesgo.
 
 Se actualiza solo: cuando el pipeline mensual termina bien y guarda `resultados/<fecha>/`, el
 workflow `Dashboard` (`.github/workflows/dashboard.yml`) arma el sitio con `dashboard/construir.py`
@@ -105,7 +125,7 @@ clave, o si algo falla, la etapa se omite y el corte se publica igual. Para un c
 
 ### Vulnerabilidad social, fichas y validación de la IA
 
-El mismo paso 8 hace tres cosas más:
+El mismo paso del agente hace tres cosas más:
 
 - **Cruce con vulnerabilidad social** (`vulnerabilidad.py`): descarga el IPM municipal del DANE (censo
   2018) y los 170 municipios PDET (Agencia de Renovación del Territorio) y evalúa cuatro hipótesis
@@ -143,15 +163,18 @@ Los notebooks **explican**; el paquete **ejecuta**. Los notebooks importan las f
 config/config.yaml        todos los parámetros (EPS intervenidas, pesos, modelos, umbrales)
 src/riesgo_salud/         un módulo por etapa
     extraccion.py  limpieza.py  validacion.py  features.py  indice.py
-    modelado.py    tracking.py  monitoreo.py   reportes.py  pipeline.py  sintetico.py
+    modelado.py    tracking.py  monitoreo.py   reportes.py  equidad.py   sintetico.py
+    pipeline.py    flujo.py (Prefect)          api/ (FastAPI)
+    noticias.py    vulnerabilidad.py  fichas.py  validar_ia.py   (agente de IA)
+dashboard/                página web del dashboard y construir.py (arma el sitio de GitHub Pages)
 notebooks/
     01_limpieza_eda.ipynb             fase 1: extracción, limpieza y EDA, explicados
     02_indice_clustering_mlops.ipynb  fase 2: índice, clustering, MLflow y monitoreo
 tests/                    pruebas automáticas (pytest), con controles negativos
 resultados/<fecha>/       salidas de cada corte (se versionan: son pequeñas)
 data/, mlflow/            datos crudos/limpios y experimentos (no se versionan)
-docs/                     ficha del modelo, ética y usuario, arquitectura, decisiones, Power BI
-.github/workflows/        pruebas en cada cambio + ejecución mensual automática
+docs/                     ficha del modelo, ética y usuario, arquitectura, decisiones, Power BI (opcional)
+.github/workflows/        pruebas en cada cambio, ejecución mensual y publicación del dashboard
 ```
 
 ## Prácticas de MLOps
@@ -174,6 +197,11 @@ docs/                     ficha del modelo, ética y usuario, arquitectura, deci
 | Servicio de predicción con contrato validado y health check | `src/riesgo_salud/api/` (FastAPI + Pydantic) |
 | Contenedores sin root para el pipeline y para la API | `Dockerfile`, `Dockerfile.api` |
 | Documentación del modelo, del usuario y de la ética | `docs/ficha_modelo.md`, `docs/etica_usuario_beneficio.md` |
+| Publicación automática de resultados (despliegue continuo del tablero) | `dashboard/`, `.github/workflows/dashboard.yml` → GitHub Pages |
+| IA acotada: el código busca y calcula, la IA solo clasifica y redacta | `noticias.py`, `vulnerabilidad.py`, `fichas.py` |
+| Hipótesis registradas antes de ver los datos (rúbrica) | `config.yaml` → `vulnerabilidad.rubrica` |
+| Validación humana de la IA (acuerdo y kappa de Cohen) | `validar_ia.py` → `validacion_ia.json` |
+| Secretos fuera del código | `GEMINI_API_KEY` en *GitHub Secrets* |
 
 ## Orquestación con Prefect
 
@@ -227,19 +255,36 @@ corte, con la misma regla del índice: para un municipio existente devuelve exac
 índice. El grupo lo asigna el modelo registrado. Para usar el modelo del Model Registry en
 lugar del archivo del corte: `MODELO_URI=models:/clusters-riesgo-municipal@produccion`.
 
-## Resultados (corte del 29 de octubre de 2026)
+## Resultados (corte del 12 de noviembre de 2026)
 
-- **42,3 %** de los afiliados del país (21,2 millones) está en una EPS intervenida; en 702 de
-  1.122 municipios es la mitad o más.
-- El índice ubica **113 municipios en nivel "Muy alto"** (1,4 millones de afiliados), sobre
+- **42,2 %** de los afiliados del país (unos 21 millones) está en una EPS intervenida.
+- El índice ubica **113 municipios en nivel "Muy alto"** (1,44 millones de afiliados), sobre
   todo en Santander, Boyacá, Caquetá, Cauca y Valle del Cauca. Los primeros del ranking son
   Argelia (Cauca), Leiva (Nariño) y Mogotes (Santander).
 - El ranking es estable ante cambios de pesos (Spearman mediano 0,983), pero los pesos de
   PCA lo cambian bastante (0,63): los pesos son una decisión del equipo, documentada en la
   ficha del modelo.
-- Clustering: **K-means con k = 3** (estabilidad 0,82, silhouette 0,24). Tres perfiles: rural
-  y dependiente de EPS intervenidas (446 municipios), subsidiado con EPS no intervenidas (388)
-  y urbano contributivo (288).
+- Clustering: **K-means con k = 3** (estabilidad 0,83, silhouette 0,24). Tres perfiles: rural
+  y dependiente de EPS intervenidas (450 municipios), subsidiado con EPS no intervenidas (388)
+  y urbano contributivo (284).
+- Monitoreo: frente al corte del 5 de noviembre, PSI = 0 (los datos de datos.gov.co no
+  cambiaron en la semana); no hace falta reentrenar.
+
+**Contraste externo (agente de IA)**
+- **Noticias** (150 del último mes, 146 relevantes): no siguen al índice (Spearman −0,13, no
+  significativa) sino al tamaño de la población (0,53, significativa). Coinciden Cauca y Norte de
+  Santander; ocho departamentos de riesgo alto no aparecen en la prensa ("riesgo silencioso"):
+  Vichada, Guaviare, Caquetá, Vaupés, Putumayo, Arauca, Amazonas y Huila.
+- **Vulnerabilidad social** (rúbrica registrada el 2026-11-12, antes de ver los datos):
+  - H1, pobreza (IPM): relación débil (Spearman 0,23, significativa, por debajo del umbral 0,30).
+  - H2, municipios PDET: **se cumple**. 18,8 % de los PDET está en riesgo Muy alto frente a 8,5 %
+    del resto (2,2 veces; Fisher p = 0,0001).
+  - H3, barreras de acceso a salud (DANE 2018): no se cumple (0,04, no significativa).
+  - H4, doble vulnerabilidad: no se cumple (52 municipios frente a 46 esperados).
+  - Lectura: el índice no es otra medida de pobreza. El grupo 2 es incluso más pobre que el
+    grupo 1 (IPM mediano 47 frente a 43); lo que los separa es la EPS.
+- **Validación humana de la IA:** pendiente (muestra de 30 noticias en
+  `resultados/2026-11-12/validacion_ia_muestra.xlsx`).
 
 Detalle en `resultados/<fecha>/resumen.md` y en el notebook 02.
 

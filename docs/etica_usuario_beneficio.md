@@ -11,7 +11,7 @@ corte (`resultados/<fecha>/equidad.md`).
 
 | Usuario | Qué decide con la herramienta | Qué usa |
 |---|---|---|
-| **Secretarías de salud departamentales y municipales** | Dónde reforzar la red pública (ESE) y dónde preparar la atención si una EPS deja de responder | Ranking, mapa y grupos por departamento (Power BI) |
+| **Secretarías de salud departamentales y municipales** | Dónde reforzar la red pública (ESE) y dónde preparar la atención si una EPS deja de responder | Ranking, mapa, grupos y fichas por municipio (dashboard web) |
 | **Superintendencia Nacional de Salud** | Qué territorios vigilar primero en el seguimiento de las EPS intervenidas | Ranking nacional, % de afiliados en EPS intervenidas por municipio |
 | **Ministerio de Salud y ADRES** | Dónde se necesitaría capacidad de recepción si hay que reasignar afiliados | Afiliados por EPS y municipio, oferta de IPS |
 | Veedurías, academia y periodistas (secundario) | Seguimiento ciudadano | Repositorio abierto y API |
