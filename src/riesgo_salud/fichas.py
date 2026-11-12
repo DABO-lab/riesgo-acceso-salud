@@ -122,6 +122,8 @@ sencillo, para una secretaría de salud sobre el riesgo de que la población de 
 acceso a la salud.
 Reglas estrictas:
 - Usa SOLO los datos del JSON. No inventes cifras, causas, nombres de hospitales ni noticias.
+- Escribe los números en formato colombiano: coma decimal y punto de miles (26.894 afiliados;
+  0,74 sedes; 82,7 %). Redondea los porcentajes enteros sin decimales (100 %, no 100.0 %).
 - resumen: 2 frases. por_que: 3 o 4 razones concretas con cifras del JSON. accion_recomendada: 1 o 2
   frases, coherentes con esta acción de su grupo: "{ACCION_GRUPO.get(grupo, ACCION_GRUPO[3])}".
 - advertencias: 1 o 2 límites de los datos (por ejemplo: se cuentan sedes, no camas; IPM de 2018;
