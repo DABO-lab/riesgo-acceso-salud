@@ -67,7 +67,7 @@ async function cargarCorte(corte) {
   const pedir = async (nombre) => (tiene.has(nombre) ? obtener(base + nombre, nombre.endsWith(".csv") ? "csv" : "json") : null);
   const nombres = ["municipios_riesgo.csv", "resumen_departamentos.csv", "resumen_eps.csv", "perfiles_grupos.csv",
     "comparacion_modelos.csv", "calidad.json", "monitoreo.json", "metadatos_corte.json", "metricas_indice.json", "equidad.json",
-    "contraste_noticias.json", "noticias.json"];
+    "contraste_noticias.json", "noticias.json", "vulnerabilidad.json", "fichas_municipios.json", "validacion_ia.json"];
   const res = await Promise.all(nombres.map(pedir));
   const d = Object.fromEntries(nombres.map((n, i) => [n.replace(/\.(csv|json)$/, ""), res[i]]));
   d.municipios_riesgo.forEach((m) => { m.cod_mpio = String(m.cod_mpio).padStart(5, "0"); });
@@ -357,6 +357,8 @@ function seleccionar(m, centrar = true) {
       <dt>IPS por 10.000 afiliados</dt><dd>${fmt1.format(m.ips_x_10mil)}</dd>
       <dt>Rural · subsidiado</dt><dd>${pctTexto(m.pct_rural)} · ${pctTexto(m.pct_subsidiado)}</dd>
       <dt>Prob. de estar en el 10 % más alto</dt><dd>${pctTexto(m.prob_top10)}</dd>
+      ${(() => { const v = (estado.datos.vulnerabilidad?.por_municipio || []).find((x) => x.cod_mpio === m.cod_mpio);
+        return v ? `<dt>Pobreza multidimensional (DANE 2018)</dt><dd>${v.ipm == null ? "—" : fmt1.format(v.ipm) + " %"}</dd><dt>Municipio PDET</dt><dd>${v.pdet ? "Sí" : "No"}</dd>` : ""; })()}
     </dl>
     <div class="componentes"><div class="rotulo">Componentes del índice (percentil 0–100)</div><div class="barras-h" id="det-comp"></div></div>`;
   barras($("#det-comp"), comps.map(([n, k]) => ({ nombre: n, v: m[k], tip: `<b>${n}</b>Percentil ${fmt1.format(m[k])}` })), { max: 100, fmt: (v) => fmtEntero.format(v) });
@@ -427,7 +429,11 @@ function pintarNoticias() {
       El agente corre con cada ejecución del pipeline cuando la clave de Gemini está configurada.</p>`;
     return;
   }
-  meta.textContent = `Últimos ${c.ventana_dias} días · ${c.noticias_relevantes} de ${c.noticias_total} noticias relevantes · ${c.modelo_ia}`;
+  const vi = estado.datos.validacion_ia;
+  const valida = vi?.estado === "ok"
+    ? ` · Acierto de la IA frente a revisión humana: ${fmtPct(vi.relevancia.acuerdo, 0)} (${vi.revisadas} noticias)`
+    : " · Validación humana de la IA: pendiente";
+  meta.textContent = `Últimos ${c.ventana_dias} días · ${c.noticias_relevantes} de ${c.noticias_total} noticias relevantes · ${c.modelo_ia}${valida}`;
   const k = (etq, val, det) => `<div class="kpi"><div class="etq">${etq}</div><div class="val">${val}</div><div class="det">${det}</div></div>`;
   const co = c.correlacion || {};
   const num = (x) => (x == null ? "—" : x.toFixed(2).replace(".", ","));
@@ -460,6 +466,55 @@ function pintarNoticias() {
     </section>`;
 }
 
+const RESULTADO = { se_cumple: ["ok", "Se cumple"], debil: ["alerta", "Relación débil"], no_se_cumple: ["critico", "No se cumple"] };
+
+function pintarVulnerabilidad() {
+  const v = estado.datos.vulnerabilidad, cuerpo = $("#vul-cuerpo");
+  if (!v || v.estado !== "ok") {
+    $("#vul-meta").textContent = "";
+    cuerpo.innerHTML = `<p class="vacio">Este corte no tiene el cruce con vulnerabilidad${v?.motivo ? ` (${esc(v.motivo)})` : ""}.</p>`;
+    return;
+  }
+  $("#vul-meta").textContent = `Rúbrica registrada el ${v.fecha_registro_rubrica} · DANE (IPM 2018) y ART (PDET)`;
+  const num = (x) => String(x).replace(".", ",");
+  const hip = Object.entries(v.hipotesis).map(([k, h]) => {
+    const [cls, txt] = RESULTADO[h.resultado] || ["neutro", h.resultado];
+    return `<div class="hipo"><h3>${esc(k.split("_")[0])} · ${esc(h.descripcion)}</h3>
+      <span class="st ${cls}">${icono(cls)} ${txt}</span>
+      <p>${esc(h.prueba)}: ${num(h.estadistico)} · p = ${num(h.p_valor)}${h.detalle ? `<br>${esc(h.detalle)}` : ""}</p>
+      <p class="nota">Regla: ${esc(h.umbral)}</p></div>`;
+  }).join("");
+  const d = v.doble_vulnerabilidad;
+  const filas = d.lista.slice(0, 12).map((m) => `<tr><td>${esc(titulo(m.nom_mpio))}</td><td>${esc(titulo(m.dpto))}</td>
+    <td class="num">${fmt1.format(m.indice_riesgo)}</td><td class="num">${fmt1.format(m.ipm)} %</td><td>${m.pdet ? "Sí" : "No"}</td></tr>`).join("");
+  cuerpo.innerHTML = `<p class="informe">${esc(v.informe)}</p><div class="hipotesis">${hip}</div>
+    <h3 style="font-size:13px;margin:0 0 8px">Doble vulnerabilidad: ${d.municipios} municipios en el 20 % más alto de riesgo y de pobreza (${fmtEntero.format(d.afiliados)} afiliados, ${d.pdet} PDET)</h3>
+    <div class="tabla-envoltura"><table class="tabla"><thead><tr><th>Municipio</th><th>Departamento</th><th class="num">Índice</th><th class="num">IPM 2018</th><th>PDET</th></tr></thead>
+    <tbody>${filas}</tbody></table></div>`;
+}
+
+function pintarFichas() {
+  const f = estado.datos.fichas_municipios, cuerpo = $("#fichas-cuerpo");
+  if (!f || f.estado !== "ok") { $("#fichas-meta").textContent = ""; cuerpo.innerHTML = '<p class="vacio">Este corte no tiene fichas.</p>'; return; }
+  $("#fichas-meta").textContent = f.redactado_por === "plantilla" ? "Armadas con plantilla" : `Redactadas por ${f.redactado_por} solo con datos del corte`;
+  cuerpo.innerHTML = f.fichas.map((x) => {
+    const h = x.hechos;
+    const notas = [...(h.noticias_del_municipio || []), ...(h.noticias_del_departamento || [])].slice(0, 2);
+    return `<div class="ficha"><h3>${h.ranking}. ${esc(h.municipio)}</h3>
+      <p class="sub nota">${esc(h.departamento)} · índice ${fmt1.format(h.indice_riesgo)} · ${esc(h.nivel_riesgo)} · ${fmtEntero.format(h.afiliados)} afiliados${h.municipio_pdet ? " · PDET" : ""}</p>
+      <p style="margin:0;font-size:13.5px">${esc(x.resumen)}</p>
+      <ul>${(x.por_que || []).map((p) => `<li>${esc(p)}</li>`).join("")}</ul>
+      <div class="accion"><b>Acción recomendada</b>${esc(x.accion_recomendada)}</div>
+      ${(x.advertencias || []).map((a) => `<p class="adv">${esc(a)}</p>`).join("")}
+      ${notas.length ? `<div class="enlaces">Noticias: ${notas.map((n) => `<a href="${esc(enlaceSeguro(n.enlace))}" target="_blank" rel="noopener noreferrer">${esc(n.fuente || "enlace")}</a>`).join(" · ")}</div>` : ""}
+      <button type="button" class="boton boton-sec" style="margin-top:8px" data-cod="${esc(h.cod_mpio)}">Ver en el mapa</button></div>`;
+  }).join("");
+  cuerpo.querySelectorAll("button[data-cod]").forEach((b) => b.addEventListener("click", () => {
+    const m = estado.municipios.find((x) => x.cod_mpio === b.dataset.cod);
+    if (m) { seleccionar(m); $("#mapa").scrollIntoView({ behavior: "smooth", block: "center" }); }
+  }));
+}
+
 function pintarMetodo() {
   const mi = estado.datos.metricas_indice || {}, md = estado.datos.metadatos_corte || {};
   const ei = md.eps_intervenidas || {};
@@ -477,7 +532,7 @@ async function mostrarCorte(corte) {
   estado.municipios = estado.datos.municipios_riesgo;
   estado.seleccionado = null;
   crearMarcadores(); llenarFiltros();
-  pintarEstado(); pintarGrupos(); pintarCalidad(); pintarMonitoreo(); pintarEPS(); pintarEquidad(); pintarNoticias(); pintarMetodo();
+  pintarEstado(); pintarGrupos(); pintarCalidad(); pintarMonitoreo(); pintarEPS(); pintarEquidad(); pintarNoticias(); pintarVulnerabilidad(); pintarFichas(); pintarMetodo();
   aplicarFiltros();
   const top = estado.municipios.find((m) => m.ranking_riesgo === 1);
   if (top) seleccionar(top, false);

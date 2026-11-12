@@ -21,6 +21,7 @@ from . import (
     equidad,
     extraccion,
     features,
+    fichas,
     indice,
     limpieza,
     modelado,
@@ -29,6 +30,7 @@ from . import (
     reportes,
     sintetico,
     validacion,
+    vulnerabilidad,
 )
 from .config import cargar_config, ruta
 from .tracking import Tracker
@@ -256,10 +258,27 @@ def etapa_reportes(
     return final
 
 
-def etapa_noticias(cfg: dict, fecha: str, demo: bool = False) -> dict:
-    """8. Agente de noticias: contraste del índice con la prensa del último mes (opcional, no bloquea)."""
-    _titulo("8. Contraste con noticias (agente de IA)")
-    return noticias.etapa(cfg, fecha, demo)
+def etapa_agente(cfg: dict, fecha: str, demo: bool = False) -> dict:
+    """8. Agente de IA (opcional, nunca bloquea el corte): noticias, vulnerabilidad social y fichas.
+
+    El código busca, descarga y calcula; Gemini solo clasifica titulares y redacta. Sin clave, el
+    cruce con vulnerabilidad se calcula igual y las fichas salen con plantilla.
+    """
+    _titulo("8. Agente de IA: noticias, vulnerabilidad social y fichas")
+    gemini = None
+    if not demo and cfg.get("noticias", {}).get("activo", False):
+        try:
+            gemini = noticias.Gemini(cfg)
+            print(f"  Modelo de IA: {gemini.modelo}")
+        except noticias.SinClave:
+            print("  Sin GEMINI_API_KEY: se omiten las noticias y las lecturas se arman con plantilla")
+        except Exception as e:  # noqa: BLE001
+            print(f"  No se pudo conectar con Gemini: {e}")
+    return {
+        "noticias": noticias.etapa(cfg, fecha, demo, gemini),
+        "vulnerabilidad": vulnerabilidad.etapa(cfg, fecha, gemini, demo),
+        "fichas": fichas.etapa(cfg, fecha, gemini, demo),
+    }
 
 
 def nuevo_tracker(cfg: dict, fecha: str, usar_mlflow: bool) -> Tracker:
@@ -289,7 +308,7 @@ def ejecutar(
         mod = etapa_modelado(cfg, fecha, ind["ti"], ind["metricas"], tracker)
         monit = etapa_monitoreo(cfg, fecha, mod["ti"], mod["modelo"], prep["anterior"], tracker)
         final = etapa_reportes(cfg, fecha, ind, mod, monit, tracker)
-    etapa_noticias(cfg, fecha, demo)
+    etapa_agente(cfg, fecha, demo)
     salida = ruta(cfg, "resultados", fecha)
     print(f"\nListo en {time.time() - t0:.0f} s. Resultados en: {salida}")
     return resultado(final, prep, ind, mod, monit, salida)

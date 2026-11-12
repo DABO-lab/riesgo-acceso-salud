@@ -221,6 +221,23 @@ main { max-width: 1320px; margin: 0 auto; padding: 20px 24px 8px; display: grid;
 .lista-noticias .meta { color: var(--tinta-3); font-size: 12px; }
 .grav { display: inline-block; font-size: 11px; font-weight: 600; padding: 1px 6px; border-radius: 6px; border: 1px solid var(--base); color: var(--tinta-2); margin-right: 6px; }
 
+/* Vulnerabilidad y fichas */
+.hipotesis { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin-bottom: 14px; }
+.hipo { border: 1px solid var(--borde); border-radius: 10px; padding: 12px; }
+.hipo h3 { font-size: 13px; margin: 0 0 6px; }
+.hipo p { margin: 4px 0 0; font-size: 12.5px; color: var(--tinta-2); }
+.hipo .st { margin-top: 6px; }
+.fichas { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.ficha { border: 1px solid var(--borde); border-radius: 10px; padding: 14px; }
+.ficha h3 { font-size: 15px; margin: 0; }
+.ficha .sub { margin: 2px 0 8px; }
+.ficha ul { margin: 6px 0 8px; padding-left: 18px; font-size: 13px; }
+.ficha li { margin-bottom: 3px; }
+.ficha .accion { background: var(--plano); border-radius: 8px; padding: 8px 10px; font-size: 13px; margin: 8px 0; }
+.ficha .accion b { display: block; font-size: 12px; color: var(--tinta-2); margin-bottom: 2px; }
+.ficha .adv { font-size: 12px; color: var(--tinta-3); margin: 0; }
+.ficha .enlaces { font-size: 12px; margin-top: 6px; }
+
 .pie { max-width: 1320px; margin: 0 auto; padding: 8px 24px 32px; color: var(--tinta-3); font-size: 12px; }
 
 .tooltip {

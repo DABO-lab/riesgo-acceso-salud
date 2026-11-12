@@ -37,6 +37,9 @@ ARCHIVOS = [
     "equidad.json",
     "contraste_noticias.json",
     "noticias.json",
+    "vulnerabilidad.json",
+    "fichas_municipios.json",
+    "validacion_ia.json",
 ]
 OBLIGATORIOS = {"municipios_riesgo.csv", "calidad.json", "metadatos_corte.json"}
 

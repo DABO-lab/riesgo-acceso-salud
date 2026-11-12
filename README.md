@@ -103,6 +103,26 @@ Requiere la clave `GEMINI_API_KEY` (en GitHub: *Settings → Secrets and variabl
 clave, o si algo falla, la etapa se omite y el corte se publica igual. Para un corte ya calculado:
 `uv run python -m riesgo_salud.noticias --fecha 2026-11-05`.
 
+### Vulnerabilidad social, fichas y validación de la IA
+
+El mismo paso 8 hace tres cosas más:
+
+- **Cruce con vulnerabilidad social** (`vulnerabilidad.py`): descarga el IPM municipal del DANE (censo
+  2018) y los 170 municipios PDET (Agencia de Renovación del Territorio) y evalúa cuatro hipótesis
+  **registradas antes de ver los datos** en `config.yaml` (`vulnerabilidad.rubrica`, 2026-11-12):
+  H1 pobreza, H2 PDET, H3 barreras de acceso a salud y H4 doble vulnerabilidad. Cada una tiene su
+  prueba (Spearman, Fisher, binomial) y su umbral. Sale en `vulnerabilidad.json`.
+- **Fichas de los 5 municipios de mayor riesgo** (`fichas.py`): el agente las redacta solo con los
+  datos del corte (índice, componentes, EPS, IPS, pobreza, PDET y noticias). Sin clave, usa una plantilla.
+- **Validación de la IA** (`validar_ia.py`): una muestra de 30 noticias se revisa a mano y se mide el
+  acuerdo con la clasificación de Gemini (acuerdo y kappa de Cohen):
+
+  ```bash
+  uv run python -m riesgo_salud.validar_ia preparar --fecha 2026-11-12   # crea la muestra en Excel
+  # llenar las columnas humano_relevante, humano_departamentos y humano_tipo
+  uv run python -m riesgo_salud.validar_ia evaluar --fecha 2026-11-12    # crea validacion_ia.json
+  ```
+
 ## Cómo leer este repositorio
 
 ```mermaid
