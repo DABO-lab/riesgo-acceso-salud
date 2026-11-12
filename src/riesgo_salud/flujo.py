@@ -69,6 +69,11 @@ def t_reportes(cfg, fecha, ind, mod, monit, tracker):
     return pipeline.etapa_reportes(cfg, fecha, ind, mod, monit, tracker)
 
 
+@task(name="agente-noticias", **_task)
+def t_noticias(cfg, fecha, demo):
+    return pipeline.etapa_noticias(cfg, fecha, demo)
+
+
 @task(name="artifacts", **_task)
 def t_artifacts(cfg, fecha, monit, elegido):
     """Evidencia durable y legible en la interfaz de Prefect (incluida la auditoría de equidad)."""
@@ -136,6 +141,9 @@ def flujo(
         monit = t_monitoreo(cfg, fecha, mod["ti"], mod["modelo"], prep["anterior"], tracker)
         final = t_reportes(cfg, fecha, ind, mod, monit, tracker)
     estado = t_artifacts(cfg, fecha, monit, mod["elegido"])
+    contraste = t_noticias(cfg, fecha, demo)
+    if contraste.get("estado") != "ok":
+        logger.warning("Contraste con noticias %s: %s", contraste.get("estado"), contraste.get("motivo"))
 
     if monit.get("reentrenar"):
         logger.warning("El monitoreo recomienda revisar y reentrenar: %s", "; ".join(monit["alertas"]))

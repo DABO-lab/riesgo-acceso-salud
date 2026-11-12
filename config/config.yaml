@@ -82,6 +82,30 @@ equidad:                                 # auditoría de sesgos en cada corte (e
   vulnerable_subsidiado: 0.80
   incertidumbre_top10: [0.20, 0.80]      # prob. de estar en el top 10 % que no es ni sí ni no
 
+# Agente de noticias (noticias.py): contrasta el índice con la prensa del último mes.
+# Necesita la variable GEMINI_API_KEY (en GitHub: Settings -> Secrets -> Actions). Sin ella se omite.
+noticias:
+  activo: true
+  dias_atras: 30                         # ventana de noticias antes de la fecha del corte
+  max_noticias: 150
+  sufijo_eps: "salud"                    # consulta por EPS: '"NUEVA EPS" salud', 'COOSALUD salud', ...
+  consultas_generales:                   # nacionales, iguales para todo el país (no sesgan el contraste)
+    - "EPS intervenida pacientes"
+    - "Supersalud EPS"
+    - "hospital cierre servicios EPS deuda"
+    - "falta de medicamentos EPS"
+    - "crisis de salud municipio EPS"
+  modelos_preferidos:                    # nivel gratuito de Gemini; si cambian, usa otro modelo flash
+    - gemini-3.5-flash-lite
+    - gemini-3.1-flash-lite
+    - gemini-3.6-flash
+    - gemini-2.5-flash-lite
+    - gemini-2.5-flash
+  tamano_lote: 20                        # titulares por llamada a Gemini
+  pausa_gemini_segundos: 13              # ~4-5 llamadas por minuto, dentro del límite gratuito
+  pausa_rss_segundos: 1
+  min_departamentos: 8                   # menos departamentos con noticias = no se mide correlación
+
 mlflow:
   experimento: riesgo-acceso-salud
   modelo_registrado: clusters-riesgo-municipal

@@ -84,6 +84,25 @@ publica nada y el tablero sigue mostrando el último corte válido. El botón **
 abre el pipeline en GitHub Actions ("Run workflow", solo colaboradores del repositorio) y el
 recuadro de estado consulta en vivo si la última ejecución terminó, falló o sigue corriendo.
 
+## Agente de noticias (IA)
+
+Después de calcular el corte, `src/riesgo_salud/noticias.py` contrasta el índice con la prensa del
+último mes. Las tareas están separadas para que el resultado se pueda verificar:
+
+1. **Buscar (código):** noticias de Google Noticias sobre las 7 EPS intervenidas y la crisis de salud,
+   con consultas nacionales iguales para todo el país.
+2. **Leer y clasificar (IA, Gemini, nivel gratuito):** EPS, departamentos, municipios, tipo de problema
+   y gravedad de cada noticia. Se guarda el enlace como evidencia.
+3. **Contrastar (código):** menciones por departamento frente al índice, con la correlación de Spearman
+   y un control por tamaño de la población. Clasifica los departamentos en *coinciden*, *riesgo
+   silencioso* (riesgo alto sin noticias) y *posible punto ciego* (noticias con riesgo bajo).
+   La IA solo redacta el resumen con esas cifras.
+
+Salidas: `resultados/<fecha>/contraste_noticias.json` y `noticias.json`, visibles en el dashboard.
+Requiere la clave `GEMINI_API_KEY` (en GitHub: *Settings → Secrets and variables → Actions*). Sin
+clave, o si algo falla, la etapa se omite y el corte se publica igual. Para un corte ya calculado:
+`uv run python -m riesgo_salud.noticias --fecha 2026-11-05`.
+
 ## Cómo leer este repositorio
 
 ```mermaid

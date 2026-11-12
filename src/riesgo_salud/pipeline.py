@@ -25,6 +25,7 @@ from . import (
     limpieza,
     modelado,
     monitoreo,
+    noticias,
     reportes,
     sintetico,
     validacion,
@@ -255,6 +256,12 @@ def etapa_reportes(
     return final
 
 
+def etapa_noticias(cfg: dict, fecha: str, demo: bool = False) -> dict:
+    """8. Agente de noticias: contraste del índice con la prensa del último mes (opcional, no bloquea)."""
+    _titulo("8. Contraste con noticias (agente de IA)")
+    return noticias.etapa(cfg, fecha, demo)
+
+
 def nuevo_tracker(cfg: dict, fecha: str, usar_mlflow: bool) -> Tracker:
     return Tracker(cfg, habilitado=usar_mlflow, carpeta_local=ruta(cfg, "resultados", fecha))
 
@@ -282,6 +289,7 @@ def ejecutar(
         mod = etapa_modelado(cfg, fecha, ind["ti"], ind["metricas"], tracker)
         monit = etapa_monitoreo(cfg, fecha, mod["ti"], mod["modelo"], prep["anterior"], tracker)
         final = etapa_reportes(cfg, fecha, ind, mod, monit, tracker)
+    etapa_noticias(cfg, fecha, demo)
     salida = ruta(cfg, "resultados", fecha)
     print(f"\nListo en {time.time() - t0:.0f} s. Resultados en: {salida}")
     return resultado(final, prep, ind, mod, monit, salida)
