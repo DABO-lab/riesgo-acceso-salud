@@ -1,0 +1,20 @@
+{
+  "estado": "ok",
+  "fecha_corte": "2026-11-12",
+  "generado": "2026-11-23T23:32:40+00:00",
+  "revisadas": 30,
+  "relevancia": {
+    "acuerdo": 1.0,
+    "kappa_cohen": 1.0,
+    "falsos_positivos": 0,
+    "falsos_negativos": 0
+  },
+  "departamentos": {
+    "evaluadas": 28,
+    "acuerdo": 1.0
+  },
+  "tipo": {
+    "evaluadas": 28,
+    "acuerdo": 1.0
+  }
+}

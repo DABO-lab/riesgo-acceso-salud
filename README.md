@@ -283,8 +283,11 @@ lugar del archivo del corte: `MODELO_URI=models:/clusters-riesgo-municipal@produ
   - H4, doble vulnerabilidad: no se cumple (52 municipios frente a 46 esperados).
   - Lectura: el índice no es otra medida de pobreza. El grupo 2 es incluso más pobre que el
     grupo 1 (IPM mediano 47 frente a 43); lo que los separa es la EPS.
-- **Validación humana de la IA:** pendiente (muestra de 30 noticias en
-  `resultados/2026-11-12/validacion_ia_muestra.xlsx`).
+- **Validación humana de la IA:** el equipo revisó a mano una muestra de 30 noticias
+  (`resultados/2026-11-12/validacion_ia_muestra.xlsx`) y la IA acertó en todas: acuerdo del
+  100 % en relevancia (kappa de Cohen = 1,0; 0 falsos positivos y 0 falsos negativos), en
+  departamentos (28 noticias relevantes) y en tipo de problema (28). Resultado en
+  `resultados/2026-11-12/validacion_ia.json`.
 
 Detalle en `resultados/<fecha>/resumen.md` y en el notebook 02.
 
