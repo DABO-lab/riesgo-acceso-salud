@@ -1,0 +1,364 @@
+{
+ "estado": "ok",
+ "fecha_corte": "2026-11-23",
+ "generado": "2026-11-24T00:05:30+00:00",
+ "redactado_por": "gemini-3.5-flash-lite",
+ "fichas": [
+  {
+   "hechos": {
+    "municipio": "Argelia",
+    "departamento": "Cauca",
+    "cod_mpio": "19050",
+    "ranking": 1,
+    "indice_riesgo": 92.9,
+    "nivel_riesgo": "Muy alto",
+    "grupo": "Grupo 1 (mayor riesgo)",
+    "afiliados": 26894,
+    "pct_en_eps_intervenidas": 100.0,
+    "eps_principal": "ASMET SALUD",
+    "pct_eps_principal": 82.7,
+    "eps_principal_intervenida": true,
+    "numero_eps": 3,
+    "sedes_ips": 2,
+    "ips_por_10mil_afiliados": 0.74,
+    "pct_rural": 81.0,
+    "pct_subsidiado": 97.0,
+    "prob_estar_en_top10": 100,
+    "componentes_de_mayor_a_menor": [
+     [
+      "régimen subsidiado",
+      98.8
+     ],
+     [
+      "baja oferta de IPS",
+      97.0
+     ],
+     [
+      "dependencia de EPS intervenidas",
+      94.6
+     ],
+     [
+      "ruralidad",
+      93.5
+     ],
+     [
+      "afiliación concentrada en pocas EPS",
+      76.3
+     ]
+    ],
+    "ipm_dane_2018": 50.1,
+    "barreras_acceso_salud_dane_2018": 13.8,
+    "municipio_pdet": true,
+    "noticias_del_municipio": [],
+    "noticias_del_departamento": [
+     {
+      "titulo": "Trabajadores de Asmet Salud protestan en Popayán por salarios atrasados y exigen la renuncia de la interventora",
+      "fuente": ":.Periodicovirtual.com.:",
+      "fecha": "2026-11-23",
+      "enlace": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNamRoZUMxTUN5b0ptSEZRZktPLW1NYWhFeUY4ZEE4c2pLaVlaa1lGbkJmVktpazN6bVFmMEdSMWU3SXM4bGZ6S2h3NENfOGZWVXZXRVB4SEF4bG9adURmeHhpdGNkUWVkRlFSZzFaR2FXNGxVMk5oZXAxYmRJQkJtclpBcUpiOHJTc3hpTzVaUFNzWHBDOXhMenJybEZ6ZjNHTkFyLVI0N0ZkNjZPZU5ndnZKYjg5STBSU3E5d2hDLWJTS1NwSE1TZjlfbFZZUFh2RTl2aWs0c2s?oc=5"
+     },
+     {
+      "titulo": "Hospital Universitario San José de Popayán reporta insumos para unos ocho días y una cartera de $447.000 millones con las EPS",
+      "fuente": "IFM Noticias",
+      "fecha": "2026-11-20",
+      "enlace": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNT09zM3NvLTVrbmRpRldCUmx2SWJtVnctUzNmTzI0TDZGZmNrY1NJbzJxaXROWWNaa2VsTlVNOEpWX0tDVWhDd2NMZ1I1QXRrSExvNXVwbzZpYXVyOVdDVUtLVGlNTktSVGVlRXJ4NmVwR0lOMzBIOG1ZSUxRdVd1S01iMnpYMjJEU3ZHRU54TW9UMVNTUWZEb1Bzck5GZ0ZkZzNQOUhwbmMxWjRQWVk5aw?oc=5"
+     },
+     {
+      "titulo": "Crisis financiera en el Hospital Universitario San José de Popayán: deuda de las EPS se acerca a los $447 mil millones",
+      "fuente": "Radio 1040 AM",
+      "fecha": "2026-11-19",
+      "enlace": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNOUhBMTlmRmpmdUtPNVBQODk3MElIcEhOSmJqT3dzYWo0NzAtdTRCRGVvU3lkUGtPR05FYVRENkFndWFfZ1FPQUVPVlphN0RfZjAxRV83ZWplZENEaDFRTW82RjJ4TWVVWXlMVFNudGFTZEtwd25WenNnLXp5bGdZSjNZYWlmUU14bjk0Vk1uTXlQVUstZUtlOGFHcG9MMjF0cGdPb3o5M1duQm9VSVhtY1BTbFBTMlNWT0dYMWRTcGp4eGNqUXMxX1dlYzlhaTd4ZzdoSjV5MlhOajRpWmRYOVFtZ0o2ZDg?oc=5"
+     }
+    ]
+   },
+   "resumen": "El municipio de Argelia presenta un riesgo muy alto, con un índice de 92,9, lo que amenaza el acceso a la salud de sus 26.894 afiliados. El 100 % de la población está en EPS intervenidas, destacando Asmet Salud con el 82,7 % de los afiliados.",
+   "por_que": [
+    "El 97 % de la afiliación pertenece al régimen subsidiado.",
+    "Hay una baja oferta con solo 0,74 sedes IPS por cada 10.000 afiliados y un total de 2 sedes IPS.",
+    "El 81 % de la población se encuentra en zona rural y el IPM del DANE en 2018 fue de 50,1.",
+    "El 100 % de los afiliados depende de EPS que se encuentran intervenidas."
+   ],
+   "accion_recomendada": "Se debe resolver la situación de la EPS principal o preparar la reasignación de afiliados, y reforzar la red pública del municipio.",
+   "advertencias": [
+    "Los datos cuentan sedes y no camas hospitalarias.",
+    "Las noticias corresponden al departamento del Cauca y no necesariamente al municipio de Argelia."
+   ]
+  },
+  {
+   "hechos": {
+    "municipio": "Leiva",
+    "departamento": "Nariño",
+    "cod_mpio": "52405",
+    "ranking": 2,
+    "indice_riesgo": 89.9,
+    "nivel_riesgo": "Muy alto",
+    "grupo": "Grupo 1 (mayor riesgo)",
+    "afiliados": 8757,
+    "pct_en_eps_intervenidas": 100.0,
+    "eps_principal": "ASMET SALUD",
+    "pct_eps_principal": 98.1,
+    "eps_principal_intervenida": true,
+    "numero_eps": 3,
+    "sedes_ips": 1,
+    "ips_por_10mil_afiliados": 1.14,
+    "pct_rural": 65.2,
+    "pct_subsidiado": 97.0,
+    "prob_estar_en_top10": 100,
+    "componentes_de_mayor_a_menor": [
+     [
+      "régimen subsidiado",
+      98.8
+     ],
+     [
+      "afiliación concentrada en pocas EPS",
+      94.7
+     ],
+     [
+      "baja oferta de IPS",
+      90.9
+     ],
+     [
+      "dependencia de EPS intervenidas",
+      88.6
+     ],
+     [
+      "ruralidad",
+      75.7
+     ]
+    ],
+    "ipm_dane_2018": 55.3,
+    "barreras_acceso_salud_dane_2018": 5.5,
+    "municipio_pdet": true,
+    "noticias_del_municipio": [],
+    "noticias_del_departamento": []
+   },
+   "resumen": "El municipio de Leiva presenta un nivel de riesgo muy alto de perder el acceso a la salud, ubicándose en el grupo de mayor riesgo. Toda la población afiliada depende actualmente de EPS intervenidas.",
+   "por_que": [
+    "El 100 % de los 8.757 afiliados está en EPS intervenidas y el 98,1 % pertenece a ASMET SALUD.",
+    "La ruralidad alcanza el 65,2 % y la pobreza medida por el IPM del DANE en 2018 fue de 55,3 %.",
+    "Existe una baja oferta de IPS con apenas 1 sede disponible en todo el territorio.",
+    "El régimen subsidiado concentra el 97,0 % de la afiliación municipal."
+   ],
+   "accion_recomendada": "Se debe resolver la situación de la EPS principal o preparar la reasignación de afiliados a otras entidades, al tiempo que se refuerza la red pública de salud. Es fundamental garantizar la continuidad en la atención para la población.",
+   "advertencias": [
+    "Los datos de pobreza y barreras de acceso provienen del IPM del DANE de 2018.",
+    "Para medir la capacidad se cuenta el número de sedes y no el número de camas disponibles."
+   ]
+  },
+  {
+   "hechos": {
+    "municipio": "Mogotes",
+    "departamento": "Santander",
+    "cod_mpio": "68464",
+    "ranking": 3,
+    "indice_riesgo": 88.6,
+    "nivel_riesgo": "Muy alto",
+    "grupo": "Grupo 1 (mayor riesgo)",
+    "afiliados": 9269,
+    "pct_en_eps_intervenidas": 100.0,
+    "eps_principal": "NUEVA EPS",
+    "pct_eps_principal": 100.0,
+    "eps_principal_intervenida": true,
+    "numero_eps": 1,
+    "sedes_ips": 1,
+    "ips_por_10mil_afiliados": 1.08,
+    "pct_rural": 63.4,
+    "pct_subsidiado": 88.5,
+    "prob_estar_en_top10": 100,
+    "componentes_de_mayor_a_menor": [
+     [
+      "afiliación concentrada en pocas EPS",
+      98.4
+     ],
+     [
+      "dependencia de EPS intervenidas",
+      94.6
+     ],
+     [
+      "baja oferta de IPS",
+      91.9
+     ],
+     [
+      "ruralidad",
+      73.3
+     ],
+     [
+      "régimen subsidiado",
+      57.9
+     ]
+    ],
+    "ipm_dane_2018": 49.4,
+    "barreras_acceso_salud_dane_2018": 11.4,
+    "municipio_pdet": false,
+    "noticias_del_municipio": [],
+    "noticias_del_departamento": [
+     {
+      "titulo": "Santander: esta es la millonaria deuda que tiene en riesgo los servicios de Urgencias en el Hospital Universitario",
+      "fuente": "Vanguardia",
+      "fecha": "2026-11-21",
+      "enlace": "https://news.google.com/rss/articles/CBMijwJBVV95cUxPN1BEcEZSa3ItWk1NUmE3eXFuVjZFemlNbDZYVHBnckY3RjRRZHhfVVZwTzZheGo2QmxtYjJJY0NLdF91djFTaFQ4WFdVOEdtZWRlOU5pSlpKZWJpYmk1MU85d3poQ0l4S0RxQmRyMDFNVmdzeWNuekdDcjhpMlVOczlRbmU1dDBuN185V0J6ZW5TX3JmaTJzbmFVdF9FUzFxZ3JSUVppWWlta09UdHBwMFhqemVWUlR1ZzJkeHNqdUhBWlE4bENQemppa0JvY29ZTUtDSEJLalZkU00zbHM2WUxKdXNDSThOalQ1dXdKNmt3dlhqTV9DV21hd3lfZTRVREkwbjlRcE1iOHdzV0F3?oc=5"
+     },
+     {
+      "titulo": "Usuarios de Nueva EPS en Santander piden intervención del Gobierno por crisis de la Foscal",
+      "fuente": "Blu Radio",
+      "fecha": "2026-11-17",
+      "enlace": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPZE9PZm5SNG5nV0JTbm56cDZpTHpsTGp5SEw3MWJJeHJWNVktTjA0MUpQdTBBSlVWTDJGWTdlcEt3dVl3bFJDNGlkT29lTU4tZmpSWGg5SWZEcEJDWEVldThuaXJLQWtiSVE3Q2Y5SU11Q1IydGMyQWlZZWd0STJadWF3ekZHbW42S3VRUTlYbm02aHdsN2RpcVpraFR0MTU4M0lyYWJDb0ZIai1acnVqMnV0bVZCTkhzNkhQa0lORThLOGhYbjZEUVRnZ3dMU09CSVZaRXJKajjSAeYBQVVfeXFMTWZTeERzZFNzZ2Q0UlhIb0ZVT0N0ejM3QWtEdy1VOUtCYzNfblBlVkdHYzJVRkw0NWdSQUQyXzVyckFBX2JLR1hjc0trQ1Zrdk80Ty14MlhxYm9nWXZUZ3RwcE5oWk14RDZsSV93bHg2TnBINU1CbnlzUWp3V2ZCc3hhcmdlMjVocHl4MEIwTGhXMmxMazhvZ3A3a2VTS2gzM3dPM3RacVFkd1NZQV9wX0tBOW4ySXVvTkVGeVJOdjlXMF9kOUNvYlFmSjgxWU1sMm9pa2hPWVdGM0RQYWwybGxNc014d0E?oc=5"
+     }
+    ]
+   },
+   "resumen": "Mogotes presenta un nivel de riesgo muy alto de perder el acceso a la salud, ubicándose en el ranking 3 con un índice de 88,6. La situación exige atención prioritaria para proteger a los 9.269 afiliados del municipio.",
+   "por_que": [
+    "El 100 % de los afiliados depende de una única EPS, que además se encuentra intervenida.",
+    "Existe una baja oferta de IPS con apenas 1,08 sedes por cada 10.000 afiliados.",
+    "El municipio registra una alta ruralidad del 63,4 % y el 88,5 % de la población pertenece al régimen subsidiado.",
+    "El indicador de Pobreza Multidimensional del DANE de 2018 se situaba en 49,4 %."
+   ],
+   "accion_recomendada": "Se debe resolver la situación de la EPS principal o preparar la reasignación de afiliados, y reforzar la red pública del municipio.",
+   "advertencias": [
+    "Los datos cuentan sedes de IPS y no camas hospitalarias disponibles.",
+    "Las noticias corresponden al nivel departamental de Santander y no son exclusivas del municipio de Mogotes."
+   ]
+  },
+  {
+   "hechos": {
+    "municipio": "La Montañita",
+    "departamento": "Caquetá",
+    "cod_mpio": "18410",
+    "ranking": 4,
+    "indice_riesgo": 88.3,
+    "nivel_riesgo": "Muy alto",
+    "grupo": "Grupo 1 (mayor riesgo)",
+    "afiliados": 13254,
+    "pct_en_eps_intervenidas": 100.0,
+    "eps_principal": "ASMET SALUD",
+    "pct_eps_principal": 92.2,
+    "eps_principal_intervenida": true,
+    "numero_eps": 2,
+    "sedes_ips": 2,
+    "ips_por_10mil_afiliados": 1.51,
+    "pct_rural": 71.1,
+    "pct_subsidiado": 94.8,
+    "prob_estar_en_top10": 100,
+    "componentes_de_mayor_a_menor": [
+     [
+      "dependencia de EPS intervenidas",
+      94.6
+     ],
+     [
+      "régimen subsidiado",
+      91.4
+     ],
+     [
+      "afiliación concentrada en pocas EPS",
+      86.8
+     ],
+     [
+      "ruralidad",
+      83.9
+     ],
+     [
+      "baja oferta de IPS",
+      82.2
+     ]
+    ],
+    "ipm_dane_2018": 56.2,
+    "barreras_acceso_salud_dane_2018": 8.9,
+    "municipio_pdet": true,
+    "noticias_del_municipio": [],
+    "noticias_del_departamento": []
+   },
+   "resumen": "El municipio de La Montañita presenta un nivel de riesgo muy alto de perder el acceso a la salud, ubicándose en el grupo 1 con un índice de riesgo de 88,3. Toda la población afiliada depende actualmente de EPS que se encuentran intervenidas.",
+   "por_que": [
+    "El 100 % de los 13.254 afiliados está en EPS intervenidas y el 92,2 % pertenece a ASMET SALUD.",
+    "Existe una baja oferta de IPS con apenas 2 sedes para todo el territorio, lo que equivale a 1,51 sedes por cada 10.000 afiliados.",
+    "El municipio registra una alta ruralidad del 71,1 % y una población casi en su totalidad bajo el régimen subsidiado con un 94,8 %.",
+    "Presenta un indicador de pobreza multidimensional del DANE de 2018 de 56,2 %, lo que dificulta aún más el acceso."
+   ],
+   "accion_recomendada": "Es necesario resolver urgentemente la situación de la EPS principal o preparar la reasignación de los 13.254 afiliados, además de reforzar la red pública de salud del municipio.",
+   "advertencias": [
+    "Los datos de pobreza y barreras de acceso corresponden al censo del IPM del DANE de 2018.",
+    "Se cuenta el número total de sedes IPS disponibles, pero no la capacidad instalada en camas u otros servicios."
+   ]
+  },
+  {
+   "hechos": {
+    "municipio": "Florencia",
+    "departamento": "Cauca",
+    "cod_mpio": "19290",
+    "ranking": 5,
+    "indice_riesgo": 87.7,
+    "nivel_riesgo": "Muy alto",
+    "grupo": "Grupo 1 (mayor riesgo)",
+    "afiliados": 5730,
+    "pct_en_eps_intervenidas": 100.0,
+    "eps_principal": "ASMET SALUD",
+    "pct_eps_principal": 95.9,
+    "eps_principal_intervenida": true,
+    "numero_eps": 2,
+    "sedes_ips": 1,
+    "ips_por_10mil_afiliados": 1.75,
+    "pct_rural": 74.5,
+    "pct_subsidiado": 94.9,
+    "prob_estar_en_top10": 100,
+    "componentes_de_mayor_a_menor": [
+     [
+      "dependencia de EPS intervenidas",
+      94.6
+     ],
+     [
+      "régimen subsidiado",
+      91.6
+     ],
+     [
+      "afiliación concentrada en pocas EPS",
+      91.0
+     ],
+     [
+      "ruralidad",
+      87.7
+     ],
+     [
+      "baja oferta de IPS",
+      76.6
+     ]
+    ],
+    "ipm_dane_2018": 36.3,
+    "barreras_acceso_salud_dane_2018": 4.7,
+    "municipio_pdet": false,
+    "noticias_del_municipio": [],
+    "noticias_del_departamento": [
+     {
+      "titulo": "Trabajadores de Asmet Salud protestan en Popayán por salarios atrasados y exigen la renuncia de la interventora",
+      "fuente": ":.Periodicovirtual.com.:",
+      "fecha": "2026-11-23",
+      "enlace": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNamRoZUMxTUN5b0ptSEZRZktPLW1NYWhFeUY4ZEE4c2pLaVlaa1lGbkJmVktpazN6bVFmMEdSMWU3SXM4bGZ6S2h3NENfOGZWVXZXRVB4SEF4bG9adURmeHhpdGNkUWVkRlFSZzFaR2FXNGxVMk5oZXAxYmRJQkJtclpBcUpiOHJTc3hpTzVaUFNzWHBDOXhMenJybEZ6ZjNHTkFyLVI0N0ZkNjZPZU5ndnZKYjg5STBSU3E5d2hDLWJTS1NwSE1TZjlfbFZZUFh2RTl2aWs0c2s?oc=5"
+     },
+     {
+      "titulo": "Hospital Universitario San José de Popayán reporta insumos para unos ocho días y una cartera de $447.000 millones con las EPS",
+      "fuente": "IFM Noticias",
+      "fecha": "2026-11-20",
+      "enlace": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNT09zM3NvLTVrbmRpRldCUmx2SWJtVnctUzNmTzI0TDZGZmNrY1NJbzJxaXROWWNaa2VsTlVNOEpWX0tDVWhDd2NMZ1I1QXRrSExvNXVwbzZpYXVyOVdDVUtLVGlNTktSVGVlRXJ4NmVwR0lOMzBIOG1ZSUxRdVd1S01iMnpYMjJEU3ZHRU54TW9UMVNTUWZEb1Bzck5GZ0ZkZzNQOUhwbmMxWjRQWVk5aw?oc=5"
+     },
+     {
+      "titulo": "Crisis financiera en el Hospital Universitario San José de Popayán: deuda de las EPS se acerca a los $447 mil millones",
+      "fuente": "Radio 1040 AM",
+      "fecha": "2026-11-19",
+      "enlace": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNOUhBMTlmRmpmdUtPNVBQODk3MElIcEhOSmJqT3dzYWo0NzAtdTRCRGVvU3lkUGtPR05FYVRENkFndWFfZ1FPQUVPVlphN0RfZjAxRV83ZWplZENEaDFRTW82RjJ4TWVVWXlMVFNudGFTZEtwd25WenNnLXp5bGdZSjNZYWlmUU14bjk0Vk1uTXlQVUstZUtlOGFHcG9MMjF0cGdPb3o5M1duQm9VSVhtY1BTbFBTMlNWT0dYMWRTcGp4eGNqUXMxX1dlYzlhaTd4ZzdoSjV5MlhOajRpWmRYOVFtZ0o2ZDg?oc=5"
+     }
+    ]
+   },
+   "resumen": "El municipio de Florencia presenta un nivel de riesgo muy alto de perder el acceso a la salud, ubicándose en el ranking 5 del departamento del Cauca con un índice de riesgo de 87,7. Esta situación crítica se ve agravada por la alta dependencia de EPS intervenidas y una oferta limitada de servicios.",
+   "por_que": [
+    "El 100 % de los 5.730 afiliados depende de EPS que se encuentran intervenidas.",
+    "La EPS principal es ASMET SALUD, la cual concentra el 95,9 % de los afiliados del municipio.",
+    "Existe una baja oferta de IPS con apenas 1 sede disponible, lo que equivale a 1,75 sedes por cada 10.000 afiliados.",
+    "El municipio registra una alta ruralidad del 74,5 % y una población en régimen subsidiado del 94,9 %."
+   ],
+   "accion_recomendada": "Se debe resolver urgentemente la situación de la EPS principal o preparar la reasignación de los afiliados, además de reforzar la red pública de salud en el municipio.",
+   "advertencias": [
+    "Los datos disponibles cuentan sedes y no camas hospitalarias.",
+    "Las noticias financieras y laborales reportadas corresponden al nivel departamental y no necesariamente al municipio de Florencia."
+   ]
+  }
+ ]
+}
